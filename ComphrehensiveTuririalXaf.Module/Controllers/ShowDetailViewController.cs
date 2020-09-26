@@ -14,21 +14,13 @@ namespace ComprehensiveTutorialXaf.Module.Controllers
     {
         public ShowDetailViewController()
         {
-            PopupWindowShowAction showPopupDetailViewAction = new PopupWindowShowAction(
-                this, $"{GetType().FullName}.{nameof(showPopupDetailViewAction)}", PredefinedCategory.Edit)
-            {
-                ImageName = "BO_Skull",
-
-            };
-            showPopupDetailViewAction.SelectionDependencyType = SelectionDependencyType.RequireSingleObject;
-            showPopupDetailViewAction.TargetObjectsCriteria = "Not IsNewObject(This)";
-            showPopupDetailViewAction.CustomizePopupWindowParams += showDetailViewAction_CustomizePopupWindowParams;
 
 
             SimpleAction showSimpleDetailView = new SimpleAction(this, $"{GetType().FullName}.{nameof(showSimpleDetailView)}"
                 , PredefinedCategory.Edit)
             {
                 ImageName = "Pacifier",
+                Caption = "Pokaż dane (simple)",
 
             };
             showSimpleDetailView.SelectionDependencyType = SelectionDependencyType.RequireSingleObject;
@@ -36,6 +28,8 @@ namespace ComprehensiveTutorialXaf.Module.Controllers
             showSimpleDetailView.Execute += showSimpleDetailView_Execute;
 
         }
+
+
 
         private void showSimpleDetailView_Execute(object sender, SimpleActionExecuteEventArgs e)
         {
@@ -48,20 +42,17 @@ namespace ComprehensiveTutorialXaf.Module.Controllers
                 e.ShowViewParameters.CreatedView = detailView;
                 e.ShowViewParameters.Context = TemplateContext.View;
                 e.ShowViewParameters.TargetWindow = TargetWindow.Default;
+                // po zamknieciu okna zostanie wywołane zdarzenie
+                detailView.Closed += DetailView_Closed;
             }
         }
 
-        void showDetailViewAction_CustomizePopupWindowParams(
-            object sender, CustomizePopupWindowParamsEventArgs e)
+        private void DetailView_Closed(object sender, EventArgs e)
         {
-            IObjectSpace newObjectSpace = Application.CreateObjectSpace(View.ObjectTypeInfo.Type);
-            Object objectToShow = newObjectSpace.GetObject(View.CurrentObject);
-            if (objectToShow != null)
-            {
-                DetailView createdView = Application.CreateDetailView(newObjectSpace, objectToShow);
-                createdView.ViewEditMode = ViewEditMode.Edit;
-                e.View = createdView;
-            }
+            //będzie wywołane po zamknięciu zwykłego okna
+            View.ObjectSpace.Refresh();
         }
+
+
     }
 }
