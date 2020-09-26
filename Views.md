@@ -48,6 +48,7 @@ var nestedListViewId = ModelNodeIdHelper.GetNestedListViewId(typeof(Contact), na
 
 
 * DashboardView (nie mylić z Dashbordami)
+
 ![](https://docs.devexpress.com/expressappframework/images/views_dashboardview_win132346.png)
 
 to jest szerszy temat ...
