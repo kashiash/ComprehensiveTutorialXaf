@@ -9,7 +9,7 @@ using DevExpress.ExpressApp.Xpo;
 using DevExpress.ExpressApp.Security;
 using DevExpress.ExpressApp.Security.ClientServer;
 
-namespace ComphrehensiveTuririalXaf.Win {
+namespace ComprehensiveTutorialXaf.Win {
     // For more typical usage scenarios, be sure to check out https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.Win.WinApplication._members
     public partial class ComphrehensiveTuririalXafWindowsFormsApplication : WinApplication {
         public ComphrehensiveTuririalXafWindowsFormsApplication() {

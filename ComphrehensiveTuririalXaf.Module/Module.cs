@@ -17,7 +17,7 @@ using DevExpress.ExpressApp.Model.DomainLogics;
 using DevExpress.ExpressApp.Model.NodeGenerators;
 using DevExpress.ExpressApp.Xpo;
 
-namespace ComphrehensiveTuririalXaf.Module {
+namespace ComprehensiveTutorialXaf.Module {
     // For more typical usage scenarios, be sure to check out https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.ModuleBase.
     public sealed partial class ComphrehensiveTuririalXafModule : ModuleBase {
         public ComphrehensiveTuririalXafModule() {

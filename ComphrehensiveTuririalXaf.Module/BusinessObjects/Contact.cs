@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ComphrehensiveTuririalXaf.Module.BusinessObjects
+namespace ComprehensiveTutorialXaf.Module.BusinessObjects
 {
     [DefaultClassOptions]
     public class Contact : Person

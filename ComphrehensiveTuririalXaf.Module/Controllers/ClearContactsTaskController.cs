@@ -1,4 +1,4 @@
-﻿using ComphrehensiveTuririalXaf.Module.BusinessObjects;
+﻿using ComprehensiveTutorialXaf.Module.BusinessObjects;
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Actions;
 using DevExpress.ExpressApp.Templates;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ComphrehensiveTuririalXaf.Module.Controllers
+namespace ComprehensiveTutorialXaf.Module.Controllers
 {
     public class ClearContactsTaskController : ViewController<DetailView>
     {
@@ -27,18 +27,19 @@ namespace ComphrehensiveTuririalXaf.Module.Controllers
                 ImageName = "Action_Clear",
                 PaintStyle = ActionItemPaintStyle.Image,
                 ToolTip = "Clear tasks",
+                ConfirmationMessage = "Jesteś pewny tego czynu?",
                 SelectionDependencyType = SelectionDependencyType.RequireSingleObject,
             };
             ClearTasksAction.Execute += ClearTasks;
         }
-            private void ClearTasks(object sender, SimpleActionExecuteEventArgs e)
-            {
+        private void ClearTasks(object sender, SimpleActionExecuteEventArgs e)
+        {
             var currentObject = View.CurrentObject as Contact;
-        
-                while (currentObject.Tasks.Count > 0)
-                {
-                    currentObject.Tasks.Remove(currentObject.Tasks[0]);
-                }
+
+            while (currentObject.Tasks.Count > 0)
+            {
+                currentObject.Tasks.Remove(currentObject.Tasks[0]);
+            }
             ObjectSpace.SetModified(currentObject);
         }
 
@@ -56,4 +57,6 @@ namespace ComphrehensiveTuririalXaf.Module.Controllers
 
 
     }
+
+
 }

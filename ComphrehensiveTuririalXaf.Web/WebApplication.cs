@@ -7,13 +7,13 @@ using DevExpress.ExpressApp.Xpo;
 using DevExpress.ExpressApp.Security;
 using DevExpress.ExpressApp.Security.ClientServer;
 
-namespace ComphrehensiveTuririalXaf.Web {
+namespace ComprehensiveTutorialXaf.Web {
     // For more typical usage scenarios, be sure to check out https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.Web.WebApplication
     public partial class ComphrehensiveTuririalXafAspNetApplication : WebApplication {
         private DevExpress.ExpressApp.SystemModule.SystemModule module1;
         private DevExpress.ExpressApp.Web.SystemModule.SystemAspNetModule module2;
-        private ComphrehensiveTuririalXaf.Module.ComphrehensiveTuririalXafModule module3;
-        private ComphrehensiveTuririalXaf.Module.Web.ComphrehensiveTuririalXafAspNetModule module4;
+        private ComprehensiveTutorialXaf.Module.ComphrehensiveTuririalXafModule module3;
+        private ComprehensiveTutorialXaf.Module.Web.ComphrehensiveTuririalXafAspNetModule module4;
         private DevExpress.ExpressApp.Security.SecurityModule securityModule1;
         private DevExpress.ExpressApp.Security.SecurityStrategyComplex securityStrategyComplex1;
         private DevExpress.ExpressApp.Security.AuthenticationActiveDirectory authenticationActiveDirectory1;
@@ -72,8 +72,8 @@ namespace ComphrehensiveTuririalXaf.Web {
         private void InitializeComponent() {
             this.module1 = new DevExpress.ExpressApp.SystemModule.SystemModule();
             this.module2 = new DevExpress.ExpressApp.Web.SystemModule.SystemAspNetModule();
-            this.module3 = new ComphrehensiveTuririalXaf.Module.ComphrehensiveTuririalXafModule();
-            this.module4 = new ComphrehensiveTuririalXaf.Module.Web.ComphrehensiveTuririalXafAspNetModule();
+            this.module3 = new ComprehensiveTutorialXaf.Module.ComphrehensiveTuririalXafModule();
+            this.module4 = new ComprehensiveTutorialXaf.Module.Web.ComphrehensiveTuririalXafAspNetModule();
             this.securityModule1 = new DevExpress.ExpressApp.Security.SecurityModule();
             this.securityStrategyComplex1 = new DevExpress.ExpressApp.Security.SecurityStrategyComplex();
             this.securityStrategyComplex1.SupportNavigationPermissionsForTypes = false;

@@ -14,7 +14,7 @@ using DevExpress.ExpressApp.Model.DomainLogics;
 using DevExpress.ExpressApp.Model.NodeGenerators;
 using DevExpress.Persistent.BaseImpl;
 
-namespace ComphrehensiveTuririalXaf.Module.Web {
+namespace ComprehensiveTutorialXaf.Module.Web {
     [ToolboxItemFilter("Xaf.Platform.Web")]
     // For more typical usage scenarios, be sure to check out https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.ModuleBase.
     public sealed partial class ComphrehensiveTuririalXafAspNetModule : ModuleBase {

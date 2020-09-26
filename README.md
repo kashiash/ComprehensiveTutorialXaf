@@ -12,6 +12,11 @@ na bazie https://docs.devexpress.com/eXpressAppFramework/112560/getting-started/
 
 [Widoki](Views.md)
 
+# XPO Session, UnitOfWork, Object Space
+
+<a href="https://docs.devexpress.com/eXpressAppFramework/113707/concepts/data-manipulation-and-business-logic/object-space" target="_blank">ObjectSpace</a>
+
+<a href="https://docs.devexpress.com/eXpressAppFramework/113711/concepts/data-manipulation-and-business-logic/create-read-update-and-delete-data" target="_blank">Edycja danych</a>
 
 # XPO Best Practices
 https://supportcenter.devexpress.com/ticket/details/a2944/xpo-best-practices

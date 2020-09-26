@@ -1,4 +1,4 @@
-﻿namespace ComphrehensiveTuririalXaf.Module.Win {
+﻿namespace ComprehensiveTutorialXaf.Module.Win {
     partial class ComphrehensiveTuririalXafWindowsFormsModule {
         /// <summary> 
         /// Required designer variable.
@@ -26,7 +26,7 @@
             // 
             // ComphrehensiveTuririalXafWindowsFormsModule
             // 
-            this.RequiredModuleTypes.Add(typeof(ComphrehensiveTuririalXaf.Module.ComphrehensiveTuririalXafModule));
+            this.RequiredModuleTypes.Add(typeof(ComprehensiveTutorialXaf.Module.ComphrehensiveTuririalXafModule));
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Win.SystemModule.SystemWindowsFormsModule));
 			this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Validation.Win.ValidationWindowsFormsModule));
         }

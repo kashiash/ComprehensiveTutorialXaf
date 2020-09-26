@@ -1,4 +1,4 @@
-﻿namespace ComphrehensiveTuririalXaf.Win {
+﻿namespace ComprehensiveTutorialXaf.Win {
     partial class XafSplashScreen
     {
         /// <summary>

@@ -11,7 +11,7 @@ using DevExpress.ExpressApp.Security;
 using DevExpress.ExpressApp.Web;
 using DevExpress.Web;
 
-namespace ComphrehensiveTuririalXaf.Web {
+namespace ComprehensiveTutorialXaf.Web {
     public class Global : System.Web.HttpApplication {
         public Global() {
             InitializeComponent();

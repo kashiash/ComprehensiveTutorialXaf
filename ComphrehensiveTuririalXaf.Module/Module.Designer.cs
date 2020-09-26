@@ -1,4 +1,4 @@
-﻿namespace ComphrehensiveTuririalXaf.Module {
+﻿namespace ComprehensiveTutorialXaf.Module {
 	partial class ComphrehensiveTuririalXafModule {
 		/// <summary> 
 		/// Required designer variable.
@@ -35,6 +35,7 @@
             this.AdditionalExportedTypes.Add(typeof(DevExpress.Xpo.XPCustomObject));
             this.AdditionalExportedTypes.Add(typeof(DevExpress.Xpo.XPBaseObject));
             this.AdditionalExportedTypes.Add(typeof(DevExpress.Xpo.PersistentBase));
+            this.AdditionalExportedTypes.Add(typeof(DevExpress.Persistent.BaseImpl.Note));
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.SystemModule.SystemModule));
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Security.SecurityModule));
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Objects.BusinessClassLibraryCustomizationModule));

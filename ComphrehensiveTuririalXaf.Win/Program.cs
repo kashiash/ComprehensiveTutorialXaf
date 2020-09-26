@@ -9,7 +9,7 @@ using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.XtraEditors;
 
-namespace ComphrehensiveTuririalXaf.Win {
+namespace ComprehensiveTutorialXaf.Win {
     static class Program {
         /// <summary>
         /// The main entry point for the application.

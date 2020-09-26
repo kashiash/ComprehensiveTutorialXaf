@@ -14,7 +14,7 @@ using DevExpress.ExpressApp.Model.DomainLogics;
 using DevExpress.ExpressApp.Model.NodeGenerators;
 using DevExpress.Persistent.BaseImpl;
 
-namespace ComphrehensiveTuririalXaf.Module.Win {
+namespace ComprehensiveTutorialXaf.Module.Win {
     [ToolboxItemFilter("Xaf.Platform.Win")]
     // For more typical usage scenarios, be sure to check out https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.ModuleBase.
     public sealed partial class ComphrehensiveTuririalXafWindowsFormsModule : ModuleBase {

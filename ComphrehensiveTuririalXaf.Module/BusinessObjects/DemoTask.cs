@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 
-namespace ComphrehensiveTuririalXaf.Module.BusinessObjects
+namespace ComprehensiveTutorialXaf.Module.BusinessObjects
 {
     using DevExpress.ExpressApp.Model;
     using DevExpress.Persistent.Base;

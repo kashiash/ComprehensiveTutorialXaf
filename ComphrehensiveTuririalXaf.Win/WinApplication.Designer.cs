@@ -1,4 +1,4 @@
-﻿namespace ComphrehensiveTuririalXaf.Win {
+﻿namespace ComprehensiveTutorialXaf.Win {
     partial class ComphrehensiveTuririalXafWindowsFormsApplication {
         /// <summary> 
         /// Required designer variable.
@@ -25,8 +25,8 @@
         private void InitializeComponent() {
             this.module1 = new DevExpress.ExpressApp.SystemModule.SystemModule();
             this.module2 = new DevExpress.ExpressApp.Win.SystemModule.SystemWindowsFormsModule();
-            this.module3 = new ComphrehensiveTuririalXaf.Module.ComphrehensiveTuririalXafModule();
-            this.module4 = new ComphrehensiveTuririalXaf.Module.Win.ComphrehensiveTuririalXafWindowsFormsModule();
+            this.module3 = new ComprehensiveTutorialXaf.Module.ComphrehensiveTuririalXafModule();
+            this.module4 = new ComprehensiveTutorialXaf.Module.Win.ComphrehensiveTuririalXafWindowsFormsModule();
             this.securityModule1 = new DevExpress.ExpressApp.Security.SecurityModule();
             this.securityStrategyComplex1 = new DevExpress.ExpressApp.Security.SecurityStrategyComplex();
             this.securityStrategyComplex1.SupportNavigationPermissionsForTypes = false;
@@ -78,8 +78,8 @@
 
         private DevExpress.ExpressApp.SystemModule.SystemModule module1;
         private DevExpress.ExpressApp.Win.SystemModule.SystemWindowsFormsModule module2;
-        private ComphrehensiveTuririalXaf.Module.ComphrehensiveTuririalXafModule module3;
-        private ComphrehensiveTuririalXaf.Module.Win.ComphrehensiveTuririalXafWindowsFormsModule module4;
+        private ComprehensiveTutorialXaf.Module.ComphrehensiveTuririalXafModule module3;
+        private ComprehensiveTutorialXaf.Module.Win.ComphrehensiveTuririalXafWindowsFormsModule module4;
         private DevExpress.ExpressApp.Security.SecurityModule securityModule1;
         private DevExpress.ExpressApp.Security.SecurityStrategyComplex securityStrategyComplex1;
         private DevExpress.ExpressApp.Security.AuthenticationActiveDirectory authenticationActiveDirectory1;
