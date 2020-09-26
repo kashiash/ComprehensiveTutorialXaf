@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Options xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" TestRunTimeLimit="3" EnableUpperCase="ComphrehensiveTuririalXaf.Web">
+<Options xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" TestRunTimeLimit="3" EnableUpperCase="ComprehensiveTutorialXaf.Web">
 	<Applications>
 		<!-- Win -->
 		<Application
-			Name="ComphrehensiveTuririalXafWin"
-			FileName="[WinAppBin]\ComphrehensiveTuririalXaf.Win.exe"
+			Name="ComprehensiveTutorialXafWin"
+			FileName="[WinAppBin]\ComprehensiveTutorialXaf.Win.exe"
 			AdapterAssemblyName="[WinAdapterAssemblyName]"
 			CommunicationPort="4100"/>
 		<!-- Web -->
 		<Application
-			Name="ComphrehensiveTuririalXafWeb"
+			Name="ComprehensiveTutorialXafWeb"
 			UseIISExpress="True"
 			Url="http://localhost:4030"
 			PhysicalPath="[WebAppBin]"
@@ -17,20 +17,20 @@
 			IgnoreCase="true"/>
 		<!-- For IIS -->
 		<!--Application
-			Name="ComphrehensiveTuririalXafWeb"
-			Url="http://localhost/ComphrehensiveTuririalXaf.Web/Default.aspx"
+			Name="ComprehensiveTutorialXafWeb"
+			Url="http://localhost/ComprehensiveTutorialXaf.Web/Default.aspx"
 			AdapterAssemblyName="[WebAdapterAssemblyName]"
 			IgnoreCase="true"/-->
 	</Applications>
 	<TestDatabases>
-		<Database xsi:type="TestMSSQLDatabase" Server="(localdb)\mssqllocaldb" DBName="ComphrehensiveTuririalXafEasyTest"/>
+		<Database xsi:type="TestMSSQLDatabase" Server="(localdb)\mssqllocaldb" DBName="ComprehensiveTutorialXafEasyTest"/>
 	</TestDatabases>
 
 	<Aliases>
 		<Alias Name="DomainUserName" Value="%USERDOMAIN%\%USERNAME%" />
 		<Alias Name="WinAdapterAssemblyName" Value="DevExpress.ExpressApp.EasyTest.WinAdapter.v20.2, Version=20.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
 		<Alias Name="WebAdapterAssemblyName" Value="DevExpress.ExpressApp.EasyTest.WebAdapter.v20.2, Version=20.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-		<Alias Name="WinAppBin" Value="[ConfigPath]\..\..\ComphrehensiveTuririalXaf.Win\Bin\EasyTest" />
-		<Alias Name="WebAppBin" Value="[ConfigPath]\..\..\ComphrehensiveTuririalXaf.Web" />
+		<Alias Name="WinAppBin" Value="[ConfigPath]\..\..\ComprehensiveTutorialXaf.Win\Bin\EasyTest" />
+		<Alias Name="WebAppBin" Value="[ConfigPath]\..\..\ComprehensiveTutorialXaf.Web" />
 	</Aliases>
 </Options>

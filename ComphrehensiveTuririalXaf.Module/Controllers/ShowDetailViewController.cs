@@ -14,16 +14,43 @@ namespace ComprehensiveTutorialXaf.Module.Controllers
     {
         public ShowDetailViewController()
         {
-            PopupWindowShowAction showDetailViewAction = new PopupWindowShowAction(
-                this, "ShowDetailView", PredefinedCategory.Edit)
+            PopupWindowShowAction showPopupDetailViewAction = new PopupWindowShowAction(
+                this, $"{GetType().FullName}.{nameof(showPopupDetailViewAction)}", PredefinedCategory.Edit)
             {
                 ImageName = "BO_Skull",
 
             };
-            showDetailViewAction.SelectionDependencyType = SelectionDependencyType.RequireSingleObject;
-            showDetailViewAction.TargetObjectsCriteria = "Not IsNewObject(This)";
-            showDetailViewAction.CustomizePopupWindowParams += showDetailViewAction_CustomizePopupWindowParams;
+            showPopupDetailViewAction.SelectionDependencyType = SelectionDependencyType.RequireSingleObject;
+            showPopupDetailViewAction.TargetObjectsCriteria = "Not IsNewObject(This)";
+            showPopupDetailViewAction.CustomizePopupWindowParams += showDetailViewAction_CustomizePopupWindowParams;
+
+
+            SimpleAction showSimpleDetailView = new SimpleAction(this, $"{GetType().FullName}.{nameof(showSimpleDetailView)}"
+                , PredefinedCategory.Edit)
+            {
+                ImageName = "Pacifier",
+
+            };
+            showSimpleDetailView.SelectionDependencyType = SelectionDependencyType.RequireSingleObject;
+            showSimpleDetailView.TargetObjectsCriteria = "Not IsNewObject(This)";
+            showSimpleDetailView.Execute += showSimpleDetailView_Execute;
+
         }
+
+        private void showSimpleDetailView_Execute(object sender, SimpleActionExecuteEventArgs e)
+        {
+            IObjectSpace newObjectSpace = Application.CreateObjectSpace(View.ObjectTypeInfo.Type);
+            Object objectToShow = newObjectSpace.GetObject(View.CurrentObject);
+            if (objectToShow != null)
+            {
+                string detailId = Application.FindDetailViewId(objectToShow.GetType());
+                DetailView detailView = Application.CreateDetailView(newObjectSpace, detailId, true, objectToShow);
+                e.ShowViewParameters.CreatedView = detailView;
+                e.ShowViewParameters.Context = TemplateContext.View;
+                e.ShowViewParameters.TargetWindow = TargetWindow.Default;
+            }
+        }
+
         void showDetailViewAction_CustomizePopupWindowParams(
             object sender, CustomizePopupWindowParamsEventArgs e)
         {

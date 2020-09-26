@@ -9,11 +9,11 @@ using DevExpress.ExpressApp.Security.ClientServer;
 
 namespace ComprehensiveTutorialXaf.Web {
     // For more typical usage scenarios, be sure to check out https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.Web.WebApplication
-    public partial class ComphrehensiveTuririalXafAspNetApplication : WebApplication {
+    public partial class ComprehensiveTutorialXafAspNetApplication : WebApplication {
         private DevExpress.ExpressApp.SystemModule.SystemModule module1;
         private DevExpress.ExpressApp.Web.SystemModule.SystemAspNetModule module2;
-        private ComprehensiveTutorialXaf.Module.ComphrehensiveTuririalXafModule module3;
-        private ComprehensiveTutorialXaf.Module.Web.ComphrehensiveTuririalXafAspNetModule module4;
+        private ComprehensiveTutorialXaf.Module.ComprehensiveTutorialXafModule module3;
+        private ComprehensiveTutorialXaf.Module.Web.ComprehensiveTutorialXafAspNetModule module4;
         private DevExpress.ExpressApp.Security.SecurityModule securityModule1;
         private DevExpress.ExpressApp.Security.SecurityStrategyComplex securityStrategyComplex1;
         private DevExpress.ExpressApp.Security.AuthenticationActiveDirectory authenticationActiveDirectory1;
@@ -22,7 +22,7 @@ namespace ComprehensiveTutorialXaf.Web {
         private DevExpress.ExpressApp.Validation.ValidationModule validationModule;
         private DevExpress.ExpressApp.Validation.Web.ValidationAspNetModule validationAspNetModule;
 
-        public ComphrehensiveTuririalXafAspNetApplication() {
+        public ComprehensiveTutorialXafAspNetApplication() {
             InitializeComponent();
         }
         protected override IViewUrlManager CreateViewUrlManager() {
@@ -46,7 +46,7 @@ namespace ComprehensiveTutorialXaf.Web {
             }
 			return dataStoreProvider;
         }
-        private void ComphrehensiveTuririalXafAspNetApplication_DatabaseVersionMismatch(object sender, DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs e) {
+        private void ComprehensiveTutorialXafAspNetApplication_DatabaseVersionMismatch(object sender, DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs e) {
 #if EASYTEST
             e.Updater.Update();
             e.Handled = true;
@@ -72,8 +72,8 @@ namespace ComprehensiveTutorialXaf.Web {
         private void InitializeComponent() {
             this.module1 = new DevExpress.ExpressApp.SystemModule.SystemModule();
             this.module2 = new DevExpress.ExpressApp.Web.SystemModule.SystemAspNetModule();
-            this.module3 = new ComprehensiveTutorialXaf.Module.ComphrehensiveTuririalXafModule();
-            this.module4 = new ComprehensiveTutorialXaf.Module.Web.ComphrehensiveTuririalXafAspNetModule();
+            this.module3 = new ComprehensiveTutorialXaf.Module.ComprehensiveTutorialXafModule();
+            this.module4 = new ComprehensiveTutorialXaf.Module.Web.ComprehensiveTutorialXafAspNetModule();
             this.securityModule1 = new DevExpress.ExpressApp.Security.SecurityModule();
             this.securityStrategyComplex1 = new DevExpress.ExpressApp.Security.SecurityStrategyComplex();
             this.securityStrategyComplex1.SupportNavigationPermissionsForTypes = false;
@@ -99,9 +99,9 @@ namespace ComprehensiveTutorialXaf.Web {
             this.authenticationActiveDirectory1.CreateUserAutomatically = true;
             this.authenticationActiveDirectory1.LogonParametersType = null;
             // 
-            // ComphrehensiveTuririalXafAspNetApplication
+            // ComprehensiveTutorialXafAspNetApplication
             // 
-            this.ApplicationName = "ComphrehensiveTuririalXaf";
+            this.ApplicationName = "ComprehensiveTutorialXaf";
             this.CheckCompatibilityType = DevExpress.ExpressApp.CheckCompatibilityType.DatabaseSchema;
             this.Modules.Add(this.module1);
             this.Modules.Add(this.module2);
@@ -113,7 +113,7 @@ namespace ComprehensiveTutorialXaf.Web {
             this.Modules.Add(this.conditionalAppearanceModule);
             this.Modules.Add(this.validationModule);
             this.Modules.Add(this.validationAspNetModule);
-            this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.ComphrehensiveTuririalXafAspNetApplication_DatabaseVersionMismatch);
+            this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.ComprehensiveTutorialXafAspNetApplication_DatabaseVersionMismatch);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }

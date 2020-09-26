@@ -1,5 +1,5 @@
 ﻿namespace ComprehensiveTutorialXaf.Win {
-    partial class ComphrehensiveTuririalXafWindowsFormsApplication {
+    partial class ComprehensiveTutorialXafWindowsFormsApplication {
         /// <summary> 
         /// Required designer variable.
         /// </summary>
@@ -25,8 +25,8 @@
         private void InitializeComponent() {
             this.module1 = new DevExpress.ExpressApp.SystemModule.SystemModule();
             this.module2 = new DevExpress.ExpressApp.Win.SystemModule.SystemWindowsFormsModule();
-            this.module3 = new ComprehensiveTutorialXaf.Module.ComphrehensiveTuririalXafModule();
-            this.module4 = new ComprehensiveTutorialXaf.Module.Win.ComphrehensiveTuririalXafWindowsFormsModule();
+            this.module3 = new ComprehensiveTutorialXaf.Module.ComprehensiveTutorialXafModule();
+            this.module4 = new ComprehensiveTutorialXaf.Module.Win.ComprehensiveTutorialXafWindowsFormsModule();
             this.securityModule1 = new DevExpress.ExpressApp.Security.SecurityModule();
             this.securityStrategyComplex1 = new DevExpress.ExpressApp.Security.SecurityStrategyComplex();
             this.securityStrategyComplex1.SupportNavigationPermissionsForTypes = false;
@@ -52,9 +52,9 @@
             this.authenticationActiveDirectory1.CreateUserAutomatically = true;
             this.authenticationActiveDirectory1.LogonParametersType = null;
             // 
-            // ComphrehensiveTuririalXafWindowsFormsApplication
+            // ComprehensiveTutorialXafWindowsFormsApplication
             // 
-            this.ApplicationName = "ComphrehensiveTuririalXaf";
+            this.ApplicationName = "ComprehensiveTutorialXaf";
             this.CheckCompatibilityType = DevExpress.ExpressApp.CheckCompatibilityType.DatabaseSchema;
             this.Modules.Add(this.module1);
             this.Modules.Add(this.module2);
@@ -67,8 +67,8 @@
             this.Modules.Add(this.validationModule);
             this.Modules.Add(this.validationWindowsFormsModule);
             this.UseOldTemplates = false;
-            this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.ComphrehensiveTuririalXafWindowsFormsApplication_DatabaseVersionMismatch);
-            this.CustomizeLanguagesList += new System.EventHandler<DevExpress.ExpressApp.CustomizeLanguagesListEventArgs>(this.ComphrehensiveTuririalXafWindowsFormsApplication_CustomizeLanguagesList);
+            this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.ComprehensiveTutorialXafWindowsFormsApplication_DatabaseVersionMismatch);
+            this.CustomizeLanguagesList += new System.EventHandler<DevExpress.ExpressApp.CustomizeLanguagesListEventArgs>(this.ComprehensiveTutorialXafWindowsFormsApplication_CustomizeLanguagesList);
 
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
@@ -78,8 +78,8 @@
 
         private DevExpress.ExpressApp.SystemModule.SystemModule module1;
         private DevExpress.ExpressApp.Win.SystemModule.SystemWindowsFormsModule module2;
-        private ComprehensiveTutorialXaf.Module.ComphrehensiveTuririalXafModule module3;
-        private ComprehensiveTutorialXaf.Module.Win.ComphrehensiveTuririalXafWindowsFormsModule module4;
+        private ComprehensiveTutorialXaf.Module.ComprehensiveTutorialXafModule module3;
+        private ComprehensiveTutorialXaf.Module.Win.ComprehensiveTutorialXafWindowsFormsModule module4;
         private DevExpress.ExpressApp.Security.SecurityModule securityModule1;
         private DevExpress.ExpressApp.Security.SecurityStrategyComplex securityStrategyComplex1;
         private DevExpress.ExpressApp.Security.AuthenticationActiveDirectory authenticationActiveDirectory1;

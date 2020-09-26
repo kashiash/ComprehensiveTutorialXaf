@@ -17,7 +17,7 @@ using DevExpress.Persistent.BaseImpl;
 namespace ComprehensiveTutorialXaf.Module.Web {
     [ToolboxItemFilter("Xaf.Platform.Web")]
     // For more typical usage scenarios, be sure to check out https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.ModuleBase.
-    public sealed partial class ComphrehensiveTuririalXafAspNetModule : ModuleBase {
+    public sealed partial class ComprehensiveTutorialXafAspNetModule : ModuleBase {
         //private void Application_CreateCustomModelDifferenceStore(Object sender, CreateCustomModelDifferenceStoreEventArgs e) {
         //    e.Store = new ModelDifferenceDbStore((XafApplication)sender, typeof(ModelDifference), true, "Web");
         //    e.Handled = true;
@@ -26,7 +26,7 @@ namespace ComprehensiveTutorialXaf.Module.Web {
             e.Store = new ModelDifferenceDbStore((XafApplication)sender, typeof(ModelDifference), false, "Web");
             e.Handled = true;
         }
-        public ComphrehensiveTuririalXafAspNetModule() {
+        public ComprehensiveTutorialXafAspNetModule() {
             InitializeComponent();
         }
         public override IEnumerable<ModuleUpdater> GetModuleUpdaters(IObjectSpace objectSpace, Version versionFromDB) {

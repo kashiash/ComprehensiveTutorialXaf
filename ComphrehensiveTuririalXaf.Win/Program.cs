@@ -29,7 +29,7 @@ namespace ComprehensiveTutorialXaf.Win {
                 Tracing.LocalUserAppDataPath = Application.LocalUserAppDataPath;
             }
             Tracing.Initialize();
-            ComphrehensiveTuririalXafWindowsFormsApplication winApplication = new ComphrehensiveTuririalXafWindowsFormsApplication();
+            ComprehensiveTutorialXafWindowsFormsApplication winApplication = new ComprehensiveTutorialXafWindowsFormsApplication();
             winApplication.GetSecurityStrategy().RegisterXPOAdapterProviders();
             if(ConfigurationManager.ConnectionStrings["ConnectionString"] != null) {
                 winApplication.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;

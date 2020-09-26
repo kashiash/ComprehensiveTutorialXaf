@@ -11,8 +11,8 @@ using DevExpress.ExpressApp.Security.ClientServer;
 
 namespace ComprehensiveTutorialXaf.Win {
     // For more typical usage scenarios, be sure to check out https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.Win.WinApplication._members
-    public partial class ComphrehensiveTuririalXafWindowsFormsApplication : WinApplication {
-        public ComphrehensiveTuririalXafWindowsFormsApplication() {
+    public partial class ComprehensiveTutorialXafWindowsFormsApplication : WinApplication {
+        public ComprehensiveTutorialXafWindowsFormsApplication() {
 			InitializeComponent();
 			SplashScreen = new DXSplashScreen(typeof(XafSplashScreen), new DefaultOverlayFormOptions());
         }
@@ -20,13 +20,13 @@ namespace ComprehensiveTutorialXaf.Win {
             args.ObjectSpaceProviders.Add(new SecuredObjectSpaceProvider((SecurityStrategyComplex)Security, XPObjectSpaceProvider.GetDataStoreProvider(args.ConnectionString, args.Connection, true), false));
             args.ObjectSpaceProviders.Add(new NonPersistentObjectSpaceProvider(TypesInfo, null));
         }
-        private void ComphrehensiveTuririalXafWindowsFormsApplication_CustomizeLanguagesList(object sender, CustomizeLanguagesListEventArgs e) {
+        private void ComprehensiveTutorialXafWindowsFormsApplication_CustomizeLanguagesList(object sender, CustomizeLanguagesListEventArgs e) {
             string userLanguageName = System.Threading.Thread.CurrentThread.CurrentUICulture.Name;
             if(userLanguageName != "en-US" && e.Languages.IndexOf(userLanguageName) == -1) {
                 e.Languages.Add(userLanguageName);
             }
         }
-        private void ComphrehensiveTuririalXafWindowsFormsApplication_DatabaseVersionMismatch(object sender, DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs e) {
+        private void ComprehensiveTutorialXafWindowsFormsApplication_DatabaseVersionMismatch(object sender, DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs e) {
 #if EASYTEST
             e.Updater.Update();
             e.Handled = true;

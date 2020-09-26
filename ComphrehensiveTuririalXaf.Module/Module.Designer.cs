@@ -1,5 +1,5 @@
 ﻿namespace ComprehensiveTutorialXaf.Module {
-	partial class ComphrehensiveTuririalXafModule {
+	partial class ComprehensiveTutorialXafModule {
 		/// <summary> 
 		/// Required designer variable.
 		/// </summary>
@@ -24,7 +24,7 @@
 		/// </summary>
 		private void InitializeComponent() {
             // 
-            // ComphrehensiveTuririalXafModule
+            // ComprehensiveTutorialXafModule
             // 
             this.AdditionalExportedTypes.Add(typeof(DevExpress.Persistent.BaseImpl.ModelDifference));
             this.AdditionalExportedTypes.Add(typeof(DevExpress.Persistent.BaseImpl.ModelDifferenceAspect));

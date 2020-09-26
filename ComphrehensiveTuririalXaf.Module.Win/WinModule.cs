@@ -17,7 +17,7 @@ using DevExpress.Persistent.BaseImpl;
 namespace ComprehensiveTutorialXaf.Module.Win {
     [ToolboxItemFilter("Xaf.Platform.Win")]
     // For more typical usage scenarios, be sure to check out https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.ModuleBase.
-    public sealed partial class ComphrehensiveTuririalXafWindowsFormsModule : ModuleBase {
+    public sealed partial class ComprehensiveTutorialXafWindowsFormsModule : ModuleBase {
         //private void Application_CreateCustomModelDifferenceStore(Object sender, CreateCustomModelDifferenceStoreEventArgs e) {
         //    e.Store = new ModelDifferenceDbStore((XafApplication)sender, typeof(ModelDifference), true, "Win");
         //    e.Handled = true;
@@ -26,7 +26,7 @@ namespace ComprehensiveTutorialXaf.Module.Win {
             e.Store = new ModelDifferenceDbStore((XafApplication)sender, typeof(ModelDifference), false, "Win");
             e.Handled = true;
         }
-        public ComphrehensiveTuririalXafWindowsFormsModule() {
+        public ComprehensiveTutorialXafWindowsFormsModule() {
             InitializeComponent();
         }
         public override IEnumerable<ModuleUpdater> GetModuleUpdaters(IObjectSpace objectSpace, Version versionFromDB) {

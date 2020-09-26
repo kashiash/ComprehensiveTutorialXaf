@@ -1,5 +1,5 @@
 ﻿namespace ComprehensiveTutorialXaf.Module.Web {
-    partial class ComphrehensiveTuririalXafAspNetModule {
+    partial class ComprehensiveTutorialXafAspNetModule {
         /// <summary> 
         /// Required designer variable.
         /// </summary>
@@ -24,9 +24,9 @@
         /// </summary>
         private void InitializeComponent() {
             // 
-            // ComphrehensiveTuririalXafAspNetModule
+            // ComprehensiveTutorialXafAspNetModule
             // 
-            this.RequiredModuleTypes.Add(typeof(ComprehensiveTutorialXaf.Module.ComphrehensiveTuririalXafModule));
+            this.RequiredModuleTypes.Add(typeof(ComprehensiveTutorialXaf.Module.ComprehensiveTutorialXafModule));
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Web.SystemModule.SystemAspNetModule));
 			this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Validation.Web.ValidationAspNetModule));
         }

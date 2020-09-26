@@ -1,8 +1,8 @@
-﻿;#DropDB ComphrehensiveTuririalXafEasyTest
+﻿;#DropDB ComprehensiveTutorialXafEasyTest
 
-#Application ComphrehensiveTuririalXafWin
-#Application ComphrehensiveTuririalXafWeb
-#IfDef ComphrehensiveTuririalXafWin
+#Application ComprehensiveTutorialXafWin
+#Application ComprehensiveTutorialXafWeb
+#IfDef ComprehensiveTutorialXafWin
 
 *Action About...
  
@@ -10,6 +10,6 @@
 
 #EndIf
 
-#IfDef ComphrehensiveTuririalXafWeb
+#IfDef ComprehensiveTutorialXafWeb
 *Action Navigation(My Details)
 #EndIf

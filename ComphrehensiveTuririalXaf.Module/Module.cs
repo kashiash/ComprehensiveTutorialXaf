@@ -19,8 +19,8 @@ using DevExpress.ExpressApp.Xpo;
 
 namespace ComprehensiveTutorialXaf.Module {
     // For more typical usage scenarios, be sure to check out https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.ModuleBase.
-    public sealed partial class ComphrehensiveTuririalXafModule : ModuleBase {
-        public ComphrehensiveTuririalXafModule() {
+    public sealed partial class ComprehensiveTutorialXafModule : ModuleBase {
+        public ComprehensiveTutorialXafModule() {
             InitializeComponent();
         }
         public override IEnumerable<ModuleUpdater> GetModuleUpdaters(IObjectSpace objectSpace, Version versionFromDB) {
