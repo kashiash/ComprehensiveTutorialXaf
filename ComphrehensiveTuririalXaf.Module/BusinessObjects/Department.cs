@@ -1,5 +1,6 @@
 ﻿using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
+using DevExpress.Persistent.Validation;
 using DevExpress.Xpo;
 using System;
 using System.Collections.Generic;
@@ -41,6 +42,8 @@ namespace ComphrehensiveTuririalXaf.Module.BusinessObjects
     {
         public Position(Session session) : base(session) { }
         private string title;
+        [RuleRequiredField]
+        //[RuleRequiredField(DefaultContexts.Save)]
         public string Title
         {
             get { return title; }

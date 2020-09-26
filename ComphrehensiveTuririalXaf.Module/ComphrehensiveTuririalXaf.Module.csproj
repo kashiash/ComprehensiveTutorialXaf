@@ -101,6 +101,7 @@
     <Compile Include="BusinessObjects\DemoTask.cs" />
     <Compile Include="BusinessObjects\Contact.cs" />
     <Compile Include="BusinessObjects\Department.cs" />
+    <Compile Include="Controllers\ClearContactsTaskController.cs" />
     <Compile Include="DatabaseUpdate\Updater.cs" />
     <Compile Include="Module.cs">
       <SubType>Component</SubType>
