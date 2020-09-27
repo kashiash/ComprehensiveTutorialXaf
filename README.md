@@ -6,7 +6,7 @@ na bazie https://docs.devexpress.com/eXpressAppFramework/112560/getting-started/
 
 
 # Aplikacja przykładowa
-[BusinnesModel](BO.md) - struktura danych i logika zależności pomiędzy nimi
+
 
 [Aplikacja docelowa](AplikacjaPraktyczna.md) Aplikacja do ewidencji klientów i sprzedaży
 
@@ -14,6 +14,9 @@ na bazie https://docs.devexpress.com/eXpressAppFramework/112560/getting-started/
 [Kontrolery i Akcje](Controllers.md) - obsługa interfejsu użytkownika
 
 [Widoki](Views.md)
+
+
+[BusinnesModel](BO.md) - Materiały uzupełniające
 
 # XPO Session, UnitOfWork, Object Space
 
