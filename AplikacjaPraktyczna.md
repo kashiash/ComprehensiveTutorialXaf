@@ -5,11 +5,16 @@
 
 ### Kody pocztowe, gminy miast województwa
 
+Zdefiniujemy taele na województwa, powiaty gminy i miasta z kodami pocztowymi. Dodatkowo przedstawię kod jak takie dane zaimportować
+
 [Kody pocztowe](KodyPocztowe.md) - Kody pocztowe i ich import z pliku dostarczanego przez PP
 
 ### Kontrahent , adresy, pracownicy
+
+Dane klientów, kontaktór, spotkań
 [Definicje klas](Klienci.md)
 ### Faktura, Towary, Wpłaty
+
 [Definicje klas](FakturyWplatyTowary.md)
 ### Magazyny
 TBD

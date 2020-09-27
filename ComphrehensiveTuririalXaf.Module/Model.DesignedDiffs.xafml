@@ -1,8 +1,16 @@
-﻿<?xml version="1.0" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Title="ComprehensiveTutorialXaf">
   <Options>
     <LayoutManagerOptions RequiredFieldMark="*" />
   </Options>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="20.2.1.0" IsNewNode="True" />
+  </SchemaModules>
   <Views>
+    <ListView Id="Gmina_ListView" DataAccessMode="Server" />
+    <ListView Id="KodPocztowy_ListView" DataAccessMode="InstantFeedback" />
+    <ListView Id="KodPocztowy_LookupListView" DataAccessMode="InstantFeedback" />
+    <ListView Id="Powiat_ListView" DataAccessMode="Server" />
+    <ListView Id="Wojewodztwo_KodyPocztowe_ListView" DataAccessMode="Server" />
   </Views>
 </Application>

@@ -9,6 +9,7 @@ namespace Common.BO.Adm
 {
     [NavigationItem("Administracyjne")]
     [XafDefaultProperty(nameof(Poczta))]
+    [ModelDefault("","")]
     public class KodPocztowy : XPObject
     {
         public KodPocztowy(Session session) : base(session)
