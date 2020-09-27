@@ -101,10 +101,21 @@
     <Compile Include="BusinessObjects\DemoTask.cs" />
     <Compile Include="BusinessObjects\Contact.cs" />
     <Compile Include="BusinessObjects\Department.cs" />
+    <Compile Include="BusinessObjects\Faktura.cs" />
     <Compile Include="BusinessObjects\Gmina.cs" />
+    <Compile Include="BusinessObjects\Klient.cs" />
     <Compile Include="BusinessObjects\KodyPocztowe.cs" />
+    <Compile Include="BusinessObjects\Kontakt.cs" />
+    <Compile Include="BusinessObjects\Kraj.cs" />
     <Compile Include="BusinessObjects\Powiat.cs" />
+    <Compile Include="BusinessObjects\PozycjaFaktury.cs" />
+    <Compile Include="BusinessObjects\Produkt.cs" />
+    <Compile Include="BusinessObjects\Spotkanie.cs" />
+    <Compile Include="BusinessObjects\Stanowisko.cs" />
+    <Compile Include="BusinessObjects\StawaVAT.cs" />
+    <Compile Include="BusinessObjects\Waluta.cs" />
     <Compile Include="BusinessObjects\Wojewodztwo.cs" />
+    <Compile Include="BusinessObjects\Wplata.cs" />
     <Compile Include="Controllers\WizardController.cs">
       <SubType>Component</SubType>
     </Compile>
