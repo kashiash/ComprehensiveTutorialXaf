@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComprehensiveTutorialXaf.Mo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComprehensiveTutorialXaf.Win", "ComphrehensiveTuririalXaf.Win\ComprehensiveTutorialXaf.Win.csproj", "{40085B69-0180-4B39-9BB0-C28B58AB91E7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Importy", "Importy\Importy.csproj", "{05378BB7-AB25-4AFE-93F1-2F5226A71FEB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +52,12 @@ Global
 		{40085B69-0180-4B39-9BB0-C28B58AB91E7}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
 		{40085B69-0180-4B39-9BB0-C28B58AB91E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40085B69-0180-4B39-9BB0-C28B58AB91E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05378BB7-AB25-4AFE-93F1-2F5226A71FEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05378BB7-AB25-4AFE-93F1-2F5226A71FEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05378BB7-AB25-4AFE-93F1-2F5226A71FEB}.EasyTest|Any CPU.ActiveCfg = Debug|Any CPU
+		{05378BB7-AB25-4AFE-93F1-2F5226A71FEB}.EasyTest|Any CPU.Build.0 = Debug|Any CPU
+		{05378BB7-AB25-4AFE-93F1-2F5226A71FEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05378BB7-AB25-4AFE-93F1-2F5226A71FEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

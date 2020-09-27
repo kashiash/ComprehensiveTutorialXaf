@@ -145,6 +145,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\WinListViewController.cs" />
+    <Compile Include="Controllers\ZdalnaPomocController.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WinModule.cs">
       <SubType>Component</SubType>

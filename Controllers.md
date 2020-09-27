@@ -293,3 +293,198 @@ public class ShowDetailViewController : ViewController<ListView>
 }
 ```
 
+
+##### Kontroler wywołujący kilka okien po sobie
+
+<a href="https://docs.devexpress.com/eXpressAppFramework/112805/concepts/controllers-and-actions/dialog-controller" target="_blank">https://docs.devexpress.com/eXpressAppFramework/112805/concepts/controllers-and-actions/dialog-controller</a>
+
+
+
+**Wersja testowa - do przećwiczenia**
+
+<a href="https://supportcenter.devexpress.com/ticket/details/q382057/pop-up-consecutive-windows-win-and-web" target="_blank">https://supportcenter.devexpress.com/ticket/details/q382057/pop-up-consecutive-windows-win-and-web</a>
+
+```csharp
+[NonPersistent]
+public class Parameters1
+{
+    [Size(-1)]
+    public string Message1 { get; set; }
+    public int PropertyNameInt { get; set; }
+}
+
+[NonPersistent]
+public class Parameters2
+{
+    [Size(-1)]
+    public string Message2 { get; set; }
+    public DateTime PropertyNameDate { get; set; }
+}
+
+[NonPersistent]
+public class Parameters3
+{
+    [Size(-1)]
+    public string Message3 { get; set; }
+    public decimal PropertyNameDecimal { get; set; }
+}
+
+[NonPersistent]
+public class Parameters4
+{
+    [Size(-1)]
+    public string Message4 { get; set; }
+    public string PropertyNameString { get; set; }
+}
+public class ViewController1 : ViewController
+{
+    public ViewController1()
+    {
+        PopupWindowShowAction a1 = new PopupWindowShowAction(this, "Action1", DevExpress.Persistent.Base.PredefinedCategory.Unspecified);
+        a1.CustomizePopupWindowParams += new CustomizePopupWindowParamsEventHandler(a1_CustomizePopupWindowParams);
+        a1.Execute += new PopupWindowShowActionExecuteEventHandler(a1_Execute);
+    }
+    void a1_CustomizePopupWindowParams(object sender, CustomizePopupWindowParamsEventArgs e)
+    {
+        IObjectSpace os = ObjectSpaceInMemory.CreateNew();
+        DetailView dv = Application.CreateDetailView(os, new Parameters1() { Message1 = "Message 1" });
+        e.View = dv;
+    }
+    void a1_Execute(object sender, PopupWindowShowActionExecuteEventArgs e)
+    {
+        IObjectSpace os = ObjectSpaceInMemory.CreateNew();
+        DetailView dv = Application.CreateDetailView(os, new Parameters2() { Message2 = "Message 2" });
+        e.ShowViewParameters.CreatedView = dv;
+        e.ShowViewParameters.Context = TemplateContext.PopupWindow;
+        e.ShowViewParameters.TargetWindow = TargetWindow.NewModalWindow;
+
+        DialogController dc = Application.CreateController<DialogController>();
+        e.ShowViewParameters.Controllers.Add(dc);
+        dc.AcceptAction.Executed += new EventHandler<ActionBaseEventArgs>(a2_Execute);
+    }
+    void a2_Execute(object sender, ActionBaseEventArgs e)
+    {
+        IObjectSpace os = ObjectSpaceInMemory.CreateNew();
+        DetailView dv = Application.CreateDetailView(os, new Parameters3() { Message3 = "Message 3" });
+        e.ShowViewParameters.CreatedView = dv;
+        e.ShowViewParameters.Context = TemplateContext.PopupWindow;
+        e.ShowViewParameters.TargetWindow = TargetWindow.NewModalWindow;
+
+        DialogController dc = Application.CreateController<DialogController>();
+        e.ShowViewParameters.Controllers.Add(dc);
+        dc.AcceptAction.Executed += new EventHandler<ActionBaseEventArgs>(AcceptAction_Executed);
+    }
+    void AcceptAction_Executed(object sender, ActionBaseEventArgs e)
+    {
+        IObjectSpace os = ObjectSpaceInMemory.CreateNew();
+        DetailView dv = Application.CreateDetailView(os, new Parameters4() { Message4 = "Message 3" });
+        e.ShowViewParameters.CreatedView = dv;
+        e.ShowViewParameters.Context = TemplateContext.PopupWindow;
+        e.ShowViewParameters.TargetWindow = TargetWindow.NewModalWindow;
+    }
+}
+```
+##### Inna wersja :
+
+```csharp
+public partial class WizardController : ViewController
+ {
+    
+
+     public WizardController()
+     {
+         PopupWindowShowAction TaskStatusAction = new PopupWindowShowAction(this, $"{GetType().FullName}.{nameof(TaskStatusAction)}", PredefinedCategory.Edit)
+         {
+             SelectionDependencyType = SelectionDependencyType.RequireSingleObject,
+             Caption = "Wizard",
+         };
+
+         TargetObjectType = typeof(DemoTask);
+         TaskStatusAction.CustomizePopupWindowParams += TaskStatusAction_CustomizePopupWindowParams;
+         TaskStatusAction.Execute += TaskStatusAction_Execute;
+
+     }
+
+
+     private void TaskStatusAction_CustomizePopupWindowParams(object sender, CustomizePopupWindowParamsEventArgs e)
+     {
+         IObjectSpace os = Application.CreateObjectSpace();
+         var objectToShow = os.GetObject(View.CurrentObject);
+         DetailView dv = Application.CreateDetailView(os, objectToShow, false);
+         dv.ViewEditMode = DevExpress.ExpressApp.Editors.ViewEditMode.Edit;
+         e.View = dv;
+         step = 0;
+     }
+
+     int step;
+
+     private void TaskStatusAction_Execute(object sender, PopupWindowShowActionExecuteEventArgs e)
+     {
+         DialogController dialogController = e.PopupWindow.GetController<DialogController>();
+
+         ProcessStep(e, dialogController, step);
+         step++;
+     }
+
+     private void ProcessStep(PopupWindowShowActionExecuteEventArgs e, DialogController dialogController, int step)
+     {
+
+         if (step == 10)
+         {
+             e.CanCloseWindow = true;
+             //  TaskStatusAction.Enabled["By Criteria"] = savedEnabledItem;
+             dialogController.CancelAction.Active.RemoveItem("InactiveReason");
+         }
+         else
+         {
+
+             (View.CurrentObject as DemoTask).Status = DevExpress.Persistent.Base.General.TaskStatus.InProgress;
+             View.ObjectSpace.CommitChanges();
+
+             e.CanCloseWindow = false;
+
+             var   wizardObjectSpace = Application.CreateObjectSpace();
+        
+             var objectToShow = wizardObjectSpace.GetObject(View.CurrentObject);
+             DetailView dv = Application.CreateDetailView(wizardObjectSpace, objectToShow);
+             dv.Caption = $"Action Result {step}";
+             dialogController.AcceptAction.Caption = "Done";
+             dialogController.CancelAction.Active.SetItemValue("InactiveReason", false);
+             e.PopupWindow.SetView(dv);
+         }
+     }
+ }
+```
+
+
+##### Zdalna pomoc
+
+Praktycznie w każdej aplikacji powinniśmy dostarczyć możliwość wywołania TemaViewera, aby użytkownik mógł udostępnić pulpit do obsługi klienta za pomocą TeamViewer'a:
+Następujący kontroler załatwia problem:
+Wystarczy do katalogu z programem dograć **mediqus_serwis.exe**
+```csharp
+public  class ZdalnaPomocController: ViewController
+  {
+      SimpleAction ZdalnaPomocAction;
+      public ZdalnaPomocController()
+      {
+          ZdalnaPomocAction = new SimpleAction(this, $"{GetType()}.{nameof(ZdalnaPomocAction)}", PredefinedCategory.Tools)
+          {
+
+              Caption = "Zdalna pomoc",
+
+          };
+          ZdalnaPomocAction.Execute += ZdalnaPomocAction_Execute;
+      }
+
+      private void ZdalnaPomocAction_Execute(object sender, SimpleActionExecuteEventArgs e)
+      {
+          ProcessStartInfo startInfo = new ProcessStartInfo { UseShellExecute = false, FileName = "mediqus_serwis.exe" };
+
+          using (Process.Start(startInfo))
+          {
+          }
+      }
+  }
+```
+W ten sam sposób możemy uruchamiać każdy program lub otwierać dokument.

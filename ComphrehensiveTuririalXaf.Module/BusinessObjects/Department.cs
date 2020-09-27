@@ -1,4 +1,5 @@
-﻿using DevExpress.Persistent.Base;
+﻿using DevExpress.ExpressApp.Model;
+using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
 using DevExpress.Xpo;
@@ -16,7 +17,8 @@ namespace ComprehensiveTutorialXaf.Module.BusinessObjects
     {
         public Department(Session session) : base(session) { }
         private string title;
-        public string Title
+      [ModelDefault("RowCount", "2")]
+         public string Title
         {
             get { return title; }
             set { SetPropertyValue(nameof(Title), ref title, value); }

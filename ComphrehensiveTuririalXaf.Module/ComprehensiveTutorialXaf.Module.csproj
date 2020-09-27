@@ -101,6 +101,13 @@
     <Compile Include="BusinessObjects\DemoTask.cs" />
     <Compile Include="BusinessObjects\Contact.cs" />
     <Compile Include="BusinessObjects\Department.cs" />
+    <Compile Include="BusinessObjects\Gmina.cs" />
+    <Compile Include="BusinessObjects\KodyPocztowe.cs" />
+    <Compile Include="BusinessObjects\Powiat.cs" />
+    <Compile Include="BusinessObjects\Wojewodztwo.cs" />
+    <Compile Include="Controllers\WizardController.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controllers\ShowDetailViewController.cs" />
     <Compile Include="Controllers\ClearContactsTaskController.cs" />
     <Compile Include="Controllers\PopupNotesController.cs" />
@@ -121,7 +128,6 @@
     <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="BusinessObjects\ReadMe.txt" />
     <None Include="Controllers\ReadMe.txt" />
     <None Include="DatabaseUpdate\ReadMe.txt" />
     <None Include="Images\ReadMe.txt" />
@@ -137,6 +143,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Images\pacifier.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\witch.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
