@@ -48,7 +48,7 @@ namespace ComprehensiveTutorialXaf.Module.DatabaseUpdate
             }
 
 
-            if (false)
+            if (true)
             {
                 PrzygotujDaneTestowe();
 
@@ -99,14 +99,18 @@ namespace ComprehensiveTutorialXaf.Module.DatabaseUpdate
 
         private void PrzygotujDaneTestowe()
         {
-            //var stawki = new List<StawkaVAT>();
-            //stawki.Add(NowaStawka("23%", 23M));
-            //stawki.Add(NowaStawka("0%", 0M));
-            //stawki.Add(NowaStawka("7%", 7M));
-            //stawki.Add(NowaStawka("ZW", 0M));
-
-
             var stawki = ObjectSpace.GetObjectsQuery<StawkaVAT>().ToList();
+            if (stawki.Count == 0)
+            {
+             
+                stawki.Add(NowaStawka("23%", 23M));
+                stawki.Add(NowaStawka("0%", 0M));
+                stawki.Add(NowaStawka("7%", 7M));
+                stawki.Add(NowaStawka("ZW", 0M));
+            }
+
+
+         
 
             var cusFaker = new Faker<Klient>("pl")
             .CustomInstantiator(f => ObjectSpace.CreateObject<Klient>())
@@ -140,7 +144,7 @@ namespace ComprehensiveTutorialXaf.Module.DatabaseUpdate
             var meetings = meetFaker.Generate(1000);
 
 
-            //  var stawki = new[] { "23%", "7%", "ZW", "0%" };
+
             var prodFaker = new Faker<Produkt>("pl")
             .CustomInstantiator(f => ObjectSpace.CreateObject<Produkt>())
             .RuleFor(o => o.Nazwa, f => f.Commerce.ProductName())
