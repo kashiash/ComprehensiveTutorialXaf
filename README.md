@@ -21,6 +21,11 @@ tutorial na bazie https://docs.devexpress.com/eXpressAppFramework/112560/getting
 
 [BusinnesModel](BO.md) - Materiały uzupełniające
 
+
+# Ciekawe linki:
+Tu praktycznie jest wszystko ;):
+<a href="https://github.com/jjcolumb/awesome-xaf" target="_blank">https://github.com/jjcolumb/awesome-xaf</a>
+
 # XPO Session, UnitOfWork, Object Space
 
 <a href="https://docs.devexpress.com/eXpressAppFramework/113707/concepts/data-manipulation-and-business-logic/object-space" target="_blank">ObjectSpace</a>
@@ -39,6 +44,17 @@ https://supportcenter.devexpress.com/ticket/details/a2944/xpo-best-practices
 # DB2
 
 
+
+# CodeRush
+
+w repozytorium projektu jest arkusz z podpowiedziamy do komend Code Rush
+
+aby tworzyć własne template polecam nastepujace linki:
+
+
+https://docs.devexpress.com/CodeRushForRoslyn/116541/extensibility/custom-templates-creation
+
+https://docs.devexpress.com/CodeRushForRoslyn/115919/coding-assistance/code-templates/template-configuration
 
 # Aplikacja xaf budowana od zera w kodzie
 

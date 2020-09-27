@@ -121,7 +121,7 @@ namespace ComprehensiveTutorialXaf.Module.DatabaseUpdate
             .RuleFor(o => o.Miejscowosc, f => f.Address.City())
             .RuleFor(o => o.KodPocztowy, f => f.Address.ZipCode())
             .RuleFor(o => o.Ulica, f => f.Address.StreetName());
-            var customers = cusFaker.Generate(10000);
+            var customers = cusFaker.Generate(100);
             ObjectSpace.CommitChanges();
 
             var conFaker = new Faker<Kontakt>("pl")

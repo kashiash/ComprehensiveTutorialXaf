@@ -1,6 +1,8 @@
-﻿using DevExpress.ExpressApp.ConditionalAppearance;
+﻿using ComprehensiveTutorialXaf.Module.BusinessObjects;
+using DevExpress.ExpressApp.ConditionalAppearance;
 using DevExpress.ExpressApp.DC;
 using DevExpress.Persistent.Base;
+using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
 using DevExpress.Xpo;
 using System;
@@ -14,7 +16,7 @@ namespace Demo1.Module.BusinessObjects
     [ImageName("BO_Invoice")]
     [DefaultClassOptions]
     [XafDefaultProperty(nameof(NumerFaktury))]
-   
+
     // kolorowanie rekordów
     [Appearance("FakturyZatwierdzone", Criteria = "Status = ##Enum#Demo1.Module.BusinessObjects.StatusFaktury,Zatwierdzona#", TargetItems = "*", FontColor = "Blue")]
     [Appearance("FakturyAnulowane", Criteria = "Status = ##Enum#Demo1.Module.BusinessObjects.StatusFaktury,Anulowana#", TargetItems = "*", FontColor = "Gray")]
@@ -25,6 +27,7 @@ namespace Demo1.Module.BusinessObjects
 
 
 
+        decimal sumaWplat;
         StatusFaktury status;
         string numerFaktry;
         Klient klient;
@@ -43,6 +46,9 @@ namespace Demo1.Module.BusinessObjects
             get => numerFaktry;
             set => SetPropertyValue(nameof(NumerFaktury), ref numerFaktry, value);
         }
+
+
+
         public DateTime DataFaktury
         {
             get => dataFaktury;
@@ -83,9 +89,12 @@ namespace Demo1.Module.BusinessObjects
                 if (modified && !IsLoading && !IsSaving && Klient != null)
                 {
                     DataPlatnosci = DataFaktury.AddDays(Klient.TerminPlatnosci);
+
                 }
             }
         }
+
+
 
 
         [Persistent(nameof(WartoscNetto))]
@@ -113,6 +122,13 @@ namespace Demo1.Module.BusinessObjects
             set => SetPropertyValue(nameof(WartoscBrutto), ref wartoscBrutto, value);
         }
 
+
+        public decimal SumaWplat
+        {
+            get => sumaWplat;
+            set => SetPropertyValue(nameof(SumaWplat), ref sumaWplat, value);
+        }
+
         [Association, DevExpress.Xpo.Aggregated]
         public XPCollection<PozycjaFaktury> PozycjeFaktury
         {
@@ -121,6 +137,16 @@ namespace Demo1.Module.BusinessObjects
                 return GetCollection<PozycjaFaktury>(nameof(PozycjeFaktury));
             }
         }
+
+        [Association("Faktura-Rozrachunki"), DevExpress.Xpo.Aggregated]
+        public XPCollection<Rozrachunek> Rozrachunki
+        {
+            get
+            {
+                return GetCollection<Rozrachunek>(nameof(Rozrachunki));
+            }
+        }
+
 
         public override void AfterConstruction()
         {
@@ -135,8 +161,10 @@ namespace Demo1.Module.BusinessObjects
 
         List<PodsumowanieVat> podsumowanieVat;
         [Delayed]
-        public List<PodsumowanieVat> ListaVat {
-            get {
+        public List<PodsumowanieVat> ListaVat
+        {
+            get
+            {
                 if (podsumowanieVat is null)
                 {
                     PrzygotujListePodsumowujaca();
@@ -150,16 +178,33 @@ namespace Demo1.Module.BusinessObjects
 
             var pozycjeVat = from pz in PozycjeFaktury
                              group pz by pz.Produkt.StawkaVAT into PodsumowanieVat
-                                   select new PodsumowanieVat()
-                                   {
-                                       StawkaVat = PodsumowanieVat.Key,
-                                       Netto = PodsumowanieVat.Sum(s => s.WartoscNetto),
-                                       Vat = PodsumowanieVat.Sum(s => s.WartoscVAT),
-                                       Brutto = PodsumowanieVat.Sum(s => s.WartoscBrutto),
-                                     //  Pozycje = PodsumowanieVat.ToList()
-                                   };
+                             select new PodsumowanieVat()
+                             {
+                                 StawkaVat = PodsumowanieVat.Key,
+                                 Netto = PodsumowanieVat.Sum(s => s.WartoscNetto),
+                                 Vat = PodsumowanieVat.Sum(s => s.WartoscVAT),
+                                 Brutto = PodsumowanieVat.Sum(s => s.WartoscBrutto),
+                                 //  Pozycje = PodsumowanieVat.ToList()
+                             };
             podsumowanieVat = pozycjeVat.ToList();
-            
+
+        }
+
+
+        internal void PrzeliczWplaty(bool forceChangeEvents)
+        {
+            decimal oldSumaWplat = sumaWplat;
+            decimal tmpSumaWplat = 0m;
+            foreach (var rozrachunek in Rozrachunki)
+            {
+                tmpSumaWplat += rozrachunek.Kwota;
+            }
+            sumaWplat = tmpSumaWplat;
+
+            if (forceChangeEvents)
+            {
+                OnChanged(nameof(SumaWplat), oldSumaWplat, sumaWplat);
+            }
         }
 
         public void PrzeliczSumy(bool forceChangeEvents)
@@ -191,13 +236,31 @@ namespace Demo1.Module.BusinessObjects
             }
         }
 
-        
+
         public StatusFaktury Status
         {
             get => status;
             set => SetPropertyValue(nameof(Status), ref status, value);
         }
 
+
+        protected override void OnSaving()
+        {
+            base.OnSaving();
+
+            if (Session.IsNewObject(this))
+            {
+
+                if (String.IsNullOrEmpty(NumerFaktury))
+                {
+                    int sequntialNumber = DistributedIdGeneratorHelper.Generate(Session.DataLayer,
+                                                                                typeof(Faktura).FullName,
+                                                                                $"{DateTime.Now.Year}");
+
+                    NumerFaktury = $"{DateTime.Now.Year}/{DateTime.Now.Month:00}/{sequntialNumber.ToString("D4"):C}";
+                }
+            }
+        }
 
         [Action]
         public void Zatwierdz()
@@ -219,7 +282,8 @@ namespace Demo1.Module.BusinessObjects
     }
 
     [DomainComponent]
-   public class PodsumowanieVat{
+    public class PodsumowanieVat
+    {
         public StawkaVAT StawkaVat { get; set; }
         public decimal Netto { get; set; }
         public decimal Vat { get; set; }

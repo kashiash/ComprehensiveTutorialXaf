@@ -8,10 +8,15 @@ https://docs.devexpress.com/eXpressAppFramework/112611/concepts/ui-construction/
 
 XAF tworzy 3 widoki dla każdej klasy zdefiniowanej jako BussinesObject
 
-* DetailView 
+### DetailView 
+Służy do wyświetlania i edycji danych pojedynczego rekordu
 
 ![](https://docs.devexpress.com/expressappframework/images/views_detailview_win132339.png)
-* ListView
+
+<a href="https://docs.devexpress.com/eXpressAppFramework/112817/concepts/ui-construction/view-items/view-items-layout-customization#2" target="_blank">Artykuł o układaniu kontrolek na detailView za pomoca atrybutów</a>
+
+
+### ListView
 
 Służy do wyświetlania danych w formie listy z wyszukiwaniem sortowaniem itp
 
@@ -25,7 +30,7 @@ Służy do wyświetlania danych w formie listy z wyszukiwaniem sortowaniem itp
 
 ![](https://docs.devexpress.com/expressappframework/images/views_listview_win132343.png)
 
-* LookupListView
+### LookupListView
 to uproszczona wersja ListView
 
 
@@ -47,7 +52,7 @@ var nestedListViewId = ModelNodeIdHelper.GetNestedListViewId(typeof(Contact), na
 
 
 
-* DashboardView (nie mylić z Dashbordami)
+### DashboardView (nie mylić z Dashbordami)
 
 ![](https://docs.devexpress.com/expressappframework/images/views_dashboardview_win132346.png)
 

@@ -234,6 +234,28 @@ public class Kontakt : XPObject
 }
 ```
 
+Stanowiska dla naszych osób kontaktowych
+
+```csharp
+[DefaultClassOptions]
+ [DefaultProperty(nameof(Nazwa))]
+public class Stanowisko : XPObject
+{
+   public Stanowisko(Session session) : base(session)
+   { }
+
+
+     string nazwa;
+
+     [Size(SizeAttribute.DefaultStringMappingFieldSize)]
+     public string Nazwa
+     {
+         get => nazwa;
+         set => SetPropertyValue(nameof(Nazwa), ref nazwa, value);
+     }
+ }
+```
+
 
 ### Spotkania
 

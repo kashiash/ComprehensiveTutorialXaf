@@ -1,4 +1,5 @@
-﻿using DevExpress.Xpo;
+﻿using ComprehensiveTutorialXaf.Module.BusinessObjects;
+using DevExpress.Xpo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +35,10 @@ namespace Demo1.Module.BusinessObjects
             set => SetPropertyValue(nameof(DataWplaty), ref dataWplaty, value);
         }
 
+        internal void PrzeliczRozrachunki(bool v)
+        {
+            throw new NotImplementedException();
+        }
 
         public decimal KwotaWplaty
         {
@@ -60,6 +65,15 @@ namespace Demo1.Module.BusinessObjects
         {
             get => uwagi;
             set => SetPropertyValue(nameof(Uwagi), ref uwagi, value);
+        }
+
+        [Association("Wplata-Rozrachunki"),Aggregated]
+        public XPCollection<Rozrachunek> Rozrachunki
+        {
+            get
+            {
+                return GetCollection<Rozrachunek>(nameof(Rozrachunki));
+            }
         }
     }
 

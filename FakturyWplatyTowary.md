@@ -220,6 +220,28 @@ public class PodsumowanieVat{
 ```
 
 
+Aby dołożyć numerowanie faktur do klasy faktur dodamy w momencie zapisywania wyliczanie numeru faktury
+
+```csharp
+protected override void OnSaving()
+{
+    base.OnSaving();
+    if (Session.IsNewObject(this))
+    {
+        if (String.IsNullOrEmpty(NumerFaktury))
+        {
+            int sequntialNumber = DistributedIdGeneratorHelper.Generate(Session.DataLayer,
+                                                                        typeof(Faktura).FullName,
+                                                                        DateTime.Now.Year.ToString());
+            NumerFaktury = $"{DateTime.Now.Year}/{DateTime.Now.Month:00}/{sequntialNumber.ToString("D4"):C}";
+        }
+    }
+}
+```
+
+
+
+
 ## Towary
 
 ```csharp

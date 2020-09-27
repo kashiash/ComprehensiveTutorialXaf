@@ -55,6 +55,9 @@ public class ClearContactsTaskControllerV2 : ObjectViewController<DetailView,Con
 
 ## Kontroler pozwalający na dostęp do ustawień Grid'a na liście danych
 
+
+Chcemy poustawiać na liście globalnie pewne cechy np "zeberkę" (alternating rows) na wierszach listy
+
 [Na podstawie artykułu na stronie devexpress](https://docs.devexpress.com/eXpressAppFramework/113165/getting-started/comprehensive-tutorial/extend-functionality/access-grid-control-properties)
 
 ```csharp
@@ -75,8 +78,9 @@ public  class WinListViewController: ViewController<ListView>
           {
               GridView gridView = listEditor.GridView;
               gridView.OptionsView.EnableAppearanceOddRow = true;
+              
               //  gridView.Appearance.OddRow.BackColor = Color.FromArgb(244, 244, 244);
-              gridView.OptionsView.ShowFooter = false;
+              gridView.OptionsView.ShowFooter = true;
               // gridView.OptionsView.GroupFooterShowMode = GroupFooterShowMode.VisibleIfExpanded;
               gridView.OptionsPrint.ExpandAllGroups = false;
               //   właczamy filtry pod nagłowkami
@@ -109,6 +113,8 @@ public  class WinListViewController: ViewController<ListView>
 ```
 
 #### Simple Action
+
+Przycisk na wstązce który wykona jakąś akcję na wybranym rekordzie. W tym przypadku skasuje wszystkie zadania wybranego użytkownika.
 
 ```csharp
 public class ClearContactsTaskController : ViewController<DetailView>
@@ -162,6 +168,69 @@ public class ClearContactsTaskController : ViewController<DetailView>
 
 
 #### Popup Window Action
+
+Chcemy dla wybranej grupy rekordów zapytac użytkownika o dodatkowe dane i na wybranych rekordach zrobić jakas akcję. W tym przypadku dla wybranych kleintów zapytamy na jaki dzień i z jaka data faktury  mamy wstawić faktury, z możliwością wybrania kilku towarów.
+
+```csharp
+[DevExpress.ExpressApp.DC.DomainComponent]
+  public class InvoiceTemplate
+  {
+
+      public InvoiceTemplate(Session session)
+      {
+          _Products = new XPCollection<Produkt>(session);
+      }
+
+      public DateTime DataFaktury { get; set; }
+      public DateTime DataPlatnosci { get; set; }
+      private XPCollection<Produkt> _Products;
+   //   [XafDisplayName("Lista produktów")]
+      public XPCollection<Produkt> Products { get { return _Products; } }
+  }
+
+  public class KlientListViewController : ObjectViewController<ListView, Klient>
+  {
+
+      public KlientListViewController()
+      {
+          PopupWindowShowAction action = new PopupWindowShowAction(this, "Wystaw faktury", PredefinedCategory.RecordEdit)
+          {ImageName = "BO_Skull" };
+          action.SelectionDependencyType = SelectionDependencyType.RequireMultipleObjects;
+          action.CustomizePopupWindowParams += new CustomizePopupWindowParamsEventHandler(action_CustomizePopupWindowParams);
+          action.Execute += new PopupWindowShowActionExecuteEventHandler(action_Execute);
+      }
+
+      void action_CustomizePopupWindowParams(object sender, CustomizePopupWindowParamsEventArgs e)
+      {
+          IObjectSpace os = Application.CreateObjectSpace();
+          e.Context = TemplateContext.PopupWindow;
+          e.View = Application.CreateDetailView(os, new InvoiceTemplate(((DevExpress.ExpressApp.Xpo.XPObjectSpace)os).Session));
+          ((DetailView)e.View).ViewEditMode = ViewEditMode.Edit;
+      }
+      void action_Execute(object sender, PopupWindowShowActionExecuteEventArgs e)
+      {
+          InvoiceTemplate parameters = e.PopupWindow.View.CurrentObject as InvoiceTemplate;
+          ListPropertyEditor listPropertyEditor = ((DetailView)e.PopupWindow.View).FindItem("Products") as ListPropertyEditor;
+          IObjectSpace os = Application.CreateObjectSpace();
+          foreach (Klient klient in e.SelectedObjects)
+          {
+              var faktura = os.CreateObject<Faktura>();
+              faktura.DataFaktury = parameters.DataFaktury;
+              faktura.Klient = os.GetObject<Klient>(klient);
+
+              foreach (Produkt prod in listPropertyEditor.ListView.SelectedObjects)
+              {
+                  var pozycja = os.CreateObject<PozycjaFaktury>();
+                  pozycja.Produkt = os.GetObject<Produkt>(prod);
+                  pozycja.Ilosc = 1;
+                  faktura.PozycjeFaktury.Add(pozycja);
+              }
+              faktura.Save();
+          }
+          os.CommitChanges();
+      }
+  }
+```
 
 
 ##### Show Notes z tutoriala
@@ -293,8 +362,41 @@ public class ShowDetailViewController : ViewController<ListView>
 }
 ```
 
+##### Zdalna pomoc
+
+Praktycznie w każdej aplikacji powinniśmy dostarczyć możliwość wywołania TemaViewera, aby użytkownik mógł udostępnić pulpit do obsługi klienta za pomocą TeamViewer'a:
+Następujący kontroler załatwia problem:
+Wystarczy do katalogu z programem dograć **teamviewer_serwis.exe**
+```csharp
+public  class ZdalnaPomocController: ViewController
+  {
+      SimpleAction ZdalnaPomocAction;
+      public ZdalnaPomocController()
+      {
+          ZdalnaPomocAction = new SimpleAction(this, $"{GetType()}.{nameof(ZdalnaPomocAction)}", PredefinedCategory.Tools)
+          {
+
+              Caption = "Zdalna pomoc",
+
+          };
+          ZdalnaPomocAction.Execute += ZdalnaPomocAction_Execute;
+      }
+
+      private void ZdalnaPomocAction_Execute(object sender, SimpleActionExecuteEventArgs e)
+      {
+          ProcessStartInfo startInfo = new ProcessStartInfo { UseShellExecute = false, FileName = "mediqus_serwis.exe" };
+
+          using (Process.Start(startInfo))
+          {
+          }
+      }
+  }
+```
+W ten sam sposób możemy uruchamiać każdy program lub otwierać dokument.
 
 ##### Kontroler wywołujący kilka okien po sobie
+
+do omówienia w innym terminie
 
 <a href="https://docs.devexpress.com/eXpressAppFramework/112805/concepts/controllers-and-actions/dialog-controller" target="_blank">https://docs.devexpress.com/eXpressAppFramework/112805/concepts/controllers-and-actions/dialog-controller</a>
 
@@ -457,34 +559,3 @@ public partial class WizardController : ViewController
 ```
 
 
-##### Zdalna pomoc
-
-Praktycznie w każdej aplikacji powinniśmy dostarczyć możliwość wywołania TemaViewera, aby użytkownik mógł udostępnić pulpit do obsługi klienta za pomocą TeamViewer'a:
-Następujący kontroler załatwia problem:
-Wystarczy do katalogu z programem dograć **mediqus_serwis.exe**
-```csharp
-public  class ZdalnaPomocController: ViewController
-  {
-      SimpleAction ZdalnaPomocAction;
-      public ZdalnaPomocController()
-      {
-          ZdalnaPomocAction = new SimpleAction(this, $"{GetType()}.{nameof(ZdalnaPomocAction)}", PredefinedCategory.Tools)
-          {
-
-              Caption = "Zdalna pomoc",
-
-          };
-          ZdalnaPomocAction.Execute += ZdalnaPomocAction_Execute;
-      }
-
-      private void ZdalnaPomocAction_Execute(object sender, SimpleActionExecuteEventArgs e)
-      {
-          ProcessStartInfo startInfo = new ProcessStartInfo { UseShellExecute = false, FileName = "mediqus_serwis.exe" };
-
-          using (Process.Start(startInfo))
-          {
-          }
-      }
-  }
-```
-W ten sam sposób możemy uruchamiać każdy program lub otwierać dokument.

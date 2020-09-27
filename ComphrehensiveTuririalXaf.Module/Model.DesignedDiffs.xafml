@@ -1,13 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Title="ComprehensiveTutorialXaf">
-  <Options>
+  <Options DataAccessMode="InstantFeedback" LookupSmallCollectionItemCount="50">
     <LayoutManagerOptions RequiredFieldMark="*" />
   </Options>
   <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="20.2.1.0" IsNewNode="True" />
     <SchemaModule Name="SystemModule" Version="20.2.1.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
     <ListView Id="Gmina_ListView" DataAccessMode="Server" />
+    <ListView Id="Klient_ListView" DataAccessMode="Server" />
     <ListView Id="KodPocztowy_ListView" DataAccessMode="InstantFeedback" />
     <ListView Id="KodPocztowy_LookupListView" DataAccessMode="InstantFeedback" />
     <ListView Id="Powiat_ListView" DataAccessMode="Server" />
