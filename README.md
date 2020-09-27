@@ -1,6 +1,9 @@
 # Tutorial Xaf
 Tutorial z XAF - notatki z przypomnienia wiedzy ;)
-na bazie https://docs.devexpress.com/eXpressAppFramework/112560/getting-started/comprehensive-tutorial-main-demo-application?v=20.2
+
+Niniejsze repozytorium zawiera przykład realizowany na podstawie opisu ze strony z devexpres rozbudowany (albo jak kto woli wymieszany) z klasami do aplikacji do fakturowania
+
+tutorial na bazie https://docs.devexpress.com/eXpressAppFramework/112560/getting-started/comprehensive-tutorial-main-demo-application?v=20.2
 
 
 
