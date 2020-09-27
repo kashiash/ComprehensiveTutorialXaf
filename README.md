@@ -11,7 +11,7 @@ na bazie https://docs.devexpress.com/eXpressAppFramework/112560/getting-started/
 [Aplikacja docelowa](AplikacjaPraktyczna.md) Aplikacja do ewidencji klientów i sprzedaży
 
 
-[Kontrolery i Akcje](Controllers.md) - obsługa interfejsu użytkownika
+[Kontrolery i Akcje](Controllers.md) - przykłady zastosowania
 
 [Widoki](Views.md)
 
