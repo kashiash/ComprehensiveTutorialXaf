@@ -1,7 +1,7 @@
 # Klienci
 
 
-Prosze sie nie przywiązywac do tej struktury, w kolejnych przykładach dokonamy na niej pewnej refaktoryzacji.
+Prosze sie nie przywiązywac do tej struktury, w kolejnych przykładach dokonamy na niej pewnej refaktoryzacji. Jest ona przydatna dla mniejszych aplikacji i nie trzeba jej zmieniac, nie mniej jednak gdy będziemy chcieli rozbudowac go o Dostawców, kLientów firmy wspołpracujace itd, to warto poczytac dalej  o refaktoryzacji do rozdzielenia adresów organizacji itp ...
 
 ```csharp
 [DefaultClassOptions]
