@@ -39,10 +39,21 @@ https://supportcenter.devexpress.com/ticket/details/a2944/xpo-best-practices
 
 <a href="https://community.devexpress.com/blogs/xaf/archive/2018/04/26/xaf-best-practices-from-manuel-grundner.aspx" target="_blank">Best practices od Manueala Grundnera</a>
 
+https://blog.delegate.at/2020/09/21/fixing-an-n1-performance-problem-in-xaf-xpo-with-totally-undocumented-apis.html
+
 <a href="https://community.devexpress.com/blogs/xaf/archive/2011/07/04/best-practices-of-creating-reusable-xaf-modules-by-example-of-a-view-variants-module-extension.aspx" target="_blank">Tworzenie modułów do dalszego wykorzystania</a>
+# Inne nie mniej ciekawe linki dotczące XAF
+https://supportcenter.devexpress.com/ticket/details/t880467/how-to-port-an-xaf-platform-agnostic-module-from-net-framework-to-net-standard-2-0
+https://community.devexpress.com/blogs/xaf/archive/2013/01/29/dynamic-member-aliases-from-application-model.aspx
+https://docs.devexpress.com/eXpressAppFramework/113224/concepts/business-model-design/types-info-subsystem/access-business-object-metadata\
+https://community.devexpress.com/blogs/xaf/archive/2013/01/21/modifying-business-objects-using-attributes.aspx
+## security
+http://apobekiaris.blogspot.com/2013/01/user-friendly-way-to-add-permissions.html
+https://dennisgaravsky.blogspot.com/2015/05/how-to-assign-security-role-to-new.html
+
 
 # DB2
-
+https://wiki.base22.com/btg/a-useful-list-of-ibm-db2-commands-81789781.html
 
 
 # CodeRush
