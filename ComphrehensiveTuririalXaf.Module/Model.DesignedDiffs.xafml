@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Title="ComprehensiveTutorialXaf">
-  <Options DataAccessMode="InstantFeedback" LookupSmallCollectionItemCount="50">
+  <Options DataAccessMode="Client" LookupSmallCollectionItemCount="50">
     <LayoutManagerOptions RequiredFieldMark="*" />
   </Options>
   <SchemaModules>
@@ -14,5 +14,13 @@
     <ListView Id="KodPocztowy_LookupListView" DataAccessMode="InstantFeedback" />
     <ListView Id="Powiat_ListView" DataAccessMode="Server" />
     <ListView Id="Wojewodztwo_KodyPocztowe_ListView" DataAccessMode="Server" />
+    <ListView Id="Wplata_ListView" DataAccessMode="InstantFeedback" />
+    <ListView Id="WplataDoRozliczeniaDC_Naleznosci_ListView">
+      <Columns>
+        <ColumnInfo Id="Faktura" Width="177" AllowEdit="False" />
+        <ColumnInfo Id="Faktura_KwotaBrutto" PropertyName="Faktura.WartoscBrutto" Width="201" Index="0" Caption="KwotaBrutto" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="KwotaDoRozliczenia" Width="235" />
+      </Columns>
+    </ListView>
   </Views>
 </Application>

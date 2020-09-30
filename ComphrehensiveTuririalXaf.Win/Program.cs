@@ -46,6 +46,8 @@ namespace ComprehensiveTutorialXaf.Win {
 #endif
             try {
                 winApplication.Setup();
+
+              
                 winApplication.Start();
             }
             catch(Exception e) {

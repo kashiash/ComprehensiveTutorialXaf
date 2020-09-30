@@ -43,6 +43,7 @@
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
+    <Reference Include="DevExpress.Dashboard.v20.2.Core, Version=20.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.Desktop.v20.2">
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
@@ -51,14 +52,19 @@
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
+    <Reference Include="DevExpress.DataAccess.v20.2, Version=20.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.CloneObject.v20.2, Version=20.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.ExpressApp.ConditionalAppearance.v20.2">
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
+    <Reference Include="DevExpress.ExpressApp.Dashboards.v20.2, Version=20.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.ExpressApp.Objects.v20.2">
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
+    <Reference Include="DevExpress.ExpressApp.Office.v20.2, Version=20.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.ReportsV2.v20.2, Version=20.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.ExpressApp.Security.v20.2">
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
@@ -111,6 +117,7 @@
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
+    <Reference Include="DevExpress.Spreadsheet.v20.2.Core, Version=20.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v20.2">
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
@@ -143,6 +150,7 @@
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
+    <Reference Include="DevExpress.XtraReports.v20.2, Version=20.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraRichEdit.v20.2">
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
@@ -198,6 +206,7 @@
       <Name>System.XML</Name>
       <Private>False</Private>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Images\Logo.svg" />
@@ -226,6 +235,10 @@
     <Compile Include="XafSplashScreen.Designer.cs">
       <DependentUpon>XafSplashScreen.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="WinApplication.resx">
+      <DependentUpon>WinApplication.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XafSplashScreen.resx">
       <DependentUpon>XafSplashScreen.cs</DependentUpon>
     </EmbeddedResource>

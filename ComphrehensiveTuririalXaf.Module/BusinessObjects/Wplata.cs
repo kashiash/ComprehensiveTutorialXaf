@@ -1,4 +1,5 @@
 ﻿using ComprehensiveTutorialXaf.Module.BusinessObjects;
+using DevExpress.Persistent.Base;
 using DevExpress.Xpo;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Demo1.Module.BusinessObjects
 {
+    [DefaultClassOptions]
     public class Wplata : XPObject
     {
         public Wplata(Session session) : base(session)

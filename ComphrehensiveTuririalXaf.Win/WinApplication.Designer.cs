@@ -29,28 +29,52 @@
             this.module4 = new ComprehensiveTutorialXaf.Module.Win.ComprehensiveTutorialXafWindowsFormsModule();
             this.securityModule1 = new DevExpress.ExpressApp.Security.SecurityModule();
             this.securityStrategyComplex1 = new DevExpress.ExpressApp.Security.SecurityStrategyComplex();
-            this.securityStrategyComplex1.SupportNavigationPermissionsForTypes = false;
+            this.authenticationActiveDirectory1 = new DevExpress.ExpressApp.Security.AuthenticationActiveDirectory();
             this.objectsModule = new DevExpress.ExpressApp.Objects.BusinessClassLibraryCustomizationModule();
             this.conditionalAppearanceModule = new DevExpress.ExpressApp.ConditionalAppearance.ConditionalAppearanceModule();
             this.validationModule = new DevExpress.ExpressApp.Validation.ValidationModule();
             this.validationWindowsFormsModule = new DevExpress.ExpressApp.Validation.Win.ValidationWindowsFormsModule();
-            this.authenticationActiveDirectory1 = new DevExpress.ExpressApp.Security.AuthenticationActiveDirectory();
+            this.reportsModuleV21 = new DevExpress.ExpressApp.ReportsV2.ReportsModuleV2();
+            this.dashboardsModule1 = new DevExpress.ExpressApp.Dashboards.DashboardsModule();
+            this.officeModule1 = new DevExpress.ExpressApp.Office.OfficeModule();
+            this.cloneObjectModule1 = new DevExpress.ExpressApp.CloneObject.CloneObjectModule();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // securityStrategyComplex1
             // 
+            this.securityStrategyComplex1.AllowAnonymousAccess = false;
             this.securityStrategyComplex1.Authentication = this.authenticationActiveDirectory1;
+            this.securityStrategyComplex1.PermissionsReloadMode = DevExpress.ExpressApp.Security.PermissionsReloadMode.NoCache;
             this.securityStrategyComplex1.RoleType = typeof(DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyRole);
+            this.securityStrategyComplex1.SupportNavigationPermissionsForTypes = false;
             this.securityStrategyComplex1.UserType = typeof(DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser);
-            // 
-            // securityModule1
-            // 
-            this.securityModule1.UserType = typeof(DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser);
             // 
             // authenticationActiveDirectory1
             // 
             this.authenticationActiveDirectory1.CreateUserAutomatically = true;
             this.authenticationActiveDirectory1.LogonParametersType = null;
+            // 
+            // validationModule
+            // 
+            this.validationModule.AllowValidationDetailsAccess = true;
+            this.validationModule.IgnoreWarningAndInformationRules = false;
+            // 
+            // reportsModuleV21
+            // 
+            this.reportsModuleV21.EnableInplaceReports = true;
+            this.reportsModuleV21.ReportDataType = typeof(DevExpress.Persistent.BaseImpl.ReportDataV2);
+            // 
+            // dashboardsModule1
+            // 
+            this.dashboardsModule1.DashboardDataType = typeof(DevExpress.Persistent.BaseImpl.DashboardData);
+            // 
+            // officeModule1
+            // 
+            this.officeModule1.RichTextMailMergeDataType = null;
+            // 
+            // cloneObjectModule1
+            // 
+            this.cloneObjectModule1.ClonerType = null;
             // 
             // ComprehensiveTutorialXafWindowsFormsApplication
             // 
@@ -58,18 +82,21 @@
             this.CheckCompatibilityType = DevExpress.ExpressApp.CheckCompatibilityType.DatabaseSchema;
             this.Modules.Add(this.module1);
             this.Modules.Add(this.module2);
-            this.Modules.Add(this.module3);
-            this.Modules.Add(this.module4);
             this.Modules.Add(this.securityModule1);
-            this.Security = this.securityStrategyComplex1;
             this.Modules.Add(this.objectsModule);
             this.Modules.Add(this.conditionalAppearanceModule);
             this.Modules.Add(this.validationModule);
+            this.Modules.Add(this.reportsModuleV21);
+            this.Modules.Add(this.dashboardsModule1);
+            this.Modules.Add(this.officeModule1);
+            this.Modules.Add(this.cloneObjectModule1);
+            this.Modules.Add(this.module3);
             this.Modules.Add(this.validationWindowsFormsModule);
+            this.Modules.Add(this.module4);
+            this.Security = this.securityStrategyComplex1;
             this.UseOldTemplates = false;
             this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.ComprehensiveTutorialXafWindowsFormsApplication_DatabaseVersionMismatch);
             this.CustomizeLanguagesList += new System.EventHandler<DevExpress.ExpressApp.CustomizeLanguagesListEventArgs>(this.ComprehensiveTutorialXafWindowsFormsApplication_CustomizeLanguagesList);
-
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -87,5 +114,9 @@
         private DevExpress.ExpressApp.ConditionalAppearance.ConditionalAppearanceModule conditionalAppearanceModule;
         private DevExpress.ExpressApp.Validation.ValidationModule validationModule;
         private DevExpress.ExpressApp.Validation.Win.ValidationWindowsFormsModule validationWindowsFormsModule;
+        private DevExpress.ExpressApp.ReportsV2.ReportsModuleV2 reportsModuleV21;
+        private DevExpress.ExpressApp.Dashboards.DashboardsModule dashboardsModule1;
+        private DevExpress.ExpressApp.Office.OfficeModule officeModule1;
+        private DevExpress.ExpressApp.CloneObject.CloneObjectModule cloneObjectModule1;
     }
 }
