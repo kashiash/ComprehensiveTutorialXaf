@@ -27,6 +27,7 @@ namespace Demo1.Module.BusinessObjects
 
 
 
+    
         decimal sumaWplat;
         StatusFaktury status;
         string numerFaktry;
@@ -127,6 +128,14 @@ namespace Demo1.Module.BusinessObjects
         {
             get => sumaWplat;
             set => SetPropertyValue(nameof(SumaWplat), ref sumaWplat, value);
+        }
+
+
+        FakturaKorygujaca fakturaKorygujaca;
+        public FakturaKorygujaca FakturaKorygujaca
+        {
+            get => fakturaKorygujaca;
+            set => SetPropertyValue(nameof(FakturaKorygujaca), ref fakturaKorygujaca, value);
         }
 
         [Association, DevExpress.Xpo.Aggregated]

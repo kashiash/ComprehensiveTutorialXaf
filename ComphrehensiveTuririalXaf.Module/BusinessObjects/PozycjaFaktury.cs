@@ -1,4 +1,5 @@
-﻿using DevExpress.Persistent.Base;
+﻿using ComprehensiveTutorialXaf.Module.BusinessObjects;
+using DevExpress.Persistent.Base;
 using DevExpress.Xpo;
 using System;
 using System.Collections.Generic;
@@ -47,10 +48,12 @@ namespace Demo1.Module.BusinessObjects
             get => faktura;
             set
             {
+                var oldFaktura = faktura;
                 bool modified = SetPropertyValue(nameof(Faktura), ref faktura, value);
-                if (!IsLoading && !IsSaving && Faktura != null && modified)
+                if (!IsLoading && !IsSaving && oldFaktura != faktura && modified)
                 {
-                    Faktura.PrzeliczSumy(true);
+                    oldFaktura = oldFaktura ?? faktura;
+                    oldFaktura.PrzeliczSumy(true);
 
                 }
             }
@@ -72,6 +75,9 @@ namespace Demo1.Module.BusinessObjects
 
         private void PrzeliczPozycje()
         {
+            if (this is PozycjaFakturyKorygujacej)
+                return; // nie wyliczamy w korektach
+
             WartoscNetto = Ilosc * Cena;
             if (Produkt != null && Produkt.StawkaVAT != null)
             {
@@ -123,5 +129,15 @@ namespace Demo1.Module.BusinessObjects
             get => wartoscBrutto;
             set => SetPropertyValue(nameof(WartoscBrutto), ref wartoscBrutto, value);
         }
+
+        PozycjaFaktury pozycjaKorygujaca;
+        public PozycjaFaktury PozycjaKorygujaca
+        {
+            get => pozycjaKorygujaca;
+            set => SetPropertyValue(nameof(PozycjaKorygujaca), ref pozycjaKorygujaca, value);
+        }
+
+
+
     }
 }
