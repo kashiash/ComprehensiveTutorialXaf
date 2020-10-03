@@ -144,6 +144,9 @@
     <Compile Include="BusinessObjects\Wplata.cs" />
     <Compile Include="BusinessObjects\WplataDoRozliczeniaDC.cs" />
     <Compile Include="Controllers\ContactBusinessLogicViewController.cs" />
+    <Compile Include="Controllers\FakturyViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controllers\KlientListViewController.cs" />
     <Compile Include="Controllers\WizardController.cs">
       <SubType>Component</SubType>

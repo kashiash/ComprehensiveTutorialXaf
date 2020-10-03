@@ -216,7 +216,7 @@ namespace Demo1.Module.BusinessObjects
             }
         }
 
-        public void PrzeliczSumy(bool forceChangeEvents)
+        public void PrzeliczSumy(bool forceChangeEvents = true)
         {
             decimal oldWartoscNetto = wartoscNetto;
             decimal? oldWartoscVAT = wartoscVAT;
