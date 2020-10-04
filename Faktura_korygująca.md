@@ -35,11 +35,13 @@ na ekranie maja byc widoczne dane do faktury
 
 Ewentualne materiały jak toz robić są tutaj:
 
-<a href="https://supportcenter.devexpress.com/ticket/details/t928633/xaf-win-how-to-programmatically-find-and-select-a-record-on-list-view-gri" target="_blank">https://supportcenter.devexpress.com/ticket/details/t928633/xaf-win-how-to-programmatically-find-and-select-a-record-on-list-view-gri</a>d
+<a href="https://supportcenter.devexpress.com/ticket/details/t928633/xaf-win-how-to-programmatically-find-and-select-a-record-on-list-view-gri" target="_blank">xaf-win-how-to-programmatically-find-and-select-a-record-on-list-view-gri</a>d
 
-<a href="https://supportcenter.devexpress.com/ticket/details/cs47517/how-to-set-the-default-current-object-after-opening-a-listview" target="_blank">https://supportcenter.devexpress.com/ticket/details/cs47517/how-to-set-the-default-current-object-after-opening-a-listview</a>
+<a href="https://supportcenter.devexpress.com/ticket/details/cs47517/how-to-set-the-default-current-object-after-opening-a-listview" target="_blank">how-to-set-the-default-current-object-after-opening-a-listview</a>
 
 
-<a href="https://supportcenter.devexpress.com/ticket/details/t905770/can-i-set-the-default-selected-objects-when-showing-a-popup-list-view" target="_blank">https://supportcenter.devexpress.com/ticket/details/t905770/can-i-set-the-default-selected-objects-when-showing-a-popup-list-view</a>
+<a href="https://supportcenter.devexpress.com/ticket/details/t905770/can-i-set-the-default-selected-objects-when-showing-a-popup-list-view" target="_blank">can-i-set-the-default-selected-objects-when-showing-a-popup-list-view</a>
 
-<a href="https://supportcenter.devexpress.com/ticket/details/t496358/xaf-select-focus-a-specific-row-on-opening-a-list-view" target="_blank">https://supportcenter.devexpress.com/ticket/details/t496358/xaf-select-focus-a-specific-row-on-opening-a-list-view</a>
+<a href="https://supportcenter.devexpress.com/ticket/details/t496358/xaf-select-focus-a-specific-row-on-opening-a-list-view" target="_blank">xaf-select-focus-a-specific-row-on-opening-a-list-view</a>
+
+<a href="https://supportcenter.devexpress.com/ticket/details/t820368/column-size-sync-in-gridview" target="_blank">column-size-sync-in-gridview</a>

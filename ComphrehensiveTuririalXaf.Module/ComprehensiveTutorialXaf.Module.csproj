@@ -211,6 +211,14 @@
   <ItemGroup>
     <EmbeddedResource Include="Images\abacus.svg" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\bill.svg" />
+    <EmbeddedResource Include="Images\cryptocurrency.svg" />
+    <EmbeddedResource Include="Images\document.svg" />
+    <EmbeddedResource Include="Images\invoice.svg" />
+    <EmbeddedResource Include="Images\mask.svg" />
+    <EmbeddedResource Include="Images\pay.svg" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

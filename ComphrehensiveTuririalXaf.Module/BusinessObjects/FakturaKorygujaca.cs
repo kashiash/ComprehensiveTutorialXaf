@@ -11,6 +11,7 @@ using System.Linq;
 namespace ComprehensiveTutorialXaf.Module.BusinessObjects
 {
     [DefaultClassOptions]
+    [ImageName("document")]
     public class FakturaKorygujaca : Faktura
     {
         public FakturaKorygujaca(Session session) : base(session)

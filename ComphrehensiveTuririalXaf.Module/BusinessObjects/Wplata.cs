@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 namespace Demo1.Module.BusinessObjects
 {
     [DefaultClassOptions]
+    [ImageName("pay")]
     public class Wplata : XPObject
     {
         public Wplata(Session session) : base(session)
