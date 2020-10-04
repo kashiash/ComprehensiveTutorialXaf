@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XtraReportsLayoutSerializer SerializerVersion="20.2.1.0" Ref="1" ControlType="DevExpress.XtraReports.UI.XtraReport, DevExpress.XtraReports.v20.2, Version=20.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Name="Report1" DisplayName="Faktura" Margins="100, 100, 20, 100" PageWidth="850" PageHeight="1100" Version="20.2" DataSource="#Ref-0" Font="Arial, 9.75pt">
+  <Extensions>
+    <Item1 Ref="2" Key="DataSerializationExtension" Value="XtraReport" />
+    <Item2 Ref="3" Key="DataEditorExtension" Value="XtraReport" />
+    <Item3 Ref="4" Key="ParameterEditorExtension" Value="XtraReport" />
+  </Extensions>
+  <Bands>
+    <Item1 Ref="5" ControlType="TopMarginBand" Name="TopMargin" HeightF="19.79167" />
+    <Item2 Ref="6" ControlType="BottomMarginBand" Name="BottomMargin" />
+    <Item3 Ref="7" ControlType="DetailBand" Name="Detail" HeightF="8.854198" />
+    <Item4 Ref="8" ControlType="GroupHeaderBand" Name="GroupHeader1" PageBreak="BeforeBandExceptFirstEntry" HeightF="189.6875">
+      <GroupFields>
+        <Item1 Ref="9" FieldName="Oid" />
+      </GroupFields>
+      <Controls>
+        <Item1 Ref="10" ControlType="XRPictureBox" Name="pictureBox1" ImageSource="svg,77u/PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4NCjxzdmcgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4IiB2aWV3Qm94PSIwIDAgNTEyLjAwMSA1MTIuMDAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDUxMi4wMDEgNTEyLjAwMSIgaWQ9IkNhcGFfMSI+DQogIDxnPg0KICAgIDxnPg0KICAgICAgPGc+DQogICAgICAgIDxwYXRoIGQ9Im0yNDUuMTExIDI2Ni44OTFjLTU3LjEzOC01Ny4xMzgtMTQ5Ljc3Ny01Ny4xMzgtMjA2LjkxNSAwcy0yNy4xNzIgMTE5LjgxMSAyOS45NjYgMTc2Ljk0OSAxMTkuODExIDg3LjEwNCAxNzYuOTQ5IDI5Ljk2NiA1Ny4xMzgtMTQ5Ljc3NyAwLTIwNi45MTV6bS03OC43NjkgMTk1Ljk4MWMtMTkuOTgtNC45OTctNDMuNDk3LTIwLjkxNy02OS44OTYtNDcuMzE2cy00Mi4zMTktNDkuOTE2LTQ3LjMxNi02OS44OTZjLTMuMjc4LTEzLjEwNy0zLjc4LTI5LjM1NCAxNy4zNS01MC40ODUgNDEuNDUxLTQxLjQ1MSAxMDguODk2LTQxLjQ1MSAxNTAuMzQ3IDBzNDEuNDUxIDEwOC44OTYgMCAxNTAuMzQ3Yy0yMS4xMzEgMjEuMTMtMzcuMzc4IDIwLjYyOC01MC40ODUgMTcuMzV6IiBmaWxsPSIjYzRlMmZlIiAvPg0KICAgICAgPC9nPg0KICAgIDwvZz4NCiAgICA8Zz4NCiAgICAgIDxwYXRoIGQ9Im02OC4xNjEgNDE1LjU1NmM3LjgxLTcuODEgMjAuNDc0LTcuODEgMjguMjg0IDAtMjYuMzk5LTI2LjM5OS00Mi4zMTktNDkuOTE2LTQ3LjMxNi02OS44OTYtMy4yNzgtMTMuMTA3LTMuNzgtMjkuMzU0IDE3LjM1LTUwLjQ4NSA0MS40NTEtNDEuNDUxIDEwOC44OTYtNDEuNDUxIDE1MC4zNDcgMGwyOC4yODQtMjguMjg0Yy01Ny4xMzgtNTcuMTM4LTE0OS43NzctNTcuMTM4LTIwNi45MTUgMHMtMjcuMTcyIDExOS44MTEgMjkuOTY2IDE3Ni45NDljLTcuODEtNy44MS03LjgxLTIwLjQ3NCAwLTI4LjI4NHoiIGZpbGw9IiNiMGQ4ZmQiIC8+DQogICAgPC9nPg0KICAgIDxnPg0KICAgICAgPHBhdGggZD0ibTMxOC42ODkgMzM0LjU1MS0xNDEuNDIxLTE0MS40MjJjLTM5LjA1MiAzOS4wNTItMzkuMDUyIDEwMi4zNjkgMCAxNDEuNDIxIDM5LjA1MiAzOS4wNTMgMTAyLjM2OSAzOS4wNTMgMTQxLjQyMS4wMDF6IiBmaWxsPSIjOWNjZWZkIiAvPg0KICAgIDwvZz4NCiAgICA8Zz4NCiAgICAgIDxwYXRoIGQ9Im0xNzcuMjY4IDI4NC4zNDZjMTMuODY0LTEzLjg2NCAzNi4zNDEtMTMuODY0IDUwLjIwNSAwbDIwLjUyNC0yMC40ODgtNzAuNzI5LTcwLjcyOWMtMzkuMDUyIDM5LjA1Mi0zOS4wNTIgMTAyLjM2OSAwIDE0MS40MjEtMTMuODY0LTEzLjg2My0xMy44NjQtMzYuMzQgMC01MC4yMDR6IiBmaWxsPSIjNzJiYWZkIiAvPg0KICAgIDwvZz4NCiAgICA8Zz4NCiAgICAgIDxwYXRoIGQ9Im00NjcuODg5IDIyMC43MDZjNDguNTI1LTQ4LjUyNSA0OC44MTQtMTI3LjAyLjg2Ny0xNzUuOTAxLTQ4LjM4NC00OS4zMjgtMTI4LjU1Mi00OS44MDMtMTc3LjQ5Mi0xLjAyNy0yMy40MDIgMjMuMzI0LTM1LjYyIDUzLjYwMS0zNi42NyA4NC4xOTMtLjg2MyAyNS4xNDktMTEuNjE3IDQ4Ljk0Ny0yOS40MTEgNjYuNzQxbC0yOS41MyAyOS41MyA5MS45MjQgOTEuOTI0IDI5LjYtMjkuNmMxNy43Ni0xNy43NiA0MS41MTUtMjguNDg4IDY2LjYxNy0yOS4zMzkgMzAuNTQ0LTEuMDM2IDYwLjc3OC0xMy4yMDQgODQuMDk1LTM2LjUyMXoiIGZpbGw9IiNmZmYyYjQiIC8+DQogICAgPC9nPg0KICAgIDxnPg0KICAgICAgPHBhdGggZD0ibTM2MS44MjMgMjIwLjcwNmMtNDguODE2LTQ4LjgxNi00OC44MTYtMTI3Ljk2MSAwLTE3Ni43NzcgMTUuMjQ3LTE1LjI0NyAzMy40NTMtMjUuNzMxIDUyLjc2OS0zMS40NTQtNDIuMzQzLTEyLjI0OC05MC4wNTMtMS44NjItMTIzLjMyOCAzMS4zMDMtMjMuNDAyIDIzLjMyNC0zNS42MiA1My42MDEtMzYuNjcgODQuMTkzLS44NjMgMjUuMTQ5LTExLjYxNyA0OC45NDctMjkuNDExIDY2Ljc0MWwtMjkuNTMgMjkuNTMgOTEuOTI0IDkxLjkyNCAyOS42LTI5LjZjMTcuNzYtMTcuNzYgNDEuNTE1LTI4LjQ4NyA2Ni42MTctMjkuMzM5IDEwLjQ3NS0uMzU1IDIwLjkxNC0yLjAyIDMxLjA1LTQuOTk1LTE5LjQxLTUuNzA2LTM3LjcwOC0xNi4yMTMtNTMuMDIxLTMxLjUyNnoiIGZpbGw9IiNmZmRmOGUiIC8+DQogICAgPC9nPg0KICAgIDxnPg0KICAgICAgPHBhdGggZD0ibTIyNy40NzMgMjg0LjM0NmMtODMuNjEyLTgzLjYxMi04Ny4wNjItMTc1Ljg4LTg3LjE2Ny0xNzkuNzY3LS4zMDEtMTEuMDQyIDguNDA2LTIwLjIzNyAxOS40NDgtMjAuNTM3IDExLjAxOC0uMzAxIDIwLjE5OSA4LjM2OSAyMC41MzUgMTkuMzc5LjAxOC40NjcuODgxIDIwLjY1OCAxMC41NjYgNDkuMzUgOC45MjMgMjYuNDM2IDI3LjQyNyA2NS44MTUgNjQuOTAzIDEwMy4yOTFzNzYuODU1IDU1Ljk3OSAxMDMuMjkxIDY0LjkwM2MyOC44ODYgOS43NSA0OS4xNTYgMTAuNTYgNDkuMzU3IDEwLjU2NiAxMS4wNDIuMzAyIDE5LjcxMSA5LjQ5NiAxOS40MSAyMC41MzYtLjMwMSAxMS4wNDItOS41MzQgMTkuNzQ4LTIwLjU3NSAxOS40NDYtMy44ODgtLjEwNS05Ni4xNTYtMy41NTUtMTc5Ljc2OC04Ny4xNjd6IiBmaWxsPSIjYzRlMmZlIiAvPg0KICAgIDwvZz4NCiAgICA8Zz4NCiAgICAgIDxwYXRoIGQ9Im0yMjcuNDc3IDI4NC4zNWMtNy44MS03LjgxMS03LjgwOS0yMC40NzMuMDAxLTI4LjI4MyA3LjgxMS03LjgxMSAyMC40NzQtNy44MSAyOC4yODQgMC0uMDAyLS4wMDItLjAwMy0uMDAzLS4wMDUtLjAwNS0zNy40NzYtMzcuNDc2LTU1Ljk3OS03Ni44NTUtNjQuOTAzLTEwMy4yOTEtOS42ODUtMjguNjkyLTEwLjU0OC00OC44ODMtMTAuNTY2LTQ5LjM1LS4zMzYtMTEuMDEtOS41MTctMTkuNjgtMjAuNTM1LTE5LjM3OS0xMS4wNDIuMy0xOS43NDkgOS40OTYtMTkuNDQ4IDIwLjUzNy4xMDYgMy44ODcgMy41NTUgOTYuMTU1IDg3LjE2NyAxNzkuNzY3LjAwMi4wMDEuMDA0LjAwMy4wMDUuMDA0eiIgZmlsbD0iI2IwZDhmZCIgLz4NCiAgICA8L2c+DQogICAgPGc+DQogICAgICA8Zz4NCiAgICAgICAgPGc+DQogICAgICAgICAgPGVsbGlwc2UgY3g9IjMzMC4zMDciIGN5PSI2OC44NzciIHJ4PSIyMy40MDMiIHJ5PSIyOS4zODciIGZpbGw9IiNmZGEwYzEiIHRyYW5zZm9ybT0ibWF0cml4KDAuNzA3LCAtMC43MDcsIDAuNzA3LCAwLjcwNywgNDguMDQsIDI1My43MzQpIiAvPg0KICAgICAgICA8L2c+DQogICAgICAgIDxnPg0KICAgICAgICAgIDxlbGxpcHNlIGN4PSI0NDIuOTQxIiBjeT0iMTgxLjUxMiIgcng9IjIzLjQwMyIgcnk9IjI5LjM4NyIgZmlsbD0iI2ZkYTBjMSIgdHJhbnNmb3JtPSJtYXRyaXgoMC43MDcsIC0wLjcwNywgMC43MDcsIDAuNzA3LCAxLjM4NywgMzY2LjM3NCkiIC8+DQogICAgICAgIDwvZz4NCiAgICAgICAgPGc+DQogICAgICAgICAgPHBhdGggZD0ibTQxNi4wOTIgMTI5LjIzNGMxMC4zNTQtMTAuMzU0IDMuODI2LTE4LjgyOC01LjQyNy0yOC4wODFzLTE3LjcyNy0xNS43ODEtMjguMDgxLTUuNDI3LTExLjI0NiAyNi4yNDgtMS45OTQgMzUuNTAxYzkuMjU0IDkuMjUzIDI1LjE0OSA4LjM2MSAzNS41MDItMS45OTN6IiBmaWxsPSIjNmU2ZTZlIiAvPg0KICAgICAgICA8L2c+DQogICAgICA8L2c+DQogICAgICA8Zz4NCiAgICAgICAgPHBhdGggZD0ibTM1My41MzcgNjAuMDk1Yy0xLjkxOSAwLTMuODM5LS43MzItNS4zMDMtMi4xOTctMi45MjktMi45MjktMi45MjktNy42NzggMC0xMC42MDZsOC40ODUtOC40ODVjMi45MjktMi45MjkgNy42NzgtMi45MjkgMTAuNjA2IDAgMi45MjkgMi45MjkgMi45MjkgNy42NzggMCAxMC42MDZsLTguNDg1IDguNDg1Yy0xLjQ2NCAxLjQ2NC0zLjM4NCAyLjE5Ny01LjMwMyAyLjE5N3oiIC8+DQogICAgICA8L2c+DQogICAgICA8Zz4NCiAgICAgICAgPHBhdGggZD0ibTM5Ni41MTcgMTQ1LjEyM2MtLjAwMSAwLS4wMDEgMC0uMDAyIDAtOC4xNDggMC0xNS42ODctMy4wNTItMjEuMjI3LTguNTkyLTEyLjE2Mi0xMi4xNjMtMTEuMjY4LTMyLjg0NyAxLjk5NC00Ni4xMDggNC45Ni00Ljk2IDEwLjMxNi03LjQ3NiAxNS45MTgtNy40NzYgOS4xMDQgMCAxNi41MjYgNi42NjEgMjIuNzY5IDEyLjkwMyA2LjYgNi42IDIyLjA1NyAyMi4wNTcgNS40MjcgMzguNjg3LTYuNzI4IDYuNzI4LTE1Ljc5NiAxMC41ODYtMjQuODc5IDEwLjU4NnptLTMuMzE3LTQ3LjE3NmMtMS40NzkgMC0zLjI2NyAxLjAzNy01LjMxMiAzLjA4My03LjQxMyA3LjQxMy04LjMwNyAxOC41ODEtMS45OTQgMjQuODk1IDIuNzA4IDIuNzA4IDYuNDc5IDQuMTk4IDEwLjYyMSA0LjE5OWguMDAxYzUuMTM1IDAgMTAuMzM3LTIuMjU3IDE0LjI3Mi02LjE5MiA0LjE3Ny00LjE3NyA1LjU2LTYuNDg3LTUuNDI3LTE3LjQ3NC0yLjc2MS0yLjc2NC04LjUwOC04LjUxMS0xMi4xNjEtOC41MTF6IiAvPg0KICAgICAgPC9nPg0KICAgICAgPGc+DQogICAgICAgIDxwYXRoIGQ9Im00NTkuMjI0IDE2NS43ODJjLTEuOTE5IDAtMy44MzktLjczMi01LjMwMy0yLjE5Ny0yLjkyOS0yLjkyOS0yLjkyOS03LjY3OCAwLTEwLjYwNmw4LjQ4NS04LjQ4NWMyLjkyOS0yLjkyOSA3LjY3OC0yLjkyOSAxMC42MDYgMCAyLjkyOSAyLjkyOSAyLjkyOSA3LjY3OCAwIDEwLjYwNmwtOC40ODUgOC40ODVjLTEuNDY0IDEuNDY0LTMuMzg0IDIuMTk3LTUuMzAzIDIuMTk3eiIgLz4NCiAgICAgIDwvZz4NCiAgICA8L2c+DQogICAgPHBhdGggZD0ibTM4NC4wNDggMjY0LjcyMmMzMy42NjItMS4xNDEgNjUuMzIxLTE0Ljg4OSA4OS4xNDUtMzguNzEzIDI0Ljg2NS0yNC44NjUgMzguNjQ3LTU3LjkyNCAzOC44MDctOTMuMDg2LjE2LTM1LjEzOS0xMy4yOTYtNjguMjk4LTM3Ljg4OS05My4zNzEtMjQuODE4LTI1LjMwMi01OC4xNTUtMzkuMzQ4LTkzLjg3LTM5LjU1LTM1LjY5Mi0uMjE3LTY5LjE4MSAxMy40NTgtOTQuMjcxIDM4LjQ2NC0yMy45MDkgMjMuODI5LTM3LjcxNCA1NS41MjUtMzguODcxIDg5LjI0OC0uNzkgMjMuMDIyLTEwLjQ1NyA0NC45MzMtMjcuMjE5IDYxLjY5NGwtMy4wOSAzLjA5Yy04Ljg1Mi0xNS43NzUtMTQuODM0LTMwLjI4OS0xOC44My00Mi4xMjYtOS4yODUtMjcuNTA5LTEwLjE3LTQ3LjA1MS0xMC4xNzUtNDcuMTgxLS40NjItMTUuMTA2LTEzLjE0Mi0yNy4wNTgtMjguMjM2LTI2LjY0Ny03LjM0My4yLTE0LjE2OCAzLjI0OC0xOS4yMTkgOC41ODEtNS4wNTEgNS4zMzQtNy43MjIgMTIuMzE1LTcuNTIxIDE5LjY1Ny4wNzEgMi42MzUgMS42MjkgNDQuNjY2IDI3LjA0NCA5Ny41MDktMy4yNDUgNC42MzctNi4xMDggOS41LTguNTYxIDE0LjU1MS00NC4xMTMtMi43NjMtODcuMDc1IDEzLjQyLTExOC40IDQ0Ljc0NS0yOC41MzIgMjguNTMyLTM4LjU3MyA2MC42OTYtMjkuODQzIDk1LjU5OCA3LjIxNSAyOC44NDggMjYuNzc5IDU4LjkyOCA1OS44MSA5MS45NThzNjMuMTEgNTIuNTk0IDkxLjk1OCA1OS44MWM4LjEzMSAyLjAzNCAxNi4xMSAzLjA0OCAyMy45MzMgMy4wNDggMjUuNzU1LS4wMDEgNDkuNzgtMTEuMDA3IDcxLjY2NS0zMi44OTIgMzEuNDAyLTMxLjQwMiA0Ny41NzctNzQuNDU2IDQ0LjcyOS0xMTguNjcxIDQuOTkxLTIuNDM1IDkuODAyLTUuMjYyIDE0LjM4OC04LjQ3MSA1Mi44NDEgMjUuNDEzIDk0Ljg2OSAyNi45NzEgOTcuNTA0IDI3LjA0Mi4yNTYuMDA3LjUwOC4wMTEuNzYyLjAxMSAxNC44MzgtLjAwMSAyNy4xMDktMTEuODQ3IDI3LjUxNS0yNi43NS40MTMtMTUuMTU3LTExLjU2Ni0yNy44MjQtMjYuNjI3LTI4LjIzNS0uMTk0LS4wMDgtMTkuNzExLS44ODYtNDcuMjM4LTEwLjE3OC0xMS4xNjMtMy43NjgtMjUuODQyLTkuNzE4LTQyLjExNC0xOC44NDJsMy4xNDctMy4xNDdjMTYuNzI2LTE2LjcyNiAzOC41OTEtMjYuMzY2IDYxLjU2Ny0yNy4xNDZ6bS0xNDQuMjQxIDIwMy43ODFjLTI0Ljg5MyAyNC44OTMtNTEuNTA0IDMzLjM2My04MS4zNTIgMjUuODk4LTI1Ljc3My02LjQ0Ni01NC4zNjktMjUuMjQyLTg0Ljk5MS01NS44NjRzLTQ5LjQxNy01OS4yMTgtNTUuODY0LTg0Ljk5MWMtNy40NjUtMjkuODQ5IDEuMDA2LTU2LjQ1OSAyNS44OTgtODEuMzUyIDI3LjEwNi0yNy4xMDUgNjMuODY2LTQxLjY0MSAxMDEuOTQ1LTQwLjU5OC0yLjUzOSA4LjA5MS00LjEzOSAxNi40NzktNC43MTMgMjUtMjkuNzcxLjI1NC01OC40NjcgMTIuMTg5LTc5LjU1NSAzMy4yNzctMjMuOTE2IDIzLjkxNi0yMi44ODkgNDMuMzQ5LTE5LjMyMyA1Ny42MDcgNS4zMzIgMjEuMzE4IDIxLjkxNiA0Ni4wMDYgNDkuMjg5IDczLjM4IDguODA4IDguODA4IDE3LjQzNSAxNi41OTEgMjUuNjQyIDIzLjEzMiAxLjM4MSAxLjEwMSAzLjAzMSAxLjYzNiA0LjY3IDEuNjM2IDIuMjA1IDAgNC4zODktLjk2OCA1Ljg3LTIuODI2IDIuNTgyLTMuMjM5IDIuMDQ5LTcuOTU4LTEuMTktMTAuNTQtNy43NjktNi4xOTItMTUuOTc0LTEzLjU5OC0yNC4zODUtMjIuMDA5LTI1LjQyNS0yNS40MjUtNDAuNjgxLTQ3Ljc3LTQ1LjM0NC02Ni40MTMtMi45MDgtMTEuNjI2LTMuMDU4LTI0LjkyNiAxNS4zNzctNDMuMzYxIDE4LjI4Mi0xOC4yODIgNDMuMTY2LTI4LjYzNSA2OC45ODEtMjguODgyIDEuODUzIDI1Ljc0OCAxMi45MjIgNDkuOTc5IDMxLjIwMSA2OC4yNTggMTguMjkxIDE4LjI5MSA0Mi41NTggMjkuMzc2IDY4LjMyOSAzMS4yMTIuMDM4LjAwMy4wNzYuMDAzLjExNC4wMDYtLjIwMiAyNS44NzYtMTAuNTU5IDUwLjgyMS0yOC44ODQgNjkuMTQ2LTE4LjQzNiAxOC40MzUtMzEuNzM1IDE4LjI4NS00My4zNjIgMTUuMzc3LTUuNjY4LTEuNDE3LTExLjc5NC0zLjg3NS0xOC4yMDktNy4zMDUtMy42NTQtMS45NTMtOC4xOTctLjU3NS0xMC4xNSAzLjA3OHMtLjU3NSA4LjE5NyAzLjA3OCAxMC4xNWM3LjUgNC4wMDkgMTQuNzggNi45MTIgMjEuNjQyIDguNjI4IDQuMjk4IDEuMDc1IDkuMDY1IDEuOTE5IDE0LjI4NSAxLjkxOSAxMi4wOTYgMCAyNi42MTctNC41MzYgNDMuMzIzLTIxLjI0MiAyMS4xNC0yMS4xNCAzMy4wNzctNDkuOTE5IDMzLjI3OS03OS43NiA4LjUxNi0uNTkgMTYuOTA0LTIuMTg2IDI0Ljk5MS00LjczOCAxLjExMyAzOC4xNjQtMTMuNDIgNzUuMDA1LTQwLjU5MiAxMDIuMTc3em0tNTcuMjM2LTEzOS4yNTVjLTI5LjY1LTI5LjY1LTM1LjIyOS03NS45MTEtMTQuNzYtMTExLjU0IDEyLjg0IDIzLjI1MSAzMC4zODMgNDcuOTY1IDU0LjM1OSA3MS45NDFzNDguNjg5IDQxLjUxOCA3MS45NCA1NC4zNThjLTM1LjYxOCAyMC40NDktODEuOTMzIDE0Ljg0Ny0xMTEuNTM5LTE0Ljc1OXptMTAzLjEwMy01Ni42NjZjLTMuMjYtMi41NTUtNy45NzQtMS45ODMtMTAuNTI5IDEuMjc3cy0xLjk4MyA3Ljk3NSAxLjI3NyAxMC41MjljMzAuNzYxIDI0LjEwNCA2MC42MDcgMzcuMDU5IDgwLjIyOCA0My42ODEgMzAuMTQ1IDEwLjE3NiA1MS4zMDkgMTAuOTUgNTEuNTUgMTAuOTU4IDYuODY5LjE4OCAxMi4zMDUgNS45NDYgMTIuMTE4IDEyLjgzNS0uMTg4IDYuODktNS45NjIgMTIuMzQzLTEyLjg3NSAxMi4xNTQtMy43NjUtLjEwMy05My4xMzMtMy40MzktMTc0LjY2Ny04NC45NzRzLTg0Ljg3MS0xNzAuOTAzLTg0Ljk3NC0xNzQuNjY4Yy0uMDkxLTMuMzM4IDEuMTIzLTYuNTExIDMuNDE5LTguOTM2IDIuMjk1LTIuNDI0IDUuMzk4LTMuODA5IDguNzM2LTMuOSA2Ljg1Ny0uMTgzIDEyLjYyNSA1LjI0NiAxMi44MzYgMTIuMTcyLjAzNC44NzYuOTQ2IDIxLjgwNyAxMC45NTUgNTEuNDU4IDkuMTc5IDI3LjE5NSAyOC4yMDQgNjcuNjk0IDY2LjcwNiAxMDYuMTk2LjcxLjcxIDEuNDIxIDEuNDE0IDIuMTMyIDIuMTExIDIuOTU5IDIuODk4IDcuNzA4IDIuODQ5IDEwLjYwNi0uMTFzMi44NS03LjcwNy0uMTA5LTEwLjYwNmMtLjY3NS0uNjYxLTEuMzQ5LTEuMzI5LTIuMDIzLTIuMDAyLTE1LjAzMi0xNS4wMzItMjYuOTE3LTMwLjM3LTM2LjMwOS00NS4wMDlsNS43MzUtNS43MzVjMTkuNDU4LTE5LjQ1OCAzMC42ODItNDQuOTUyIDMxLjYwNC03MS43ODYgMS4wMjYtMjkuOTAyIDEzLjI2OC01OC4wMDcgMzQuNDY5LTc5LjEzOCAyMi4yMzUtMjIuMTYyIDUxLjk2NS0zNC4yOCA4My41OTctMzQuMDg4IDMxLjY4Ni4xNzkgNjEuMjUgMTIuNjI4IDgzLjI0NyAzNS4wNTQgNDQuOTIzIDQ1Ljc5OSA0NC41NTcgMTE5Ljk3My0uODE2IDE2NS4zNDYtMjEuMTI1IDIxLjEyNS00OS4xOTggMzMuMzE2LTc5LjA0NiAzNC4zMjgtMjYuNzkuOTA4LTUyLjI0MSAxMi4xMDYtNzEuNjY2IDMxLjUzMWwtNS43OTcgNS43OTdjLTYuNjc0LTQuMjczLTEzLjUxMi05LjA3NC0yMC40MDQtMTQuNDc1eiIgLz4NCiAgPC9nPg0KPC9zdmc+" Sizing="Squeeze" ImageAlignment="MiddleCenter" SizeF="222.2173,101.0416" LocationFloat="417.7827,10.00001" />
+        <Item2 Ref="11" ControlType="XRLabel" Name="label6" Multiline="true" Text="label6" SizeF="204.5833,23" LocationFloat="110,161.5417" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="12" EventName="BeforePrint" PropertyName="Text" Expression="[Klient].[Miejscowosc]" />
+          </ExpressionBindings>
+        </Item2>
+        <Item3 Ref="13" ControlType="XRLabel" Name="label5" Multiline="true" Text="label5" SizeF="100,23" LocationFloat="10.00001,161.5417" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="14" EventName="BeforePrint" PropertyName="Text" Expression="[Klient].[KodPocztowy]" />
+          </ExpressionBindings>
+        </Item3>
+        <Item4 Ref="15" ControlType="XRLabel" Name="label4" Multiline="true" Text="label4" SizeF="304.5833,23" LocationFloat="10.00001,138.5417" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="16" EventName="BeforePrint" PropertyName="Text" Expression="[Klient].[Ulica]" />
+          </ExpressionBindings>
+        </Item4>
+        <Item5 Ref="17" ControlType="XRLabel" Name="label3" Multiline="true" Text="label3" SizeF="304.5833,23" LocationFloat="10.00001,111.5417" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="18" EventName="BeforePrint" PropertyName="Text" Expression="[Klient].[Nazwa]" />
+          </ExpressionBindings>
+        </Item5>
+        <Item6 Ref="19" ControlType="XRTable" Name="table2" SizeF="275,25" LocationFloat="365,130.5417" Padding="2,2,0,0,96">
+          <Rows>
+            <Item1 Ref="20" ControlType="XRTableRow" Name="tableRow2" Weight="11.5">
+              <Cells>
+                <Item1 Ref="21" ControlType="XRTableCell" Name="tableCell4" Weight="0.2857142857142857" Multiline="true" Text="Data Faktury" TextAlignment="MiddleCenter" Font="Arial, 8pt">
+                  <StylePriority Ref="22" UseFont="false" UseTextAlignment="false" />
+                </Item1>
+                <Item2 Ref="23" ControlType="XRTableCell" Name="tableCell5" Weight="0.2857142857142857" Multiline="true" Text="Data Platnosci" TextAlignment="MiddleCenter" Font="Arial, 8pt">
+                  <StylePriority Ref="24" UseFont="false" UseTextAlignment="false" />
+                </Item2>
+                <Item3 Ref="25" ControlType="XRTableCell" Name="tableCell6" Weight="0.2857142857142857" Multiline="true" Text="Data Sprzedazy" TextAlignment="MiddleCenter" Font="Arial, 8pt">
+                  <StylePriority Ref="26" UseFont="false" UseTextAlignment="false" />
+                </Item3>
+              </Cells>
+            </Item1>
+          </Rows>
+        </Item6>
+        <Item7 Ref="27" ControlType="XRTable" Name="table1" SizeF="275,25" LocationFloat="365,159.5417" Padding="2,2,0,0,96">
+          <Rows>
+            <Item1 Ref="28" ControlType="XRTableRow" Name="tableRow1" Weight="11.5">
+              <Cells>
+                <Item1 Ref="29" ControlType="XRTableCell" Name="tableCell1" Weight="0.2857142857142857" TextFormatString="{0:d}" Multiline="true" Text="tableCell1" TextAlignment="MiddleCenter" Font="Arial, 8pt">
+                  <ExpressionBindings>
+                    <Item1 Ref="30" EventName="BeforePrint" PropertyName="Text" Expression="[DataFaktury]" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="31" UseFont="false" UseTextAlignment="false" />
+                </Item1>
+                <Item2 Ref="32" ControlType="XRTableCell" Name="tableCell2" Weight="0.2857142857142857" TextFormatString="{0:d}" Multiline="true" Text="tableCell2" TextAlignment="MiddleCenter" Font="Arial, 8pt">
+                  <ExpressionBindings>
+                    <Item1 Ref="33" EventName="BeforePrint" PropertyName="Text" Expression="[DataPlatnosci]" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="34" UseFont="false" UseTextAlignment="false" />
+                </Item2>
+                <Item3 Ref="35" ControlType="XRTableCell" Name="tableCell3" Weight="0.2857142857142857" TextFormatString="{0:d}" Multiline="true" Text="tableCell3" TextAlignment="MiddleCenter" Font="Arial, 8pt">
+                  <ExpressionBindings>
+                    <Item1 Ref="36" EventName="BeforePrint" PropertyName="Text" Expression="[DataSprzedazy]" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="37" UseFont="false" UseTextAlignment="false" />
+                </Item3>
+              </Cells>
+            </Item1>
+          </Rows>
+        </Item7>
+        <Item8 Ref="38" ControlType="XRLabel" Name="label2" Multiline="true" Text="label2" SizeF="215.1042,23" LocationFloat="24.92561,56.95832" Font="Arial, 12pt, style=Bold" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="39" EventName="BeforePrint" PropertyName="Text" Expression="[NumerFaktury]" />
+          </ExpressionBindings>
+          <StylePriority Ref="40" UseFont="false" />
+        </Item8>
+        <Item9 Ref="41" ControlType="XRLabel" Name="label1" Multiline="true" Text="Faktura VAT nr:" SizeF="147.9167,23" LocationFloat="24.92561,33.95834" Font="Arial, 12pt, style=Bold" Padding="2,2,0,0,100">
+          <StylePriority Ref="42" UseFont="false" />
+        </Item9>
+      </Controls>
+    </Item4>
+    <Item5 Ref="43" ControlType="GroupFooterBand" Name="GroupFooter1" HeightF="91.66666">
+      <Controls>
+        <Item1 Ref="44" ControlType="XRLabel" Name="label9" Multiline="true" Text="Słownie:" SizeF="78.74994,23" LocationFloat="0,0" Font="Arial, 8pt" Padding="2,2,0,0,96">
+          <StylePriority Ref="45" UseFont="false" />
+        </Item1>
+        <Item2 Ref="46" ControlType="XRLabel" Name="label8" Multiline="true" Text="wystawił" TextAlignment="BottomCenter" SizeF="204.1667,23" LocationFloat="399.8959,58.66668" Padding="2,2,0,0,100" Borders="Top" BorderDashStyle="Dot">
+          <StylePriority Ref="47" UseTextAlignment="false" />
+        </Item2>
+        <Item3 Ref="48" ControlType="XRLabel" Name="label7" Multiline="true" Text="label7" SizeF="571.250061,23" LocationFloat="78.74994,0" Font="Arial, 8pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="49" EventName="BeforePrint" PropertyName="Text" Expression="KwotaSlownie([WartoscBrutto])" />
+          </ExpressionBindings>
+          <StylePriority Ref="50" UseFont="false" />
+        </Item3>
+      </Controls>
+    </Item5>
+    <Item6 Ref="51" ControlType="DetailReportBand" Name="DetailReport" Level="0" DataMember="PozycjeFaktury" DataSource="#Ref-0">
+      <Bands>
+        <Item1 Ref="52" ControlType="DetailBand" Name="Detail1" HeightF="25">
+          <Controls>
+            <Item1 Ref="53" ControlType="XRTable" Name="table3" TextAlignment="MiddleCenter" SizeF="650,25" LocationFloat="0,0" Font="Arial, 8pt" Padding="2,2,0,0,96" BorderColor="255,216,216,216" Borders="All">
+              <Rows>
+                <Item1 Ref="54" ControlType="XRTableRow" Name="tableRow3" Weight="11.5">
+                  <Cells>
+                    <Item1 Ref="55" ControlType="XRTableCell" Name="tableCell7" Weight="5.2644240628756016" Multiline="true" Text="tableCell7" TextAlignment="MiddleLeft">
+                      <ExpressionBindings>
+                        <Item1 Ref="56" EventName="BeforePrint" PropertyName="Text" Expression="[PozycjeFaktury].[Produkt].[Nazwa]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="57" UseTextAlignment="false" />
+                    </Item1>
+                    <Item2 Ref="58" ControlType="XRTableCell" Name="tableCell8" Weight="1.1698706993689902" TextFormatString="{0:n2}" Multiline="true" Text="tableCell8" TextAlignment="MiddleRight">
+                      <ExpressionBindings>
+                        <Item1 Ref="59" EventName="BeforePrint" PropertyName="Text" Expression="[PozycjeFaktury].[Cena]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="60" UseTextAlignment="false" />
+                    </Item2>
+                    <Item3 Ref="61" ControlType="XRTableCell" Name="tableCell9" Weight="1.1810895244891828" TextFormatString="{0:n2}" Multiline="true" Text="tableCell9" TextAlignment="MiddleRight">
+                      <ExpressionBindings>
+                        <Item1 Ref="62" EventName="BeforePrint" PropertyName="Text" Expression="[PozycjeFaktury].[Ilosc]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="63" UseTextAlignment="false" />
+                    </Item3>
+                    <Item4 Ref="64" ControlType="XRTableCell" Name="tableCell10" Weight="1.9775636643629808" TextFormatString="{0:n2}" Multiline="true" Text="tableCell10" TextAlignment="MiddleRight">
+                      <ExpressionBindings>
+                        <Item1 Ref="65" EventName="BeforePrint" PropertyName="Text" Expression="[PozycjeFaktury].[WartoscNetto]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="66" UseTextAlignment="false" />
+                    </Item4>
+                    <Item5 Ref="67" ControlType="XRTableCell" Name="tableCell31" Weight="1.0576910752516526" Multiline="true" Text="tableCell31" TextAlignment="MiddleCenter">
+                      <ExpressionBindings>
+                        <Item1 Ref="68" EventName="BeforePrint" PropertyName="Text" Expression="[Produkt].[StawkaVAT].[Symbol]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="69" UseTextAlignment="false" />
+                    </Item5>
+                    <Item6 Ref="70" ControlType="XRTableCell" Name="tableCell11" Weight="1.3493609736515926" TextFormatString="{0:n2}" Multiline="true" Text="tableCell11" TextAlignment="MiddleRight">
+                      <ExpressionBindings>
+                        <Item1 Ref="71" EventName="BeforePrint" PropertyName="Text" Expression="[PozycjeFaktury].[WartoscVAT]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="72" UseTextAlignment="false" />
+                    </Item6>
+                    <Item7 Ref="73" ControlType="XRTableCell" Name="tableCell12" Weight="2" TextFormatString="{0:n2}" Multiline="true" Text="tableCell12" TextAlignment="MiddleRight">
+                      <ExpressionBindings>
+                        <Item1 Ref="74" EventName="BeforePrint" PropertyName="Text" Expression="[PozycjeFaktury].[WartoscBrutto]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="75" UseTextAlignment="false" />
+                    </Item7>
+                  </Cells>
+                </Item1>
+              </Rows>
+              <StylePriority Ref="76" UseFont="false" UseTextAlignment="false" />
+            </Item1>
+          </Controls>
+        </Item1>
+        <Item2 Ref="77" ControlType="ReportHeaderBand" Name="ReportHeader" HeightF="25">
+          <Controls>
+            <Item1 Ref="78" ControlType="XRTable" Name="table4" SizeF="650,25" LocationFloat="0,0" Font="Arial, 8pt, style=Bold" Padding="2,2,0,0,96" BorderColor="255,0,176,80" Borders="All">
+              <Rows>
+                <Item1 Ref="79" ControlType="XRTableRow" Name="tableRow4" Weight="11.5">
+                  <Cells>
+                    <Item1 Ref="80" ControlType="XRTableCell" Name="tableCell13" Weight="5.2644230769230766" Multiline="true" Text="Nazwa" TextAlignment="MiddleCenter">
+                      <StylePriority Ref="81" UseTextAlignment="false" />
+                    </Item1>
+                    <Item2 Ref="82" ControlType="XRTableCell" Name="tableCell14" Weight="1.1698723426231972" Multiline="true" Text="Cena" TextAlignment="MiddleCenter">
+                      <StylePriority Ref="83" UseTextAlignment="false" />
+                    </Item2>
+                    <Item3 Ref="84" ControlType="XRTableCell" Name="tableCell15" Weight="1.1810901817908652" Multiline="true" Text="Ilosc" TextAlignment="MiddleCenter">
+                      <StylePriority Ref="85" UseTextAlignment="false" />
+                    </Item3>
+                    <Item4 Ref="86" ControlType="XRTableCell" Name="tableCell16" Weight="1.9775636643629808" Multiline="true" Text="Wartosc Netto" TextAlignment="MiddleCenter">
+                      <StylePriority Ref="87" UseTextAlignment="false" />
+                    </Item4>
+                    <Item5 Ref="88" ControlType="XRTableCell" Name="tableCell32" Weight="1.0576910752516526" Multiline="true" Text="Stawka VAT" TextAlignment="MiddleCenter">
+                      <StylePriority Ref="89" UseTextAlignment="false" />
+                    </Item5>
+                    <Item6 Ref="90" ControlType="XRTableCell" Name="tableCell17" Weight="1.3493596590482273" Multiline="true" Text="Wartosc VAT" TextAlignment="MiddleCenter">
+                      <StylePriority Ref="91" UseTextAlignment="false" />
+                    </Item6>
+                    <Item7 Ref="92" ControlType="XRTableCell" Name="tableCell18" Weight="2" Multiline="true" Text="Wartosc Brutto" TextAlignment="MiddleCenter">
+                      <StylePriority Ref="93" UseTextAlignment="false" />
+                    </Item7>
+                  </Cells>
+                </Item1>
+              </Rows>
+              <StylePriority Ref="94" UseFont="false" />
+            </Item1>
+          </Controls>
+        </Item2>
+        <Item3 Ref="95" ControlType="ReportFooterBand" Name="ReportFooter" HeightF="7.291667" />
+      </Bands>
+    </Item6>
+    <Item7 Ref="96" ControlType="DetailReportBand" Name="DetailReport1" Level="1" DataMember="ListaVat" DataSource="#Ref-0">
+      <Bands>
+        <Item1 Ref="97" ControlType="DetailBand" Name="Detail2" HeightF="25">
+          <Controls>
+            <Item1 Ref="98" ControlType="XRTable" Name="table5" SizeF="296.4286,25" LocationFloat="353.5714,0" Font="Arial, 8pt" Padding="2,2,0,0,96" BorderColor="255,216,216,216" Borders="All">
+              <Rows>
+                <Item1 Ref="99" ControlType="XRTableRow" Name="tableRow5" Weight="11.5">
+                  <Cells>
+                    <Item1 Ref="100" ControlType="XRTableCell" Name="tableCell19" Weight="0.45201457331730771" TextFormatString="{0:n2}" Multiline="true" Text="tableCell19" TextAlignment="MiddleRight">
+                      <ExpressionBindings>
+                        <Item1 Ref="101" EventName="BeforePrint" PropertyName="Text" Expression="[ListaVat].[Netto]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="102" UseTextAlignment="false" />
+                    </Item1>
+                    <Item2 Ref="103" ControlType="XRTableCell" Name="tableCell20" Weight="0.24175793045983396" Multiline="true" Text="tableCell20" TextAlignment="MiddleLeft">
+                      <ExpressionBindings>
+                        <Item1 Ref="104" EventName="BeforePrint" PropertyName="Text" Expression="[ListaVat].[StawkaVat].[Symbol]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="105" UseTextAlignment="false" />
+                    </Item2>
+                    <Item3 Ref="106" ControlType="XRTableCell" Name="tableCell21" Weight="0.3084250623286276" TextFormatString="{0:n2}" Multiline="true" Text="tableCell21" TextAlignment="MiddleRight">
+                      <ExpressionBindings>
+                        <Item1 Ref="107" EventName="BeforePrint" PropertyName="Text" Expression="[ListaVat].[Vat]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="108" UseTextAlignment="false" />
+                    </Item3>
+                    <Item4 Ref="109" ControlType="XRTableCell" Name="tableCell22" Weight="0.45714302884615388" TextFormatString="{0:n2}" Multiline="true" Text="tableCell22" TextAlignment="MiddleRight">
+                      <ExpressionBindings>
+                        <Item1 Ref="110" EventName="BeforePrint" PropertyName="Text" Expression="[ListaVat].[Brutto]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="111" UseTextAlignment="false" />
+                    </Item4>
+                  </Cells>
+                </Item1>
+              </Rows>
+              <StylePriority Ref="112" UseFont="false" />
+            </Item1>
+          </Controls>
+        </Item1>
+        <Item2 Ref="113" ControlType="ReportHeaderBand" Name="ReportHeader1" HeightF="25">
+          <Controls>
+            <Item1 Ref="114" ControlType="XRTable" Name="table7" TextAlignment="MiddleCenter" SizeF="296.4286,25" LocationFloat="353.5714,0" Font="Arial, 8pt" Padding="2,2,0,0,96" BorderColor="255,216,216,216" Borders="All">
+              <Rows>
+                <Item1 Ref="115" ControlType="XRTableRow" Name="tableRow7" Weight="11.5">
+                  <Cells>
+                    <Item1 Ref="116" ControlType="XRTableCell" Name="tableCell27" Weight="0.4520145733173076" Multiline="true" Text="Netto" TextAlignment="MiddleCenter">
+                      <StylePriority Ref="117" UseTextAlignment="false" />
+                    </Item1>
+                    <Item2 Ref="118" ControlType="XRTableCell" Name="tableCell28" Weight="0.24175793045983401" Multiline="true" Text="Stawka VAT" TextAlignment="MiddleCenter">
+                      <StylePriority Ref="119" UseTextAlignment="false" />
+                    </Item2>
+                    <Item3 Ref="120" ControlType="XRTableCell" Name="tableCell29" Weight="0.30842506232862765" Multiline="true" Text="Vat" TextAlignment="MiddleCenter">
+                      <StylePriority Ref="121" UseTextAlignment="false" />
+                    </Item3>
+                    <Item4 Ref="122" ControlType="XRTableCell" Name="tableCell30" Weight="0.45714302884615388" Multiline="true" Text="Brutto" TextAlignment="MiddleCenter">
+                      <StylePriority Ref="123" UseTextAlignment="false" />
+                    </Item4>
+                  </Cells>
+                </Item1>
+              </Rows>
+              <StylePriority Ref="124" UseFont="false" UseTextAlignment="false" />
+            </Item1>
+          </Controls>
+        </Item2>
+        <Item3 Ref="125" ControlType="ReportFooterBand" Name="ReportFooter1" HeightF="25.8332577">
+          <Controls>
+            <Item1 Ref="126" ControlType="XRTable" Name="table6" SizeF="296.4286,25" LocationFloat="353.5714,0" Font="Arial, 8pt" Padding="2,2,0,0,96" BorderColor="255,216,216,216" Borders="All">
+              <Rows>
+                <Item1 Ref="127" ControlType="XRTableRow" Name="tableRow6" Weight="11.5">
+                  <Cells>
+                    <Item1 Ref="128" ControlType="XRTableCell" Name="tableCell23" Weight="0.45201457331730771" TextFormatString="{0:n2}" Multiline="true" Text="tableCell23" TextAlignment="MiddleRight" Font="Arial, 8pt, style=Bold">
+                      <Summary Ref="129" Running="Report" />
+                      <ExpressionBindings>
+                        <Item1 Ref="130" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([ListaVat].[Netto])" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="131" UseFont="false" UseTextAlignment="false" />
+                    </Item1>
+                    <Item2 Ref="132" ControlType="XRTableCell" Name="tableCell24" Weight="0.24175793045983396" Multiline="true" Text="RAZEM" TextAlignment="MiddleLeft" Font="Arial, 8pt, style=Bold">
+                      <StylePriority Ref="133" UseFont="false" UseTextAlignment="false" />
+                    </Item2>
+                    <Item3 Ref="134" ControlType="XRTableCell" Name="tableCell25" Weight="0.3084250623286276" TextFormatString="{0:n2}" Multiline="true" Text="tableCell25" TextAlignment="MiddleRight" Font="Arial, 8pt, style=Bold">
+                      <Summary Ref="135" Running="Report" />
+                      <ExpressionBindings>
+                        <Item1 Ref="136" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([ListaVat].[Vat])" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="137" UseFont="false" UseTextAlignment="false" />
+                    </Item3>
+                    <Item4 Ref="138" ControlType="XRTableCell" Name="tableCell26" Weight="0.45714302884615388" TextFormatString="{0:n2}" Multiline="true" Text="tableCell26" TextAlignment="MiddleRight" Font="Arial, 8pt, style=Bold">
+                      <Summary Ref="139" Running="Report" />
+                      <ExpressionBindings>
+                        <Item1 Ref="140" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([ListaVat].[Brutto])" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="141" UseFont="false" UseTextAlignment="false" />
+                    </Item4>
+                  </Cells>
+                </Item1>
+              </Rows>
+              <StylePriority Ref="142" UseFont="false" />
+            </Item1>
+          </Controls>
+        </Item3>
+      </Bands>
+    </Item7>
+    <Item8 Ref="143" ControlType="DetailReportBand" Name="DetailReport2" Level="2" DataMember="PozycjeFaktury" DataSource="#Ref-0">
+      <Bands>
+        <Item1 Ref="144" ControlType="DetailBand" Name="Detail3" HeightF="0" />
+        <Item2 Ref="145" ControlType="GroupHeaderBand" Name="GroupHeader2" HeightF="0">
+          <GroupFields>
+            <Item1 Ref="146" FieldName="Produkt.StawkaVAT.Symbol" />
+          </GroupFields>
+        </Item2>
+        <Item3 Ref="147" ControlType="GroupFooterBand" Name="GroupFooter2" HeightF="25.0000019">
+          <Controls>
+            <Item1 Ref="148" ControlType="XRTable" Name="table8" TextAlignment="MiddleCenter" SizeF="296.428558,25.0000019" LocationFloat="353.571442,0" Font="Arial, 8pt" Padding="2,2,0,0,96" BorderColor="255,216,216,216" Borders="All">
+              <Rows>
+                <Item1 Ref="149" ControlType="XRTableRow" Name="tableRow8" Weight="11.5">
+                  <Cells>
+                    <Item1 Ref="150" ControlType="XRTableCell" Name="tableCell33" Weight="0.4955823060809682" TextFormatString="{0:n2}" Multiline="true" Text="tableCell33" TextAlignment="MiddleRight">
+                      <Summary Ref="151" Running="Group" />
+                      <ExpressionBindings>
+                        <Item1 Ref="152" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([WartoscNetto])" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="153" UseTextAlignment="false" />
+                    </Item1>
+                    <Item2 Ref="154" ControlType="XRTableCell" Name="tableCell34" Weight="0.26505961730484712" Multiline="true" Text="tableCell34" TextAlignment="MiddleCenter">
+                      <ExpressionBindings>
+                        <Item1 Ref="155" EventName="BeforePrint" PropertyName="Text" Expression="[Produkt].[StawkaVAT].[Symbol]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="156" UseTextAlignment="false" />
+                    </Item2>
+                    <Item3 Ref="157" ControlType="XRTableCell" Name="tableCell35" Weight="0.33815341759313017" TextFormatString="{0:n2}" Multiline="true" Text="tableCell35" TextAlignment="MiddleRight">
+                      <Summary Ref="158" Running="Group" />
+                      <ExpressionBindings>
+                        <Item1 Ref="159" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([WartoscVAT])" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="160" UseTextAlignment="false" />
+                    </Item3>
+                    <Item4 Ref="161" ControlType="XRTableCell" Name="tableCell36" Weight="0.5012046590210546" TextFormatString="{0:n2}" Multiline="true" Text="tableCell36" TextAlignment="MiddleRight">
+                      <Summary Ref="162" Running="Group" />
+                      <ExpressionBindings>
+                        <Item1 Ref="163" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([WartoscBrutto])" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="164" UseTextAlignment="false" />
+                    </Item4>
+                  </Cells>
+                </Item1>
+              </Rows>
+              <StylePriority Ref="165" UseFont="false" UseTextAlignment="false" />
+            </Item1>
+          </Controls>
+        </Item3>
+        <Item4 Ref="166" ControlType="ReportFooterBand" Name="ReportFooter2" HeightF="29.47909">
+          <Controls>
+            <Item1 Ref="167" ControlType="XRTable" Name="table10" SizeF="296.428558,25.0000019" LocationFloat="353.571442,0" Font="Arial, 8pt" Padding="2,2,0,0,96" BorderColor="255,216,216,216" Borders="All">
+              <Rows>
+                <Item1 Ref="168" ControlType="XRTableRow" Name="tableRow10" Weight="11.5">
+                  <Cells>
+                    <Item1 Ref="169" ControlType="XRTableCell" Name="tableCell41" Weight="0.4955823060809682" TextFormatString="{0:n2}" Multiline="true" Text="tableCell33" TextAlignment="MiddleRight" Font="Arial, 8pt, style=Bold">
+                      <Summary Ref="170" Running="Report" />
+                      <ExpressionBindings>
+                        <Item1 Ref="171" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([WartoscNetto])" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="172" UseFont="false" UseTextAlignment="false" />
+                    </Item1>
+                    <Item2 Ref="173" ControlType="XRTableCell" Name="tableCell42" Weight="0.26505961730484712" Multiline="true" Text="RAZEM" TextAlignment="MiddleCenter" Font="Arial, 8pt, style=Bold">
+                      <StylePriority Ref="174" UseFont="false" UseTextAlignment="false" />
+                    </Item2>
+                    <Item3 Ref="175" ControlType="XRTableCell" Name="tableCell43" Weight="0.33815341759313017" TextFormatString="{0:n2}" Multiline="true" Text="tableCell35" TextAlignment="MiddleRight" Font="Arial, 8pt, style=Bold">
+                      <Summary Ref="176" Running="Report" />
+                      <ExpressionBindings>
+                        <Item1 Ref="177" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([WartoscVAT])" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="178" UseFont="false" UseTextAlignment="false" />
+                    </Item3>
+                    <Item4 Ref="179" ControlType="XRTableCell" Name="tableCell44" Weight="0.5012046590210546" TextFormatString="{0:n2}" Multiline="true" Text="tableCell36" TextAlignment="MiddleRight" Font="Arial, 8pt, style=Bold">
+                      <Summary Ref="180" Running="Report" />
+                      <ExpressionBindings>
+                        <Item1 Ref="181" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([WartoscBrutto])" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="182" UseFont="false" UseTextAlignment="false" />
+                    </Item4>
+                  </Cells>
+                </Item1>
+              </Rows>
+              <StylePriority Ref="183" UseFont="false" />
+            </Item1>
+          </Controls>
+        </Item4>
+        <Item5 Ref="184" ControlType="ReportHeaderBand" Name="ReportHeader2" HeightF="27.7083721">
+          <Controls>
+            <Item1 Ref="185" ControlType="XRTable" Name="table9" TextAlignment="MiddleCenter" SizeF="296.428558,25" LocationFloat="353.571442,0" Font="Arial, 8pt, style=Bold" Padding="2,2,0,0,96" BorderColor="255,216,216,216" Borders="All">
+              <Rows>
+                <Item1 Ref="186" ControlType="XRTableRow" Name="tableRow9" Weight="11.5">
+                  <Cells>
+                    <Item1 Ref="187" ControlType="XRTableCell" Name="tableCell37" Weight="0.4955823060809682" Multiline="true" Text="Netto" TextAlignment="MiddleCenter">
+                      <StylePriority Ref="188" UseTextAlignment="false" />
+                    </Item1>
+                    <Item2 Ref="189" ControlType="XRTableCell" Name="tableCell38" Weight="0.26505994674763272" Multiline="true" Text="St.VAT" TextAlignment="MiddleCenter">
+                      <StylePriority Ref="190" UseTextAlignment="false" />
+                    </Item2>
+                    <Item3 Ref="191" ControlType="XRTableCell" Name="tableCell39" Weight="0.33815308815034456" Multiline="true" Text="VAT" TextAlignment="MiddleCenter">
+                      <StylePriority Ref="192" UseTextAlignment="false" />
+                    </Item3>
+                    <Item4 Ref="193" ControlType="XRTableCell" Name="tableCell40" Weight="0.5012046590210546" Multiline="true" Text="Brutto" TextAlignment="MiddleCenter">
+                      <StylePriority Ref="194" UseTextAlignment="false" />
+                    </Item4>
+                  </Cells>
+                </Item1>
+              </Rows>
+              <StylePriority Ref="195" UseFont="false" UseTextAlignment="false" />
+            </Item1>
+          </Controls>
+        </Item5>
+      </Bands>
+    </Item8>
+  </Bands>
+  <ComponentStorage>
+    <Item1 Ref="0" Name="collectionDataSource1" ObjectTypeName="Demo1.Module.BusinessObjects.Faktura" ObjectType="DevExpress.Persistent.Base.ReportsV2.CollectionDataSource,DevExpress.Persistent.Base.v20.2" TopReturnedRecords="0">
+      <Sorting Ref="196" />
+    </Item1>
+  </ComponentStorage>
+</XtraReportsLayoutSerializer>

@@ -44,12 +44,16 @@
     <Reference Include="DevExpress.Data.v20.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="DevExpress.DataAccess.v20.2, Version=20.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v20.2.UI, Version=20.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.ExpressApp.ConditionalAppearance.v20.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="DevExpress.ExpressApp.Objects.v20.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="DevExpress.ExpressApp.ReportsV2.v20.2, Version=20.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.ReportsV2.Win.v20.2, Version=20.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.ExpressApp.Security.v20.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -83,6 +87,7 @@
     <Reference Include="DevExpress.Utils.v20.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="DevExpress.Utils.v20.2.UI, Version=20.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Xpo.v20.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -104,6 +109,9 @@
     <Reference Include="DevExpress.XtraPrinting.v20.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="DevExpress.XtraReports.v20.2, Version=20.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v20.2.Extensions, Version=20.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v20.2, Version=20.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="mscorlib">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -113,6 +121,7 @@
     <Reference Include="System.Core">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -159,6 +168,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="WinModule.resx">
+      <DependentUpon>WinModule.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Images\ExpressAppLogo.png" />

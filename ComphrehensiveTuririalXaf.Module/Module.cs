@@ -17,6 +17,7 @@ using DevExpress.ExpressApp.Model.DomainLogics;
 using DevExpress.ExpressApp.Model.NodeGenerators;
 using DevExpress.ExpressApp.Xpo;
 using ComprehensiveTutorialXaf.Module.BusinessObjects;
+using ComprehensiveTutorialXaf.Module.CustomFunctions;
 
 namespace ComprehensiveTutorialXaf.Module {
     // For more typical usage scenarios, be sure to check out https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.ModuleBase.
@@ -31,7 +32,10 @@ namespace ComprehensiveTutorialXaf.Module {
         public override void Setup(XafApplication application) {
             base.Setup(application);
             // Manage various aspects of the application UI and behavior at the module level.
-            XafTypesInfo.Instance.RegisterEntity(typeof(FakturaDoRozliczeniaDC));
+            // XafTypesInfo.Instance.RegisterEntity(typeof(FakturaDoRozliczeniaDC));
+            DevExpress.Data.Filtering.CriteriaOperator.RegisterCustomFunction(new CurrentUserName());
+            DevExpress.Data.Filtering.CriteriaOperator.RegisterCustomFunction(new KwotaSlownie());
+
         }
         public override void CustomizeTypesInfo(ITypesInfo typesInfo) {
             base.CustomizeTypesInfo(typesInfo);

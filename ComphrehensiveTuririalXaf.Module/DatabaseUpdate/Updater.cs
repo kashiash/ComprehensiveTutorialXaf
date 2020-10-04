@@ -48,7 +48,7 @@ namespace ComprehensiveTutorialXaf.Module.DatabaseUpdate
             }
 
 
-            if (true)
+            if (false)
             {
                 PrzygotujDaneTestowe();
 
@@ -59,7 +59,7 @@ namespace ComprehensiveTutorialXaf.Module.DatabaseUpdate
             }
             else
             {
-                WygenerujFaktury(100, null, null);
+               // WygenerujFaktury(100, null, null);
             }
 
             

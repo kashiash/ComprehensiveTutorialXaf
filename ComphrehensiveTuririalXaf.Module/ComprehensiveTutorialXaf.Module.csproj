@@ -91,6 +91,9 @@
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="DevExpress.XtraReports.v20.2, Version=20.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="LiczbyNaSlowaNET, Version=1.0.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiczbyNaSlowaNET.dll.1.0.5\lib\LiczbyNaSlowaNET.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="mscorlib">
       <SpecificVersion>False</SpecificVersion>
@@ -157,6 +160,8 @@
     <Compile Include="Controllers\WplatyController.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CustomFunctions\KwotaSlownie.cs" />
+    <Compile Include="CustomFunctions\CurrentUserName.cs" />
     <Compile Include="DatabaseUpdate\Updater.cs" />
     <Compile Include="InvoiceFactory\InvoiceFactory.cs" />
     <Compile Include="Module.cs">
@@ -178,7 +183,8 @@
   <ItemGroup>
     <None Include="Controllers\ReadMe.txt" />
     <None Include="DatabaseUpdate\ReadMe.txt" />
-    <None Include="Images\ReadMe.txt" />
+    <None Include="Faktura korygująca.repx" />
+    <None Include="Faktura2RoznePodsumowania.repx" />
     <None Include="packages.config" />
     <None Include="ReadMe.txt" />
   </ItemGroup>
@@ -201,6 +207,9 @@
       <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\abacus.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

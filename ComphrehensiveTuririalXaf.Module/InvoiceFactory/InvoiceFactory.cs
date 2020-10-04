@@ -155,6 +155,9 @@ namespace ComprehensiveTutorialXaf.Module.Factory
         public decimal? WartoscNetto { get; set; }
         public decimal? WartoscVAT { get; set; }
         public decimal? WartoscBrutto { get; set; }
+
+        public PozycjaFaktury PozycjaKorygowana { get; set; }
+        public PozycjaFakturyKorygujacej PozycjaKorygujaca { get; set; }
     }
 
 }

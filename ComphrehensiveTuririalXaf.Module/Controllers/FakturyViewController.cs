@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ComprehensiveTutorialXaf.Module.Controllers
 {
-   public class FakturyViewController : ViewController
+   public class FakturyViewController : ObjectViewController<ListView,Faktura>
     {
         SimpleAction wystawKorekteAction;
         public FakturyViewController()
@@ -45,7 +45,7 @@ namespace ComprehensiveTutorialXaf.Module.Controllers
         private void DetailView_Closed(object sender, EventArgs e)
         {
             //będzie wywołane po zamknięciu zwykłego okna
-            View.ObjectSpace.Refresh();
+          //  View.ObjectSpace.Refresh();
         }
     }
 }

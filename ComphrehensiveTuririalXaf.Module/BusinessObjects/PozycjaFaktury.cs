@@ -95,6 +95,33 @@ namespace Demo1.Module.BusinessObjects
                 Faktura.PrzeliczSumy(true);
             }
         }
+
+
+
+        [Action(Caption = "PrzeliczPozycjeZBrutto", ImageName="abacus.svg")]
+        public void PrzeliczPozycjeZBrutto()
+        {
+
+         
+            if (Produkt != null && Produkt.StawkaVAT != null)
+            {
+                  WartoscNetto= WartoscBrutto / ((100 + Produkt.StawkaVAT.Stawka) / 100);
+            }
+            else
+            {
+                WartoscNetto = WartoscBrutto ;
+
+            }
+            WartoscVAT = WartoscBrutto - WartoscNetto;
+
+            //Cena = WartoscNetto/Ilosc;
+
+            if (Faktura != null)
+            {
+                Faktura.PrzeliczSumy(true);
+            }
+        }
+
         [ImmediatePostData]
         public decimal Cena
         {
