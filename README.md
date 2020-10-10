@@ -22,8 +22,7 @@ tutorial na bazie https://docs.devexpress.com/eXpressAppFramework/112560/getting
 [BusinnesModel](BO.md) - Materiały uzupełniające
 
 
-### Funkcjonalności dodatkowe:
-[Faktura korygujaca](Faktura_korygująca.md) - wymagania i opis realizacji
+
 
 # Ciekawe linki:
 Tu praktycznie jest wszystko ;):
