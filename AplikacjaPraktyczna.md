@@ -1,5 +1,7 @@
 # Aplikacja praktyczna
 
+UWAGA wymaga devexpres 20.2.2
+
 Nie będe sie skupiał nad tym jak zaczac projekt, bo to jest w oryginalnym tutorialu.
 
 Tutaj definiujemy dodatkowe klasy BO, wypełniamy je danymi, robimy wydruki itd
