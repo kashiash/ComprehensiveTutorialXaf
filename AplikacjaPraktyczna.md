@@ -1,4 +1,4 @@
-# Aplikacja bardziej praktyczna
+# Aplikacja praktyczna
 
 Nie będe sie skupiał nad tym jak zaczac projekt, bo to jest w oryginalnym tutorialu.
 
@@ -19,7 +19,9 @@ Dane klientów, kontaktór, spotkań
 
 [Definicje klas](FakturyWplatyTowary.md)
 
-[Rozliczanie wpłat](Rozliczanie_wplat.md)
+### Funkcjonalności dodatkowe:
+[Faktura korygujaca](Faktura_korygująca.md) - (do zaimplementowania)
+[Rozliczanie wpłat](Rozliczanie_wplat.md) (zaimplemetowane)
 
 ### Magazyny
 TBD
