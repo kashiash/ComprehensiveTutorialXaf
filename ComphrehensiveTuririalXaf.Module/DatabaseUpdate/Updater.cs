@@ -48,6 +48,13 @@ namespace ComprehensiveTutorialXaf.Module.DatabaseUpdate
             }
 
 
+            var taskFaker = new Faker<DemoTask>("pl")
+.CustomInstantiator(f => ObjectSpace.CreateObject<DemoTask>())
+.RuleFor(o => o.Description, f => f.Lorem.Sentence())
+.RuleFor(o => o.StartDate, f => f.Date.Past(2));
+
+            var tasks = taskFaker.Generate(100);
+
             if (false)
             {
                 PrzygotujDaneTestowe();
@@ -59,10 +66,10 @@ namespace ComprehensiveTutorialXaf.Module.DatabaseUpdate
             }
             else
             {
-               // WygenerujFaktury(100, null, null);
+                // WygenerujFaktury(100, null, null);
             }
 
-            
+
 
             ObjectSpace.CommitChanges();
         }
@@ -102,7 +109,7 @@ namespace ComprehensiveTutorialXaf.Module.DatabaseUpdate
             var stawki = ObjectSpace.GetObjectsQuery<StawkaVAT>().ToList();
             if (stawki.Count == 0)
             {
-             
+
                 stawki.Add(NowaStawka("23%", 23M));
                 stawki.Add(NowaStawka("0%", 0M));
                 stawki.Add(NowaStawka("7%", 7M));
@@ -110,7 +117,7 @@ namespace ComprehensiveTutorialXaf.Module.DatabaseUpdate
             }
 
 
-         
+
 
             var cusFaker = new Faker<Klient>("pl")
             .CustomInstantiator(f => ObjectSpace.CreateObject<Klient>())
@@ -158,9 +165,15 @@ namespace ComprehensiveTutorialXaf.Module.DatabaseUpdate
 
         private StawkaVAT NowaStawka(string symbol, decimal wartosc)
         {
-            var stawka = ObjectSpace.CreateObject<StawkaVAT>();
-            stawka.Symbol = symbol;
-            stawka.Stawka = wartosc;
+            StawkaVAT stawka = ObjectSpace.FindObject<StawkaVAT>(CriteriaOperator.Parse("Symbol = ?", symbol));
+            if (stawka == null)
+            {
+                stawka = ObjectSpace.CreateObject<StawkaVAT>();
+                stawka.Symbol = symbol;
+                stawka.Stawka = wartosc;
+             
+                
+            }
             return stawka;
         }
 

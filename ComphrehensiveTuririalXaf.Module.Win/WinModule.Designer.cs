@@ -26,10 +26,16 @@
             // 
             // ComprehensiveTutorialXafWindowsFormsModule
             // 
+            this.AdditionalExportedTypes.Add(typeof(DevExpress.Persistent.BaseImpl.RichTextMailMergeData));
+            this.AdditionalExportedTypes.Add(typeof(DevExpress.Persistent.BaseImpl.BaseObject));
+            this.AdditionalExportedTypes.Add(typeof(DevExpress.Xpo.XPCustomObject));
+            this.AdditionalExportedTypes.Add(typeof(DevExpress.Xpo.XPBaseObject));
+            this.AdditionalExportedTypes.Add(typeof(DevExpress.Xpo.PersistentBase));
             this.RequiredModuleTypes.Add(typeof(ComprehensiveTutorialXaf.Module.ComprehensiveTutorialXafModule));
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Win.SystemModule.SystemWindowsFormsModule));
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Validation.Win.ValidationWindowsFormsModule));
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.ReportsV2.Win.ReportsWindowsFormsModuleV2));
+            this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Office.Win.OfficeWindowsFormsModule));
 
         }
 

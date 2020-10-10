@@ -42,6 +42,29 @@ namespace Demo1.Module.BusinessObjects
         }
 
 
+        private void PrzeliczPozycje()
+        {
+            if (this is PozycjaFakturyKorygujacej)
+                return; // nie wyliczamy w korektach
+
+            WartoscNetto = Ilosc * Cena;
+            if (Produkt != null && Produkt.StawkaVAT != null)
+            {
+                WartoscBrutto = WartoscNetto * (100 + Produkt.StawkaVAT.Stawka) / 100;
+            }
+            else
+            {
+                WartoscBrutto = WartoscNetto;
+
+            }
+            WartoscVAT = WartoscBrutto - WartoscNetto;
+
+            if (Faktura != null)
+            {
+                Faktura.PrzeliczSumy(true);
+            }
+        }
+
         [Association]
         public Faktura Faktura
         {
@@ -73,28 +96,7 @@ namespace Demo1.Module.BusinessObjects
             }
         }
 
-        private void PrzeliczPozycje()
-        {
-            if (this is PozycjaFakturyKorygujacej)
-                return; // nie wyliczamy w korektach
 
-            WartoscNetto = Ilosc * Cena;
-            if (Produkt != null && Produkt.StawkaVAT != null)
-            {
-                WartoscBrutto = WartoscNetto * (100 + Produkt.StawkaVAT.Stawka) / 100;
-            }
-            else
-            {
-                WartoscBrutto = WartoscNetto;
-
-            }
-            WartoscVAT = WartoscBrutto - WartoscNetto;
-
-            if (Faktura != null)
-            {
-                Faktura.PrzeliczSumy(true);
-            }
-        }
 
 
 

@@ -65,6 +65,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="DevExpress.ExpressApp.Office.v20.2, Version=20.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Office.Win.v20.2, Version=20.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.ExpressApp.ReportsV2.v20.2, Version=20.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.ExpressApp.ReportsV2.Win.v20.2, Version=20.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.ExpressApp.Security.v20.2">
@@ -159,6 +160,7 @@
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
+    <Reference Include="DevExpress.XtraSpreadsheet.v20.2, Version=20.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraTreeList.v20.2">
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>

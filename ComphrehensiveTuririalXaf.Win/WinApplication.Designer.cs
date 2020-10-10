@@ -38,6 +38,7 @@
             this.dashboardsModule1 = new DevExpress.ExpressApp.Dashboards.DashboardsModule();
             this.officeModule1 = new DevExpress.ExpressApp.Office.OfficeModule();
             this.cloneObjectModule1 = new DevExpress.ExpressApp.CloneObject.CloneObjectModule();
+            this.reportsWindowsFormsModuleV21 = new DevExpress.ExpressApp.ReportsV2.Win.ReportsWindowsFormsModuleV2();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // securityStrategyComplex1
@@ -92,6 +93,7 @@
             this.Modules.Add(this.cloneObjectModule1);
             this.Modules.Add(this.module3);
             this.Modules.Add(this.validationWindowsFormsModule);
+            this.Modules.Add(this.reportsWindowsFormsModuleV21);
             this.Modules.Add(this.module4);
             this.Security = this.securityStrategyComplex1;
             this.UseOldTemplates = false;
@@ -118,5 +120,6 @@
         private DevExpress.ExpressApp.Dashboards.DashboardsModule dashboardsModule1;
         private DevExpress.ExpressApp.Office.OfficeModule officeModule1;
         private DevExpress.ExpressApp.CloneObject.CloneObjectModule cloneObjectModule1;
+        private DevExpress.ExpressApp.ReportsV2.Win.ReportsWindowsFormsModuleV2 reportsWindowsFormsModuleV21;
     }
 }
