@@ -1,11 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application Title="ComprehensiveTutorialXaf">
+<Application Title="My Tutorial Xaf">
+  <NavigationItems>
+    <Items>
+      <Item Id="Administracyjne">
+        <Items>
+          <Item Id="Gmina_ListView" ImageName="Action_Clear" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
   <Options DataAccessMode="Client" LookupSmallCollectionItemCount="50">
     <LayoutManagerOptions RequiredFieldMark="*" />
   </Options>
   <SchemaModules>
-    <SchemaModule Name="CloneObjectModule" Version="20.2.1.0" IsNewNode="True" />
-    <SchemaModule Name="SystemModule" Version="20.2.1.0" IsNewNode="True" />
+    <SchemaModule Name="CloneObjectModule" Version="20.2.2.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="20.2.2.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
     <ListView Id="Gmina_ListView" DataAccessMode="Server" />
@@ -15,6 +24,25 @@
     <ListView Id="Powiat_ListView" DataAccessMode="Server" />
     <ListView Id="Wojewodztwo_KodyPocztowe_ListView" DataAccessMode="Server" />
     <ListView Id="Wplata_ListView" DataAccessMode="InstantFeedback" />
+    <DetailView Id="WplataDoRozliczeniaDC_DetailView">
+      <Items>
+        <ActionContainerViewItem Id="EditActions" ActionContainer="Edit" Caption="EditActions(8)" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="9.2634776006074411">
+            <LayoutGroup Id="WplataDoRozliczeniaDC" RelativeSize="100">
+              <LayoutItem Id="Wplata" RelativeSize="51.639344262295083" />
+              <LayoutItem Id="SumaRozliczen" RelativeSize="48.360655737704917" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Naleznosci_Group" Direction="Vertical" RelativeSize="90.736522399392555" Caption="Naleznosci">
+            <LayoutItem Id="Naleznosci" RelativeSize="94.070796460177" />
+            <LayoutItem Id="EditActions" ViewItem="EditActions" Index="1" RelativeSize="5.9292035398230087" IsNewNode="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
     <ListView Id="WplataDoRozliczeniaDC_Naleznosci_ListView">
       <Columns>
         <ColumnInfo Id="Faktura" Width="177" AllowEdit="False" />

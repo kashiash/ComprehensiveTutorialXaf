@@ -17,6 +17,6 @@ namespace ComprehensiveTutorialXaf.Module.BusinessObjects
 
         }
         public Faktura Faktura { get; set; }
-        public decimal? KwotaDoRozliczenia { get; set; }
+        public decimal KwotaDoRozliczenia { get; set; }
     }
 }

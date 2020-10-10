@@ -20,7 +20,7 @@ namespace ComprehensiveTutorialXaf.Module.BusinessObjects
         Wplata wplata;
 
 
-        [Association("Wplata-Rozrachunki"),Aggregated]
+        [Association("Wplata-Rozrachunki")]
         public Wplata Wplata
         {
             get => wplata;

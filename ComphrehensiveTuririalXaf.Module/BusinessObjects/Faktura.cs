@@ -107,17 +107,17 @@ namespace Demo1.Module.BusinessObjects
             set => SetPropertyValue(nameof(WartoscNetto), ref wartoscNetto, value);
         }
         [Persistent("WartoscVAT")]
-        decimal? wartoscVAT;
+        decimal wartoscVAT;
         [PersistentAlias(nameof(wartoscVAT))]
-        public decimal? WartoscVAT
+        public decimal WartoscVAT
         {
             get => wartoscVAT;
             set => SetPropertyValue(nameof(WartoscVAT), ref wartoscVAT, value);
         }
         [Persistent("WartoscBrutto")]
-        decimal? wartoscBrutto;
+        decimal wartoscBrutto;
         [PersistentAlias(nameof(wartoscBrutto))]
-        public decimal? WartoscBrutto
+        public decimal WartoscBrutto
         {
             get => wartoscBrutto;
             set => SetPropertyValue(nameof(WartoscBrutto), ref wartoscBrutto, value);
@@ -224,8 +224,8 @@ namespace Demo1.Module.BusinessObjects
 
 
             decimal tmpWartoscNetto = 0m;
-            decimal? tmpWartoscVAT = 0m;
-            decimal? tmpWartoscBrutto = 0m;
+            decimal tmpWartoscVAT = 0m;
+            decimal tmpWartoscBrutto = 0m;
 
             foreach (PozycjaFaktury rec in PozycjeFaktury)
             {

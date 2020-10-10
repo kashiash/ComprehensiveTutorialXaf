@@ -17,6 +17,7 @@ namespace Demo1.Module.BusinessObjects
         { }
 
 
+        decimal sumaRozksiegowan;
         string uwagi;
         RodzajPlatnosci rodzajPlatnosci;
         Waluta waluta;
@@ -38,9 +39,22 @@ namespace Demo1.Module.BusinessObjects
             set => SetPropertyValue(nameof(DataWplaty), ref dataWplaty, value);
         }
 
-        internal void PrzeliczRozrachunki(bool v)
+        internal void PrzeliczRozrachunki(bool forceRefresh = true)
         {
-            throw new NotImplementedException();
+            var oldSuma = sumaRozksiegowan;
+            var tmpSuma = 0m;
+            foreach (var rozr in Rozrachunki)
+            {
+
+                tmpSuma += rozr.Kwota;
+
+            }
+
+            sumaRozksiegowan = tmpSuma;
+            if (forceRefresh)
+            {
+                OnChanged(nameof(SumaRozksiegowan), oldSuma, sumaRozksiegowan);
+            }
         }
 
         public decimal KwotaWplaty
@@ -49,6 +63,18 @@ namespace Demo1.Module.BusinessObjects
             set => SetPropertyValue(nameof(KwotaWplaty), ref kwotaWplaty, value);
         }
 
+
+
+        public decimal SumaRozksiegowan
+        {
+            get => sumaRozksiegowan;
+            set => SetPropertyValue(nameof(SumaRozksiegowan), ref sumaRozksiegowan, value);
+        }
+
+        public decimal Nadplata
+        {
+            get => KwotaWplaty - SumaRozksiegowan;
+        }
 
         public Waluta Waluta
         {
@@ -70,7 +96,7 @@ namespace Demo1.Module.BusinessObjects
             set => SetPropertyValue(nameof(Uwagi), ref uwagi, value);
         }
 
-        [Association("Wplata-Rozrachunki"),Aggregated]
+        [Association("Wplata-Rozrachunki"), Aggregated]
         public XPCollection<Rozrachunek> Rozrachunki
         {
             get

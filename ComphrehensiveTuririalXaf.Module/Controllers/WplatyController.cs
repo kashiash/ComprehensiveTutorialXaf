@@ -50,37 +50,40 @@ namespace ComprehensiveTutorialXaf.Module.Controllers
         }
         private void rozliczWplateAction_Execute(object sender, PopupWindowShowActionExecuteEventArgs e)
         {
+          //  IObjectSpace objectSpace = Application.CreateObjectSpace();
+            var wplata = (Wplata)ObjectSpace.GetObject(View.CurrentObject);
+            if (wplata != null)
+            { WplataDoRozliczeniaDC parameters = e.PopupWindow.View.CurrentObject as WplataDoRozliczeniaDC;
+                foreach (var obj in parameters.Naleznosci)
+                {
+                    var roz = ObjectSpace.GetObject(obj);
+                    if (roz.KwotaDoRozliczenia != 0)
+                    {
+                        var rozrachunek = ObjectSpace.CreateObject<Rozrachunek>();
+                        rozrachunek.Wplata = wplata;
+                        rozrachunek.Faktura = ObjectSpace.GetObject(roz.Faktura); 
+                        rozrachunek.Kwota = roz.KwotaDoRozliczenia;
+                    }
 
-
+                }
+            }
+            //if (View is DetailView && ((DetailView)View).ViewEditMode == ViewEditMode.View)
+            //{
+            //    objectSpace.CommitChanges();
+            //}
+            if (View is ListView)
+            {
+                ObjectSpace.CommitChanges();
+                View.ObjectSpace.Refresh();
+            }
         }
 
         private void PrzygotujListeFakturDoRozliczenia(IObjectSpace objectSpace, WplataDoRozliczeniaDC rozliczenie)
         {
-          //  var listaFaktur = new BindingList<FakturaDoRozliczeniaDC>();
-            var faktury = objectSpace.GetObjectsQuery<Faktura>().Where(f => f.Klient == rozliczenie.Wplata.Klient && f.SumaWplat < f.WartoscBrutto);
 
-            decimal? kwotaDoRozliczenia = rozliczenie.Wplata.KwotaWplaty;
-            foreach (var faktura in faktury)
-            {
-                //var pozycja = objectSpace.CreateObject<FakturaDoRozliczenia>(); // to nie zadziała bo faktura do rozliczania nie jest XPO !!!!
-                var pozycja = new FakturaDoRozliczeniaDC();
-                pozycja.Faktura = faktura;
-                var kwotaFaktury = faktura.WartoscBrutto - faktura.SumaWplat;
-                if (kwotaDoRozliczenia > kwotaFaktury)
-                {
-                    pozycja.KwotaDoRozliczenia = kwotaFaktury;
-                    kwotaDoRozliczenia -= kwotaFaktury;
-                }
-                else
-                {
-                    pozycja.KwotaDoRozliczenia = kwotaDoRozliczenia;
-                    kwotaDoRozliczenia = 0;
-                }
-                rozliczenie.Naleznosci.Add(pozycja);
+   
+          RozliczanieWplatHelper.WyszukajFaktury(objectSpace,rozliczenie);
 
-            }
-
-        
         }
 
 
