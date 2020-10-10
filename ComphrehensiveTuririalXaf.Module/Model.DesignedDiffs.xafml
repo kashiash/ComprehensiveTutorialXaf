@@ -17,6 +17,15 @@
     <SchemaModule Name="SystemModule" Version="20.2.2.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
+    <ListView Id="Faktura_LookupListView">
+      <Columns>
+        <ColumnInfo Id="DataFaktury" PropertyName="DataFaktury" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="NazwaKlienta" PropertyName="Klient.Nazwa" Index="0" Caption="Nazwa klienta" IsNewNode="True" />
+        <ColumnInfo Id="SumaWplat" PropertyName="SumaWplat" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="WartoscBrutto" PropertyName="WartoscBrutto" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="NumerFaktury" Index="1" />
+      </Columns>
+    </ListView>
     <ListView Id="Gmina_ListView" DataAccessMode="Server" />
     <ListView Id="Klient_ListView" DataAccessMode="Server" />
     <ListView Id="KodPocztowy_ListView" DataAccessMode="InstantFeedback" />
