@@ -6,6 +6,11 @@ Niniejsze repozytorium zawiera przykład realizowany na podstawie opisu ze stron
 tutorial na bazie https://docs.devexpress.com/eXpressAppFramework/112560/getting-started/comprehensive-tutorial-main-demo-application?v=20.2
 
 
+[Kontrolery i Akcje](Controllers.md) - przykłady zastosowania
+
+[Widoki](Views.md)
+
+[BusinnesModel](BO.md) - Materiały uzupełniające
 
 
 # Aplikacja przykładowa
@@ -13,17 +18,16 @@ tutorial na bazie https://docs.devexpress.com/eXpressAppFramework/112560/getting
 
 [Aplikacja docelowa](AplikacjaPraktyczna.md) Aplikacja do ewidencji klientów i sprzedaży
 
+Zawiera liste klientów, kontaktów , produktów i faktur.
+dodatkowo kody pocztowe, waluty
+Pozwala wprowadzić wpłaty i rozliczyc je na faktury.
 
-[Kontrolery i Akcje](Controllers.md) - przykłady zastosowania
-
-[Widoki](Views.md)
-
-
-[BusinnesModel](BO.md) - Materiały uzupełniające
-
-
-### Funkcjonalności dodatkowe:
-[Faktura korygujaca](Faktura_korygująca.md) - wymagania i opis realizacji
+## W planach 
+kursy walut
+faktury korygujące
+obsługa magazynów
+...
+jakieś sugestie?
 
 # Ciekawe linki:
 Tu praktycznie jest wszystko ;):
