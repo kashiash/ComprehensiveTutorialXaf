@@ -604,3 +604,44 @@ public partial class WizardController : ViewController
 ```
 
 
+
+wywołanie innego detailview niz standardowy - podmiana oruginalnej akcji po kliknieciu rekordu na lsicie, na coś innego
+
+więcej tutaj: 
+
+https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.SystemModule.ListViewProcessCurrentObjectController.CustomProcessSelectedItem
+
+https://docs.devexpress.com/eXpressAppFramework/112820/task-based-help/actions/how-to-replace-a-list-views-default-action
+
+```csharp
+
+    public class CustomProcessObjectViewController : ViewController<ListView> {  
+        ListViewProcessCurrentObjectController processCurrentObjectController;  
+        public CustomProcessObjectViewController() {  
+            TargetViewNesting = Nesting.Nested;  
+            TargetObjectType = typeof(OrderLine);  
+        }  
+        protected override void OnActivated() {  
+            base.OnActivated();  
+            processCurrentObjectController = Frame.GetController<ListViewProcessCurrentObjectController>();  
+            if(processCurrentObjectController != null) {  
+                processCurrentObjectController.CustomProcessSelectedItem += originalController_CustomProcessSelectedItem;  
+            }  
+        }  
+        protected override void OnDeactivated() {  
+            base.OnDeactivated();  
+            if(processCurrentObjectController != null) {  
+                processCurrentObjectController.CustomProcessSelectedItem -= originalController_CustomProcessSelectedItem;  
+            }  
+        }  
+        void originalController_CustomProcessSelectedItem(object sender, CustomProcessListViewSelectedItemEventArgs e) {  
+            if(ObjectSpace.IsNewObject(e.InnerArgs.CurrentObject)) {  
+                e.Handled = true;  
+                e.InnerArgs.ShowViewParameters.CreatedView = Application.CreateDetailView(ObjectSpace, e.InnerArgs.CurrentObject, false);  
+            }  
+        }  
+    
+```
+
+
+

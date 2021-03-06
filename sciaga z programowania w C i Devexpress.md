@@ -18,6 +18,8 @@ https://docs.devexpress.com/XPO/2034/query-and-shape-data
 
 https://docs.devexpress.com/XPO/2537/query-and-shape-data/simplified-criteria-syntax
 
+https://docs.devexpress.com/CoreLibraries/4928/devexpress-data-library/criteria-language-syntax
+
 ### XPI i LINQ
 https://docs.devexpress.com/XPO/4060/query-and-shape-data/linq-to-xpo
 
