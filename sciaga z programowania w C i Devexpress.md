@@ -67,6 +67,8 @@ https://community.devexpress.com/blogs/xpo/archive/2006/03/27/session-management
 
 ### How to: Use XPO Upcasting in XAF
 upcasting czyli po naszemu rzutowanie typu
+* https://docs.devexpress.com/eXpressAppFramework/112797/task-based-help/business-model-design/express-persistent-objects-xpo/how-to-use-xpo-upcasting-in-xaf
+
 
 
 # Podstawy XAF
@@ -75,12 +77,7 @@ upcasting czyli po naszemu rzutowanie typu
 * https://docs.devexpress.com/eXpressAppFramework/113204/concepts/filtering/current-object-parameter
 * https://docs.devexpress.com/eXpressAppFramework/112681/task-based-help/filtering/how-to-implement-cascading-filtering-for-lookup-list-views
 
-
-
-
-
-
-https://docs.devexpress.com/eXpressAppFramework/112797/task-based-help/business-model-design/express-persistent-objects-xpo/how-to-use-xpo-upcasting-in-xaf
+* https://github.com/DevExpress-Examples/XAF_how-to-filter-lookup-list-views-e218
 
 ### Atrybuty 
 https://docs.devexpress.com/eXpressAppFramework/112701/concepts/business-model-design/data-annotations-in-data-model
