@@ -4,6 +4,12 @@
 miejsca na stronie devexpress, do których czesto wracam, a nie zawsze pamitam jak je znaleźć.
 
 
+#### Dokumentacja XAF
+https://docs.devexpress.com/eXpressAppFramework/112670/expressapp-framework
+
+#### zbiór wszystkiego o XAF
+https://github.com/jjcolumb/awesome-xaf
+
 ### Relacje w XPO
 
 https://docs.devexpress.com/XPO/2041/create-a-data-model/relationships-between-objects
@@ -12,13 +18,14 @@ https://docs.devexpress.com/XPO/2041/create-a-data-model/relationships-between-o
 https://docs.devexpress.com/eXpressAppFramework/112681/task-based-help/filtering/how-to-implement-cascading-filtering-for-lookup-list-views
 
 ### budowanie zapytań w xpo
-https://supportcenter.devexpress.com/ticket/details/k18431/xpo-how-to-select-data-from-multiple-tables
+* https://supportcenter.devexpress.com/ticket/details/k18431/xpo-how-to-select-data-from-multiple-tables
 
-https://docs.devexpress.com/XPO/2034/query-and-shape-data
+* https://docs.devexpress.com/XPO/2034/query-and-shape-data
 
-https://docs.devexpress.com/XPO/2537/query-and-shape-data/simplified-criteria-syntax
+* https://docs.devexpress.com/XPO/2537/query-and-shape-data/simplified-criteria-syntax
 
-https://docs.devexpress.com/CoreLibraries/4928/devexpress-data-library/criteria-language-syntax
+* https://docs.devexpress.com/CoreLibraries/4928/devexpress-data-library/criteria-language-syntax
+
 
 ### XPI i LINQ
 https://docs.devexpress.com/XPO/4060/query-and-shape-data/linq-to-xpo
