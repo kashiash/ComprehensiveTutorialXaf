@@ -12,10 +12,17 @@ https://github.com/jjcolumb/awesome-xaf
 
 ### Relacje w XPO
 
-https://docs.devexpress.com/XPO/2041/create-a-data-model/relationships-between-objects
+* <a href="https://docs.devexpress.com/XPO/2041/create-a-data-model/relationships-between-objects" target="_blank">Relationships Between Objects</a>
+
+
+### Kolekcje w XPO
+* <a href="https://docs.devexpress.com/eXpressAppFramework/113569/concepts/business-model-design/data-types-supported-by-built-in-editors/collection-properties/collection-properties-in-xpo" target="_blank">Collection Properties in XPO</a>
+
+
 
 ### Filtrowanie list / droplist
-https://docs.devexpress.com/eXpressAppFramework/112681/task-based-help/filtering/how-to-implement-cascading-filtering-for-lookup-list-views
+* https://docs.devexpress.com/eXpressAppFramework/113204/concepts/filtering/current-object-parameter
+* https://docs.devexpress.com/eXpressAppFramework/112681/task-based-help/filtering/how-to-implement-cascading-filtering-for-lookup-list-views
 
 ### budowanie zapytań w xpo
 * https://supportcenter.devexpress.com/ticket/details/k18431/xpo-how-to-select-data-from-multiple-tables
