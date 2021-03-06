@@ -8,9 +8,14 @@ miejsca na stronie devexpress, do których czesto wracam
 
 https://docs.devexpress.com/XPO/2041/create-a-data-model/relationships-between-objects
 
+### Filtrowanie list / droplist
+https://docs.devexpress.com/eXpressAppFramework/112681/task-based-help/filtering/how-to-implement-cascading-filtering-for-lookup-list-views
+
 ### budowanie zapytań w xpo
-https://supportcenter.devexpress.com/ticket/details/k18431/xpo-how-to-select-data-from-multiple-tables#
+https://supportcenter.devexpress.com/ticket/details/k18431/xpo-how-to-select-data-from-multiple-tables
+
 https://docs.devexpress.com/XPO/2034/query-and-shape-data
+
 https://docs.devexpress.com/XPO/2537/query-and-shape-data/simplified-criteria-syntax
 
 ### XPI i LINQ
