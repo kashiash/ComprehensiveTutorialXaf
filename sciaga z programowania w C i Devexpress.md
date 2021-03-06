@@ -1,7 +1,7 @@
 # sciaga z programowania w C# i Devexpress
 
 ## zbiór artykułów ze Strony Devexpress, które warto przeczytać
-miejsca na stronie devexpress, do których czesto wracam
+miejsca na stronie devexpress, do których czesto wracam, a nie zawsze pamitam jak je znaleźć.
 
 
 ### Relacje w XPO
