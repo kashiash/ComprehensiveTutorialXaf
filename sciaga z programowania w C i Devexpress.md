@@ -3,7 +3,7 @@
 
 ## Zawartość
 * [Wstęp](#wstęp)
-* [Interesujace linki](#general)
+* [Interesujace linki](#linki)
 * [Przykłady aplikacji w XAF](#sample-projects)
 * [Podstawy w XPO](#podstawy-xpo)
 * [Podstawy w XAF](#podstawy-xaf)
@@ -21,10 +21,10 @@ Zbiór artykułów ze Strony Devexpress, które warto przeczytać
 miejsca na stronie devexpress, do których czesto wracam, a nie zawsze pamiętam jak je znaleźć.
 
 #### Dokumentacja XAF
-https://docs.devexpress.com/eXpressAppFramework/112670/expressapp-framework
+* <a href="https://docs.devexpress.com/eXpressAppFramework/112670/expressapp-framework" target="_blank">Dokumentacja XAF</a>
 
-#### zbiór wszystkiego o XAF
-https://github.com/jjcolumb/awesome-xaf
+
+* <a href="https://github.com/jjcolumb/awesome-xaf" target="_blank">zbiór wszystkiego o XAF</a>
 
 
 ## Sample projects
@@ -34,15 +34,13 @@ https://github.com/jjcolumb/awesome-xaf
 
 ## Podstawy XPO
 
-### Relacje w XPO
+
 
 * <a href="https://docs.devexpress.com/XPO/2041/create-a-data-model/relationships-between-objects" target="_blank">Relationships Between Objects</a>
 
-
-### Kolekcje w XPO
 * <a href="https://docs.devexpress.com/eXpressAppFramework/113569/concepts/business-model-design/data-types-supported-by-built-in-editors/collection-properties/collection-properties-in-xpo" target="_blank">Collection Properties in XPO</a>
 
-### budowanie zapytań w xpo
+#### budowanie zapytań w xpo
 * https://supportcenter.devexpress.com/ticket/details/k18431/xpo-how-to-select-data-from-multiple-tables
 
 * https://docs.devexpress.com/XPO/2034/query-and-shape-data
@@ -52,21 +50,22 @@ https://github.com/jjcolumb/awesome-xaf
 * https://docs.devexpress.com/CoreLibraries/4928/devexpress-data-library/criteria-language-syntax
 
 
-### XPO i LINQ
+#### XPO i LINQ
 https://docs.devexpress.com/XPO/4060/query-and-shape-data/linq-to-xpo
 
 
-### Jak XPO ładuje obiekty i kolekcje
+#### Jak XPO ładuje obiekty i kolekcje
 https://supportcenter.devexpress.com/ticket/details/a643/how-xpo-reloads-objects-and-collections#
 
-### XPO Dobre praktyki
+#### XPO Dobre praktyki
 https://supportcenter.devexpress.com/ticket/details/a2944/xpo-best-practices#
 
-### Session management and casching
+#### Session management and caching
 https://community.devexpress.com/blogs/xpo/archive/2006/03/27/session-management-and-caching.aspx
 
-### How to: Use XPO Upcasting in XAF
-upcasting czyli po naszemu rzutowanie typu
+#### How to: Use XPO Upcasting in XAF
+upcasting czyli po naszemu rzutowanie typu np lekarz na pracownik czy pacjent jako osoba
+
 * https://docs.devexpress.com/eXpressAppFramework/112797/task-based-help/business-model-design/express-persistent-objects-xpo/how-to-use-xpo-upcasting-in-xaf
 
 
