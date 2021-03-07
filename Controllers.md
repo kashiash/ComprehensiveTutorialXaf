@@ -1,7 +1,16 @@
 ﻿*Kontrolery*
 
-https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.ViewController
-https://blog.delegate.at/2018/03/10/xaf-best-practices-2017-03.html
+
+Na poczatek polecam lekturę:
+
+* <a href="https://docs.devexpress.com/eXpressAppFramework/112623/concepts/controllers-and-actions" target="_blank">Controllers and Actions</a>
+
+* <a href="https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.ViewController" target="_blank">ViewController Class</a>
+
+* <a href="https://blog.delegate.at/2018/03/10/xaf-best-practices-2017-03.html" target="_blank">XAF best practices by Grudner</a>
+
+
+A tu kilka przykładów z lokalnego podwórka
 
 ### Standardowa wersja kontrolera
 
