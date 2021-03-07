@@ -71,7 +71,13 @@ upcasting czyli po naszemu rzutowanie typu
 
 
 
-# Podstawy XAF
+## Podstawy XAF
+
+* <a href="https://docs.devexpress.com/eXpressAppFramework/113710/concepts/data-manipulation-and-business-logic/ways-to-implement-business-logic" target="_blank">Ways to Implement Business Logic</a>
+
+* <a href="https://docs.devexpress.com/eXpressAppFramework/113711/concepts/data-manipulation-and-business-logic/create-read-update-and-delete-data" target="_blank">Create, Read, Update and Delete Data</a>
+
+* <a href="https://docs.devexpress.com/eXpressAppFramework/113103/concepts/controllers-and-actions/define-the-scope-of-controllers-and-actions" target="_blank">Define the Scope of Controllers and Actions</a>
 
 ### Filtrowanie list / droplist
 * https://docs.devexpress.com/eXpressAppFramework/113204/concepts/filtering/current-object-parameter
