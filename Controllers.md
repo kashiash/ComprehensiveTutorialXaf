@@ -7,6 +7,9 @@ Na poczatek polecam lekturę:
 
 * <a href="https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.ViewController" target="_blank">ViewController Class</a>
 
+
+* <a href="https://docs.devexpress.com/eXpressAppFramework/113161/task-based-help/views/how-to-access-master-detail-view-and-nested-list-view-environment" target="_blank">Access Master Detail View and Nested List View Environment</a>
+
 * <a href="https://blog.delegate.at/2018/03/10/xaf-best-practices-2017-03.html" target="_blank">XAF best practices by Grudner</a>
 
 
