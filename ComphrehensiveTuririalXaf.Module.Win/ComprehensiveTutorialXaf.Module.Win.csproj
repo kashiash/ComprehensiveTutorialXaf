@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ComprehensiveTutorialXaf.Module.Win</RootNamespace>
     <AssemblyName>ComprehensiveTutorialXaf.Module.Win</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -163,7 +163,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\WinListViewController.cs" />
     <Compile Include="Controllers\ZdalnaPomocController.cs">
       <SubType>Component</SubType>
     </Compile>

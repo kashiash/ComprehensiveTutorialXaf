@@ -10,10 +10,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ComprehensiveTutorialXaf.Module</RootNamespace>
     <AssemblyName>ComprehensiveTutorialXaf.Module</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -125,6 +126,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessObjects\Adres.cs" />
+    <Compile Include="BusinessObjects\AdresKlienta.cs" />
     <Compile Include="BusinessObjects\FakturaKorygujaca.cs" />
     <Compile Include="BusinessObjects\PozycjaFakturyKorygujacej.cs" />
     <Compile Include="BusinessObjects\FakturaDoRozliczeniaDC.cs" />
@@ -151,10 +154,10 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Controllers\ContactBusinessLogicViewController.cs" />
     <Compile Include="Controllers\DemoTaskController.cs" />
+    <Compile Include="Controllers\FakturaDetailViewController.cs" />
+    <Compile Include="Controllers\KlientDetailViewController.cs" />
     <Compile Include="Controllers\WplataDoRozliczeniaDCDetailViewController.cs" />
-    <Compile Include="Controllers\FakturyViewController.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Controllers\FakturyViewController.cs" />
     <Compile Include="Controllers\KlientListViewController.cs" />
     <Compile Include="Controllers\WizardController.cs">
       <SubType>Component</SubType>

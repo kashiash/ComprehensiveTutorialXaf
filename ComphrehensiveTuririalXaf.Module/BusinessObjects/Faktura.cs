@@ -1,6 +1,9 @@
 ﻿using ComprehensiveTutorialXaf.Module.BusinessObjects;
+using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.ConditionalAppearance;
 using DevExpress.ExpressApp.DC;
+using DevExpress.ExpressApp.Editors;
+using DevExpress.ExpressApp.Xpo;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
@@ -48,7 +51,17 @@ namespace Demo1.Module.BusinessObjects
             set => SetPropertyValue(nameof(NumerFaktury), ref numerFaktry, value);
         }
 
+        internal void ZmienKlienta(Klient newCustomer)
+        {
+            var oldKlient = klient;
+       
+            if (oldKlient != null && oldKlient.IsNewObject  && oldKlient != newCustomer)
+            {
+                oldKlient.Delete();
+            }
 
+            Klient = newCustomer;
+        }
 
         public DateTime DataFaktury
         {
@@ -79,24 +92,37 @@ namespace Demo1.Module.BusinessObjects
 
 
         [Association]
-
+        [EditorAlias(EditorAliases.DetailPropertyEditor)]
+        [ExpandObjectMembers(ExpandObjectMembers.Never)]
         public Klient Klient
         {
             get => klient;
             set
             {
+                var oldKlient = klient;
+
                 var modified = SetPropertyValue(nameof(Klient), ref klient, value);
 
                 if (modified && !IsLoading && !IsSaving && Klient != null)
                 {
+
+                   
+
+                    if (oldKlient != null && IsNewObject(oldKlient) && oldKlient != Klient)
+                    {
+                        oldKlient.Delete();
+                    }
                     DataPlatnosci = DataFaktury.AddDays(Klient.TerminPlatnosci);
 
                 }
             }
         }
 
-
-
+        private bool IsNewObject(Klient obj)
+        {
+            IObjectSpace objectSpace = XPObjectSpace.FindObjectSpaceByObject(obj);
+            return objectSpace != null && objectSpace.IsNewObject(obj);
+        }
 
         [Persistent(nameof(WartoscNetto))]
         decimal wartoscNetto;
@@ -165,6 +191,8 @@ namespace Demo1.Module.BusinessObjects
             // Opowiednik w clarionie "On prime records"
             DataFaktury = DateTime.Now;
             Status = StatusFaktury.Przygotowana;
+
+            Klient = new Klient(Session);
 
         }
 

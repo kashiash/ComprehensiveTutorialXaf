@@ -1,4 +1,5 @@
 # Logowanie z zewnętrznej aplikacji z parametrami
+
 * 
 
 * https://supportcenter.devexpress.com/ticket/details/k18099/how-to-show-a-specific-view-at-application-startup-right-after-the-logon-window-or-after#
@@ -293,22 +294,22 @@ public class CustomWinShowStartupNavigationItemController : WinShowStartupNaviga
 ```
 
 
-materiały żródłowe
+### materiały żródłowe
 
-<a href="https://docs.devexpress.com/eXpressAppFramework/112803/concepts/ui-construction/views/ways-to-show-a-view" target="_blank">https://docs.devexpress.com/eXpressAppFramework/112803/concepts/ui-construction/views/ways-to-show-a-view</a>
-
-
-<a href="https://supportcenter.devexpress.com/ticket/details/t693704/security-how-to-run-app-under-a-specific-user-and-log-in-automatically" target="_blank">https://supportcenter.devexpress.com/ticket/details/t693704/security-how-to-run-app-under-a-specific-user-and-log-in-automatically</a>
-
-<a href="https://docs.devexpress.com/eXpressAppFramework/112982/task-based-help/security/how-to-use-custom-logon-parameters-and-authentication" target="_blank">https://docs.devexpress.com/eXpressAppFramework/112982/task-based-help/security/how-to-use-custom-logon-parameters-and-authentication</a>
-
-<a href="https://supportcenter.devexpress.com/ticket/details/q556109/how-to-open-a-view-using-information-from-command-line-arguments-passed-when-launching" target="_blank">https://supportcenter.devexpress.com/ticket/details/q556109/how-to-open-a-view-using-information-from-command-line-arguments-passed-when-launching</a>
-
-<a href="https://supportcenter.devexpress.com/ticket/details/k18099/how-to-show-a-specific-view-at-application-startup-right-after-the-logon-window-or-after" target="_blank">https://supportcenter.devexpress.com/ticket/details/k18099/how-to-show-a-specific-view-at-application-startup-right-after-the-logon-window-or-after</a>
+* <a href="https://docs.devexpress.com/eXpressAppFramework/112803/concepts/ui-construction/views/ways-to-show-a-view" target="_blank">https://docs.devexpress.com/eXpressAppFramework/112803/concepts/ui-construction/views/ways-to-show-a-view</a>
 
 
-dla wersji webowej do rozpoznania w przyszłości:
+* <a href="https://supportcenter.devexpress.com/ticket/details/t693704/security-how-to-run-app-under-a-specific-user-and-log-in-automatically" target="_blank">https://supportcenter.devexpress.com/ticket/details/t693704/security-how-to-run-app-under-a-specific-user-and-log-in-automatically</a>
 
-<a href="https://dennisgaravsky.blogspot.com/2015/05/redirecting-from-external-hyperlink-to.html" target="_blank">https://dennisgaravsky.blogspot.com/2015/05/redirecting-from-external-hyperlink-to.html</a>
+* <a href="https://docs.devexpress.com/eXpressAppFramework/112982/task-based-help/security/how-to-use-custom-logon-parameters-and-authentication" target="_blank">https://docs.devexpress.com/eXpressAppFramework/112982/task-based-help/security/how-to-use-custom-logon-parameters-and-authentication</a>
 
-<a href="https://supportcenter.devexpress.com/ticket/details/t344730/how-to-get-a-hyperlink-or-url-for-a-certain-view-of-an-xaf-web-application" target="_blank">https://supportcenter.devexpress.com/ticket/details/t344730/how-to-get-a-hyperlink-or-url-for-a-certain-view-of-an-xaf-web-application</a>
+* <a href="https://supportcenter.devexpress.com/ticket/details/q556109/how-to-open-a-view-using-information-from-command-line-arguments-passed-when-launching" target="_blank">https://supportcenter.devexpress.com/ticket/details/q556109/how-to-open-a-view-using-information-from-command-line-arguments-passed-when-launching</a>
+
+* <a href="https://supportcenter.devexpress.com/ticket/details/k18099/how-to-show-a-specific-view-at-application-startup-right-after-the-logon-window-or-after" target="_blank">https://supportcenter.devexpress.com/ticket/details/k18099/how-to-show-a-specific-view-at-application-startup-right-after-the-logon-window-or-after</a>
+
+
+### dla wersji webowej do rozpoznania w przyszłości:
+
+* <a href="https://dennisgaravsky.blogspot.com/2015/05/redirecting-from-external-hyperlink-to.html" target="_blank">https://dennisgaravsky.blogspot.com/2015/05/redirecting-from-external-hyperlink-to.html</a>
+
+* <a href="https://supportcenter.devexpress.com/ticket/details/t344730/how-to-get-a-hyperlink-or-url-for-a-certain-view-of-an-xaf-web-application" target="_blank">https://supportcenter.devexpress.com/ticket/details/t344730/how-to-get-a-hyperlink-or-url-for-a-certain-view-of-an-xaf-web-application</a>

@@ -12,6 +12,8 @@ using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
 using Bogus;
+using ComprehensiveTutorialXaf.Module.BusinessObjects;
+using DevExpress.ExpressApp.Editors;
 
 namespace Demo1.Module.BusinessObjects
 {
@@ -27,10 +29,10 @@ namespace Demo1.Module.BusinessObjects
 
 
 
+        AdresKlienta adresKorespondencyjny;
+        AdresKlienta adresSiedziby;
         int terminPlatnosci;
-        string miejscowosc;
-        string kodPocztowy;
-        string ulica;
+
         string telefon;
         string email;
         string skrot;
@@ -70,26 +72,7 @@ namespace Demo1.Module.BusinessObjects
         }
 
 
-        [Size(SizeAttribute.DefaultStringMappingFieldSize)]
-        public string Ulica
-        {
-            get => ulica;
-            set => SetPropertyValue(nameof(Ulica), ref ulica, value);
-        }
 
-        [Size(SizeAttribute.DefaultStringMappingFieldSize)]
-        public string KodPocztowy
-        {
-            get => kodPocztowy;
-            set => SetPropertyValue(nameof(KodPocztowy), ref kodPocztowy, value);
-        }
-
-        [Size(SizeAttribute.DefaultStringMappingFieldSize)]
-        public string Miejscowosc
-        {
-            get => miejscowosc;
-            set => SetPropertyValue(nameof(Miejscowosc), ref miejscowosc, value);
-        }
 
 
 
@@ -139,10 +122,97 @@ namespace Demo1.Module.BusinessObjects
             }
         }
 
+
+        [EditorAlias(EditorAliases.DetailPropertyEditor)]
+        [ExpandObjectMembers(ExpandObjectMembers.Never)]
+        public AdresKlienta AdresSiedziby
+        {
+            get => adresSiedziby;
+            set
+            {
+                var oldAdres = adresSiedziby;
+                bool modified = SetPropertyValue(nameof(AdresSiedziby), ref adresSiedziby, value);
+                if (modified && !IsLoading && !IsSaving)
+                {
+                    if (oldAdres != null && oldAdres != AdresSiedziby &&  oldAdres.IsNewObject)
+                    {
+                        oldAdres.Delete();
+                    }
+                    AdresyKlienta.Add(AdresSiedziby);
+
+                }
+            }
+        }
+        private bool _innyAdresKorespondecyjny;
+        [XafDisplayName("Adres korespondecyjny jest inny")]
+        [ImmediatePostData]
+        public bool InnyAdresKorespondecyjny
+        {
+            get => _innyAdresKorespondecyjny;
+            set
+            {
+                bool modified = SetPropertyValue(nameof(InnyAdresKorespondecyjny), ref _innyAdresKorespondecyjny, value);
+                if (modified && !IsLoading && !IsSaving)
+                {
+                    if (InnyAdresKorespondecyjny)
+                    {
+                        AdresKorespondencyjny = new AdresKlienta(Session);
+                    }
+                    else
+                    {
+                        if (AdresKorespondencyjny.IsNewObject)
+                        {
+                            AdresKorespondencyjny.Delete();
+                        }
+                        AdresKorespondencyjny = null;
+                    }
+                }
+            }
+        }
+
+        [Browsable(false)]
+        [NonPersistent]
+        public bool IsNewObject
+        {
+            get;set;
+        }
+
+        [EditorAlias(EditorAliases.DetailPropertyEditor)]
+        [ExpandObjectMembers(ExpandObjectMembers.Never)]
+        public AdresKlienta AdresKorespondencyjny
+        {
+            get => adresKorespondencyjny;
+            set
+            {
+                var oldAdres = adresKorespondencyjny;
+                bool modified = SetPropertyValue(nameof(AdresKorespondencyjny), ref adresKorespondencyjny, value);
+                if (modified && !IsLoading && !IsSaving)
+                {
+                    if (oldAdres != null && oldAdres != AdresKorespondencyjny  && oldAdres.IsNewObject)
+                    {
+                        oldAdres.Delete();
+                    }
+                    AdresyKlienta.Add(AdresKorespondencyjny);
+
+                }
+            }
+        }
+
+        [Association("Klient-AdresyKlienta")]
+        public XPCollection<AdresKlienta> AdresyKlienta
+        {
+            get
+            {
+                return GetCollection<AdresKlienta>(nameof(AdresyKlienta));
+            }
+        }
+
+
         public override void AfterConstruction()
         {
             base.AfterConstruction();
             TerminPlatnosci = 14;
+            IsNewObject = true;
         }
 
 

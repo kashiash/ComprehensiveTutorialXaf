@@ -116,7 +116,13 @@ namespace ComprehensiveTutorialXaf.Module.DatabaseUpdate
                 stawki.Add(NowaStawka("ZW", 0M));
             }
 
-
+            var adrFaker = new Faker<AdresKlienta>("pl")
+            .CustomInstantiator(f => ObjectSpace.CreateObject<AdresKlienta>())
+            .RuleFor(o => o.Miejscowosc, f => f.Address.City())
+            .RuleFor(o => o.KodPocztowy, f => f.Address.ZipCode())
+            .RuleFor(o => o.Ulica, f => f.Address.StreetName());
+            var adresses = adrFaker.Generate(200);
+            ObjectSpace.CommitChanges();
 
 
             var cusFaker = new Faker<Klient>("pl")
@@ -125,9 +131,11 @@ namespace ComprehensiveTutorialXaf.Module.DatabaseUpdate
             .RuleFor(o => o.Skrot, f => f.Company.CompanyName())
             .RuleFor(o => o.Nazwa, f => f.Company.CompanyName())
             .RuleFor(o => o.Email, (f, u) => f.Internet.Email())
-            .RuleFor(o => o.Miejscowosc, f => f.Address.City())
-            .RuleFor(o => o.KodPocztowy, f => f.Address.ZipCode())
-            .RuleFor(o => o.Ulica, f => f.Address.StreetName());
+            .RuleFor(o => o.AdresSiedziby, f => f.PickRandom(adresses))
+            .RuleFor(o => o.InnyAdresKorespondecyjny, true)
+            .RuleFor(o => o.AdresKorespondencyjny, f => f.PickRandom(adresses));
+
+
             var customers = cusFaker.Generate(100);
             ObjectSpace.CommitChanges();
 
@@ -163,6 +171,11 @@ namespace ComprehensiveTutorialXaf.Module.DatabaseUpdate
             WygenerujFaktury(1000, customers, products);
         }
 
+        private void RuleFor(Func<object, object> p1, Func<object, object> p2)
+        {
+            throw new NotImplementedException();
+        }
+
         private StawkaVAT NowaStawka(string symbol, decimal wartosc)
         {
             StawkaVAT stawka = ObjectSpace.FindObject<StawkaVAT>(CriteriaOperator.Parse("Symbol = ?", symbol));
@@ -171,8 +184,8 @@ namespace ComprehensiveTutorialXaf.Module.DatabaseUpdate
                 stawka = ObjectSpace.CreateObject<StawkaVAT>();
                 stawka.Symbol = symbol;
                 stawka.Stawka = wartosc;
-             
-                
+
+
             }
             return stawka;
         }
