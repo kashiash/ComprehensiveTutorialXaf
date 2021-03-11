@@ -108,3 +108,7 @@ public class KlientDetailViewController :ObjectViewController<DetailView,Klient>
        }
    }
 ```
+
+W modelu dla klienta ustawiamy alternatywny edtor detailview - np bez listy faktur wpłat itp:
+
+![](mmodelKlientFaktury.png)
