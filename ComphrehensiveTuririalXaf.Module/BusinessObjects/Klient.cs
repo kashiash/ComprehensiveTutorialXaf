@@ -14,6 +14,7 @@ using DevExpress.Persistent.Validation;
 using Bogus;
 using ComprehensiveTutorialXaf.Module.BusinessObjects;
 using DevExpress.ExpressApp.Editors;
+using DevExpress.ExpressApp.ConditionalAppearance;
 
 namespace Demo1.Module.BusinessObjects
 {
@@ -177,8 +178,12 @@ namespace Demo1.Module.BusinessObjects
             get;set;
         }
 
+        private bool UkryjAdresKorespondencyjny => !InnyAdresKorespondecyjny;
+
         [EditorAlias(EditorAliases.DetailPropertyEditor)]
         [ExpandObjectMembers(ExpandObjectMembers.Never)]
+
+        [Appearance(nameof(UkryjAdresKorespondencyjny), Visibility = ViewItemVisibility.Hide, Criteria = nameof(UkryjAdresKorespondencyjny))]
         public AdresKlienta AdresKorespondencyjny
         {
             get => adresKorespondencyjny;

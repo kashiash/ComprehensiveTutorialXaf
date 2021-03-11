@@ -13,10 +13,15 @@
     <LayoutManagerOptions RequiredFieldMark="*" />
   </Options>
   <SchemaModules>
-    <SchemaModule Name="CloneObjectModule" Version="20.2.2.0" IsNewNode="True" />
-    <SchemaModule Name="SystemModule" Version="20.2.2.0" IsNewNode="True" />
+    <SchemaModule Name="CloneObjectModule" Version="20.2.5.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="20.2.5.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
+    <DetailView Id="Faktura_DetailView">
+      <Items>
+        <PropertyEditor Id="Klient" View="Klient_DetailView_Copy" />
+      </Items>
+    </DetailView>
     <ListView Id="Faktura_LookupListView">
       <Columns>
         <ColumnInfo Id="DataFaktury" PropertyName="DataFaktury" Index="0" IsNewNode="True" />
@@ -27,6 +32,44 @@
       </Columns>
     </ListView>
     <ListView Id="Gmina_ListView" DataAccessMode="Server" />
+    <DetailView Id="Klient_DetailView_Copy" CaptionColon=":" EnableCaptionColon="True" CaptionLocation="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" CaptionWordWrap="Default" EnableLayoutGroupImages="True" RequiredFieldMark="*" ClassName="Demo1.Module.BusinessObjects.Klient" IsNewNode="True">
+      <Items IsNewNode="True">
+        <PropertyEditor Id="AdresKorespondencyjny" PropertyName="AdresKorespondencyjny" IsNewNode="True" />
+        <PropertyEditor Id="AdresSiedziby" PropertyName="AdresSiedziby" IsNewNode="True" />
+        <PropertyEditor Id="AdresyKlienta" PropertyName="AdresyKlienta" View="Klient_AdresyKlienta_ListView" IsNewNode="True" />
+        <PropertyEditor Id="Email" PropertyName="Email" IsNewNode="True" />
+        <PropertyEditor Id="Faktury" PropertyName="Faktury" View="Klient_Faktury_ListView" IsNewNode="True" />
+        <PropertyEditor Id="InnyAdresKorespondecyjny" PropertyName="InnyAdresKorespondecyjny" IsNewNode="True" />
+        <PropertyEditor Id="Kontakty" PropertyName="Kontakty" View="Klient_Kontakty_ListView" IsNewNode="True" />
+        <PropertyEditor Id="Nazwa" PropertyName="Nazwa" IsNewNode="True" />
+        <PropertyEditor Id="Oid" PropertyName="Oid" IsNewNode="True" />
+        <PropertyEditor Id="Skrot" PropertyName="Skrot" IsNewNode="True" />
+        <PropertyEditor Id="Spotkania" PropertyName="Spotkania" View="Klient_Spotkania_ListView" IsNewNode="True" />
+        <PropertyEditor Id="Telefon" PropertyName="Telefon" IsNewNode="True" />
+        <PropertyEditor Id="TerminPlatnosci" PropertyName="TerminPlatnosci" IsNewNode="True" />
+        <PropertyEditor Id="Wplaty" PropertyName="Wplaty" View="Klient_Wplaty_ListView" IsNewNode="True" />
+      </Items>
+      <Layout IsNewNode="True">
+        <LayoutGroup Id="Main" Index="0" ShowCaption="False" RelativeSize="100" IsNewNode="True">
+          <LayoutGroup Id="SimpleEditors" Index="0" ShowCaption="False" RelativeSize="100" IsNewNode="True">
+            <LayoutGroup Id="Klient" Index="0" Direction="Horizontal" ShowCaption="True" RelativeSize="100" IsNewNode="True">
+              <LayoutGroup Id="Klient_col1" Index="0" ShowCaption="False" RelativeSize="49.951783992285442" IsNewNode="True">
+                <LayoutItem Id="Nazwa" ViewItem="Nazwa" ShowCaption="" Index="0" RelativeSize="3.3460076045627378" IsNewNode="True" />
+                <LayoutItem Id="Skrot" ViewItem="Skrot" ShowCaption="" Index="1" RelativeSize="2.4334600760456273" IsNewNode="True" />
+                <LayoutItem Id="Email" ViewItem="Email" ShowCaption="" Index="2" RelativeSize="2.4334600760456273" IsNewNode="True" />
+                <LayoutItem Id="Telefon" ViewItem="Telefon" ShowCaption="" Index="3" RelativeSize="2.4334600760456273" IsNewNode="True" />
+                <LayoutItem Id="TerminPlatnosci" ViewItem="TerminPlatnosci" Index="4" RelativeSize="89.353612167300383" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Klient_col2" Index="1" ShowCaption="False" RelativeSize="50.048216007714558" IsNewNode="True">
+                <LayoutItem Id="AdresSiedziby" ViewItem="AdresSiedziby" ShowCaption="" Index="0" RelativeSize="3.3460076045627378" IsNewNode="True" />
+                <LayoutItem Id="InnyAdresKorespondecyjny" ViewItem="InnyAdresKorespondecyjny" ShowCaption="" Index="1" RelativeSize="2.4334600760456273" IsNewNode="True" />
+                <LayoutItem Id="AdresKorespondencyjny" ViewItem="AdresKorespondencyjny" ShowCaption="" Index="2" RelativeSize="94.220532319391637" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
     <ListView Id="Klient_ListView" DataAccessMode="Server" />
     <ListView Id="KodPocztowy_ListView" DataAccessMode="InstantFeedback" />
     <ListView Id="KodPocztowy_LookupListView" DataAccessMode="InstantFeedback" />

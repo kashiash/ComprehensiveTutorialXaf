@@ -112,3 +112,37 @@ public class KlientDetailViewController :ObjectViewController<DetailView,Klient>
 W modelu dla klienta ustawiamy alternatywny edtor detailview - np bez listy faktur wpłat itp:
 
 ![](mmodelKlientFaktury.png)
+
+
+
+
+ukrywanie niuzywanych subdetailview
+
+```csharp
+//deklarujemy zmienna która informuje nas czy ukryc czy nie
+private bool UkryjAdresKorespondencyjny => !InnyAdresKorespondecyjny;
+
+[EditorAlias(EditorAliases.DetailPropertyEditor)]
+[ExpandObjectMembers(ExpandObjectMembers.Never)]
+
+// definiujemy regułe ukrywania - w tym przypadku uzalezniona od zmiennej UkryjAdresKorespondencyjny
+[Appearance(nameof(UkryjAdresKorespondencyjny), Visibility = ViewItemVisibility.Hide, Criteria = nameof(UkryjAdresKorespondencyjny))]
+public AdresKlienta AdresKorespondencyjny
+{
+    get => adresKorespondencyjny;
+    set
+    {
+        var oldAdres = adresKorespondencyjny;
+        bool modified = SetPropertyValue(nameof(AdresKorespondencyjny), ref adresKorespondencyjny, value);
+        if (modified && !IsLoading && !IsSaving)
+        {
+            if (oldAdres != null && oldAdres != AdresKorespondencyjny  && oldAdres.IsNewObject)
+            {
+                oldAdres.Delete();
+            }
+            AdresyKlienta.Add(AdresKorespondencyjny);
+
+        }
+    }
+}
+```
