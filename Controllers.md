@@ -1,19 +1,7 @@
 ﻿*Kontrolery*
 
-
-Na poczatek polecam lekturę:
-
-* <a href="https://docs.devexpress.com/eXpressAppFramework/112623/concepts/controllers-and-actions" target="_blank">Controllers and Actions</a>
-
-* <a href="https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.ViewController" target="_blank">ViewController Class</a>
-
-
-* <a href="https://docs.devexpress.com/eXpressAppFramework/113161/task-based-help/views/how-to-access-master-detail-view-and-nested-list-view-environment" target="_blank">Access Master Detail View and Nested List View Environment</a>
-
-* <a href="https://blog.delegate.at/2018/03/10/xaf-best-practices-2017-03.html" target="_blank">XAF best practices by Grudner</a>
-
-
-A tu kilka przykładów z lokalnego podwórka
+https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.ViewController
+https://blog.delegate.at/2018/03/10/xaf-best-practices-2017-03.html
 
 ### Standardowa wersja kontrolera
 
@@ -224,7 +212,7 @@ public  class DemoTaskController : ObjectViewController<ListView,DemoTask>
 ```
 
 
-#### Popup Window Action
+#### Popup Window Action (DetailView jako Popup Window)
 
 Chcemy dla wybranej grupy rekordów zapytac użytkownika o dodatkowe dane i na wybranych rekordach zrobić jakas akcję. W tym przypadku dla wybranych kleintów zapytamy na jaki dzień i z jaka data faktury  mamy wstawić faktury, z możliwością wybrania kilku towarów.
 
@@ -289,6 +277,85 @@ Chcemy dla wybranej grupy rekordów zapytac użytkownika o dodatkowe dane i na w
   }
 ```
 
+Pop up z listą do wyboru
+```csharp
+public class PozycjaDokMagObjectViewController : ObjectViewController<DetailView, PozycjaDokMag>
+ {
+     PopupWindowShowAction wybierzTowarAction;
+
+     public PozycjaDokMagObjectViewController()
+     {
+         wybierzTowarAction = new PopupWindowShowAction(this,
+                                   $"{GetType().FullName}.{nameof(wybierzTowarAction)}",
+                                   DevExpress.Persistent.Base.PredefinedCategory.Unspecified)
+         {
+             Caption = "Wybierz towar",
+             ImageName = "Products",
+             Shortcut = "F5",
+             PaintStyle = ActionItemPaintStyle.Image,
+         };
+         wybierzTowarAction.CustomizePopupWindowParams += WybierzTowarAction_CustomizePopupWindowParams; ;
+         wybierzTowarAction.Execute += WybierzTowarAction_Execute; ;
+     }
+
+
+
+     private void WybierzTowarAction_CustomizePopupWindowParams(object sender, CustomizePopupWindowParamsEventArgs e)
+     {
+         e.View = Application.CreateListView(typeof(StanMagProdZP), true);
+     }
+     private void WybierzTowarAction_Execute(object sender, PopupWindowShowActionExecuteEventArgs e)
+     {
+         if (e.PopupWindowViewSelectedObjects.Count == 0)
+         {
+             return;
+         }
+
+         var selectedItem = e.PopupWindowViewSelectedObjects[0] as StanMagProdZP;
+         var ItemToAdd = ObjectSpace.GetObject(selectedItem);
+         if (ItemToAdd == null)
+         {
+             return;
+         }
+
+         var parent = (PozycjaDokMag)View.CurrentObject;
+         if (parent != null)
+         {
+             parent.Produkt = ItemToAdd.ProduktZP;
+             parent.IndexStanMag = ItemToAdd.IndexStanMag;
+             parent.IndexProduktu = ItemToAdd.ProduktZP.Index;
+             parent.Seria = ItemToAdd.SeriaRozszerzona;
+             parent.SeriaN = ItemToAdd.SeriaSkrocona;
+             parent.StawkaVat = ItemToAdd.StawkaVat;
+             parent.CenaJednostkowa = ItemToAdd.CenaJednostkowaNetto;
+             parent.CenaJednostkowaBrutto = ItemToAdd.CenaJednostkowaBrutto;
+             parent.JednostkaMiary = ItemToAdd.JednostkaMiary;
+             parent.DataWaznosci = ItemToAdd.DataWaznosci;
+
+         }
+     }
+ }
+```
+
+
+## podmiana detailview - tzn lista wyświetla inna klasę a detail view chcemy dla oddzielnej klasy:
+
+```csharp
+public class ViewController1 : ViewController {  
+    public ViewController1() {  
+        TargetViewId = "ProductView_ListView";  
+    }  
+    protected override void OnActivated() {  
+        base.OnActivated();  
+        Frame.GetController<ListViewProcessCurrentObjectController>().ProcessCurrentObjectAction.Executed += new EventHandler<ActionBaseEventArgs>(ProcessCurrentObjectAction_Executed);  
+    }  
+    void ProcessCurrentObjectAction_Executed(object sender, ActionBaseEventArgs e) {  
+        DictionaryNode viewInfo = new ApplicationNodeWrapper(Application.Model).Views.FindViewById("Product_DetailView").Node;  
+        e.ShowViewParameters.CreatedView.SetInfo(viewInfo);  
+    }  
+}
+```
+
 
 ##### Show Notes z tutoriala
 
@@ -335,7 +402,7 @@ public  class PopupNotesController :ObjectViewController<DetailView,DemoTask>
 ```
 
 
-##### Wywołanie okna popup z wybranym obiektem z listy
+##### Wywołanie okna popup DetailViewprede z wybranym obiektem z listy
 
 ```csharp
 public class ShowDetailViewController : ViewController<ListView> {
@@ -614,46 +681,5 @@ public partial class WizardController : ViewController
      }
  }
 ```
-
-
-
-wywołanie innego detailview niz standardowy - podmiana oruginalnej akcji po kliknieciu rekordu na lsicie, na coś innego
-
-więcej tutaj: 
-
-https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.SystemModule.ListViewProcessCurrentObjectController.CustomProcessSelectedItem
-
-https://docs.devexpress.com/eXpressAppFramework/112820/task-based-help/actions/how-to-replace-a-list-views-default-action
-
-```csharp
-
-    public class CustomProcessObjectViewController : ViewController<ListView> {  
-        ListViewProcessCurrentObjectController processCurrentObjectController;  
-        public CustomProcessObjectViewController() {  
-            TargetViewNesting = Nesting.Nested;  
-            TargetObjectType = typeof(OrderLine);  
-        }  
-        protected override void OnActivated() {  
-            base.OnActivated();  
-            processCurrentObjectController = Frame.GetController<ListViewProcessCurrentObjectController>();  
-            if(processCurrentObjectController != null) {  
-                processCurrentObjectController.CustomProcessSelectedItem += originalController_CustomProcessSelectedItem;  
-            }  
-        }  
-        protected override void OnDeactivated() {  
-            base.OnDeactivated();  
-            if(processCurrentObjectController != null) {  
-                processCurrentObjectController.CustomProcessSelectedItem -= originalController_CustomProcessSelectedItem;  
-            }  
-        }  
-        void originalController_CustomProcessSelectedItem(object sender, CustomProcessListViewSelectedItemEventArgs e) {  
-            if(ObjectSpace.IsNewObject(e.InnerArgs.CurrentObject)) {  
-                e.Handled = true;  
-                e.InnerArgs.ShowViewParameters.CreatedView = Application.CreateDetailView(ObjectSpace, e.InnerArgs.CurrentObject, false);  
-            }  
-        }  
-    
-```
-
 
 

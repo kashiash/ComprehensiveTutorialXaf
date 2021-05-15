@@ -13,17 +13,28 @@ namespace ComprehensiveTutorialXaf.Module.Controllers
    public class FakturaDetailViewController : ObjectViewController<DetailView,Faktura>
     {
 
-        PopupWindowShowAction showCustomers;
+        PopupWindowShowAction showCustomersAction;
+        PopupWindowShowAction findCustomerAction;
         public FakturaDetailViewController()
         {
-            showCustomers = new PopupWindowShowAction(this, $"{GetType().Name}.{nameof(showCustomers)}", DevExpress.Persistent.Base.PredefinedCategory.OpenObject)
+            showCustomersAction = new PopupWindowShowAction(this, $"{GetType().Name}.{nameof(showCustomersAction)}", DevExpress.Persistent.Base.PredefinedCategory.OpenObject)
             {
                 Caption = "Wybierz klienta",
                 ImageName = "BO_Skull",
 
             };
-            showCustomers.Execute += ShowCustomers_Execute;
-            showCustomers.CustomizePopupWindowParams += ShowCustomers_CustomizePopupWindowParams;
+            showCustomersAction.Execute += ShowCustomers_Execute;
+            showCustomersAction.CustomizePopupWindowParams += ShowCustomers_CustomizePopupWindowParams;
+
+            findCustomerAction = new PopupWindowShowAction(this, $"{GetType().Name}.{nameof(findCustomerAction)}", DevExpress.Persistent.Base.PredefinedCategory.OpenObject)
+            {
+                Caption = "Wybierz klienta",
+                ImageName = "BO_Skull",
+
+            };
+            findCustomerAction.Execute += ShowCustomers_Execute;
+            findCustomerAction.CustomizePopupWindowParams += ShowCustomers_CustomizePopupWindowParams;
+
         }
 
         private void ShowCustomers_CustomizePopupWindowParams(object sender, CustomizePopupWindowParamsEventArgs e)
